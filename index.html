@@ -1,1 +1,169 @@
-Hello World
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Research Scientist Personal Website</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            line-height: 1.6;
+            color: #333;
+            margin: 0;
+            padding: 0;
+        }
+        .container {
+            width: 80%;
+            margin: auto;
+            overflow: hidden;
+            padding: 0 20px;
+        }
+        header {
+            background: #f4f4f4;
+            padding: 1rem 0;
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+        }
+        nav {
+            display: flex;
+            justify-content: space-around;
+        }
+        nav a {
+            color: #333;
+            text-decoration: none;
+        }
+        .profile-image {
+            width: 200px;
+            height: 200px;
+            border-radius: 50%;
+            object-fit: cover;
+            margin: 20px auto;
+            display: block;
+        }
+        .section {
+            margin-bottom: 2rem;
+        }
+        .publication {
+            background: #f9f9f9;
+            padding: 1rem;
+            margin-bottom: 1rem;
+            border-radius: 5px;
+        }
+        .social-links a {
+            margin-right: 10px;
+            color: #333;
+            text-decoration: none;
+        }
+        .button {
+            display: inline-block;
+            background: #333;
+            color: #fff;
+            padding: 10px 20px;
+            text-decoration: none;
+            border-radius: 5px;
+        }
+        .updates {
+            display: flex;
+            margin-bottom: 10px;
+        }
+        .update-date {
+            width: 100px;
+            color: #666;
+        }
+        footer {
+            background: #333;
+            color: #fff;
+            text-align: center;
+            padding: 1rem;
+            margin-top: 2rem;
+        }
+    </style>
+</head>
+<body>
+<header>
+    <nav class="container">
+        <a href="#about">About</a>
+        <a href="#publications">Publications</a>
+        <a href="#cv">CV</a>
+        <a href="#updates">Updates</a>
+    </nav>
+</header>
+
+<main class="container">
+    <section id="about" class="section">
+        <img src="https://media.licdn.com/dms/image/v2/D4D03AQGDheP7HxJ0MQ/profile-displayphoto-shrink_800_800/profile-displayphoto-shrink_800_800/0/1715106458562?e=1733961600&v=beta&t=BXk0hZAumGLsSc_ofEgyg4Zwn2ann9QhbzO1EuCVLJQ" alt="Profile Picture" class="profile-image" id="profile-image">
+        <h1>Research Scientist @ Georgia Tech </h1>
+        <p>I am a research scientist specializing in diffusion models and generative modeling. My work focuses on advancing the field of artificial intelligence through innovative approaches to machine learning and deep learning.</p>
+        <div class="social-links">
+            <a href="mailto:researcher@example.com">Email</a>
+            <a href="https://scholar.google.com" target="_blank" rel="noopener noreferrer">Google Scholar</a>
+            <a href="https://linkedin.com" target="_blank" rel="noopener noreferrer">LinkedIn</a>
+            <a href="https://github.com" target="_blank" rel="noopener noreferrer">GitHub</a>
+            <a href="https://twitter.com" target="_blank" rel="noopener noreferrer">Twitter</a>
+        </div>
+    </section>
+
+    <section id="publications" class="section">
+        <h2>Selected Publications</h2>
+        <div class="publication">
+            <h3>Advances in Diffusion Models for Generative AI</h3>
+            <p>John Doe, Jane Smith, <span class="badge">Equal Contribution</span> Robert Johnson</p>
+            <p>Nature Machine Intelligence, 2023</p>
+            <div>
+                <a href="#">Preprint</a> |
+                <a href="#">Code</a> |
+                <a href="#">Project</a>
+            </div>
+        </div>
+        <div class="publication">
+            <h3>Novel Approaches to Generative Modeling in Computer Vision</h3>
+            <p>Jane Smith, John Doe, <span class="badge">Alphabetical Order</span> Alice Brown</p>
+            <p>CVPR, 2022</p>
+            <div>
+                <a href="#">Preprint</a> |
+                <a href="#">Code</a>
+            </div>
+        </div>
+    </section>
+
+    <section id="cv" class="section">
+        <h2>Curriculum Vitae</h2>
+        <p>My full CV is available for download (PDF format). Last updated: May 2023</p>
+        <a href="#" class="button" id="download-cv">Download CV</a>
+    </section>
+
+    <section id="updates" class="section">
+        <h2>Recent Updates</h2>
+        <div class="updates">
+            <div class="update-date">Jun 2023</div>
+            <div>Organized workshop on Diffusion Models at ICML 2023</div>
+        </div>
+        <div class="updates">
+            <div class="update-date">May 2023</div>
+            <div>Paper "Advances in Diffusion Models for Generative AI" accepted to Nature Machine Intelligence</div>
+        </div>
+        <div class="updates">
+            <div class="update-date">August 2022</div>
+            <div>Started new role as Research Scientist at Georgia Tech</div>
+        </div>
+    </section>
+</main>
+
+<footer>
+    <p>&copy; 2023 [Researcher Name]. All rights reserved.</p>
+</footer>
+
+<script>
+        document.querySelectorAll('nav a').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                document.querySelector(this.getAttribute('href')).scrollIntoView({
+                    behavior: 'smooth',
+                    block: 'center'
+                });
+            });
+        });
+</script>
+</body>
+</html>
