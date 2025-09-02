@@ -1,176 +1,818 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>PhD Student Personal Website</title>
-    <style>
-        body {
-            font-family: Arial, sans-serif;
-            line-height: 1.6;
-            color: #333;
-            margin: 0;
-            padding: 0;
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Panagiotis Theodoropoulos - PhD Student in Autonomous Control Decision Systems</title>
+  <meta name="description" content="PhD student at Georgia Tech focusing on Schrödinger Bridge, diffusion models, and stochastic optimal control. Research in generative modeling and dynamic optimal transport.">
+  <link rel="canonical" href="https://ptheodor3.github.io/">
+
+  <!-- Open Graph -->
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://ptheodor3.github.io/">
+  <meta property="og:title" content="Panagiotis Theodoropoulos - PhD Student">
+  <meta property="og:description" content="Research in Schrödinger Bridge, diffusion models, and stochastic optimal control at Georgia Tech.">
+  <meta property="og:image" content="https://media.licdn.com/dms/image/v2/D4D03AQGDheP7HxJ0MQ/profile-displayphoto-shrink_800_800/profile-displayphoto-shrink_800_800/0/1715106458562">
+
+  <!-- Twitter -->
+  <meta property="twitter:card" content="summary_large_image">
+  <meta property="twitter:url" content="https://ptheodor3.github.io/">
+  <meta property="twitter:title" content="Panagiotis Theodoropoulos - PhD Student">
+  <meta property="twitter:description" content="Research in Schrödinger Bridge, diffusion models, and stochastic optimal control at Georgia Tech.">
+  <meta property="twitter:image" content="https://media.licdn.com/dms/image/v2/D4D03AQGDheP7HxJ0MQ/profile-displayphoto-shrink_800_800/profile-displayphoto-shrink_800_800/0/1715106458562">
+
+  <!-- Favicon -->
+  <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🧠</text></svg>">
+
+  <!-- JSON-LD -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Person",
+    "@id": "#person",
+    "name": "Panagiotis Theodoropoulos",
+    "givenName": "Panagiotis",
+    "familyName": "Theodoropoulos",
+    "jobTitle": "PhD Student",
+    "description": "PhD student focusing on Schrödinger Bridge, diffusion models, and stochastic optimal control",
+    "affiliation": {"@type": "Organization","name": "Georgia Institute of Technology","url": "https://gatech.edu"},
+    "worksFor": {"@type": "Organization","name": "Autonomous Control Decision System (ACDS) Lab"},
+    "email": "ptheodor3@gatech.edu",
+    "url": "https://ptheodor3.github.io",
+    "image": "https://media.licdn.com/dms/image/v2/D4D03AQGDheP7HxJ0MQ/profile-displayphoto-shrink_800_800/profile-displayphoto-shrink_800_800/0/1715106458562",
+    "sameAs": [
+      "https://scholar.google.com/citations?user=1TNqTOYAAAAJ&hl=en",
+      "https://www.linkedin.com/in/panagiotis-theodoropoulos-93088a169/",
+      "https://x.com/panostheo_"
+    ],
+    "knowsAbout": [
+      "Schrödinger Bridge","Diffusion Models","Stochastic Optimal Control","Dynamic Optimal Transport",
+      "Generative Modeling","Neural ODEs","Machine Learning","Optimal Transport","Crowd Navigation","Opinion Depolarization"
+    ],
+    "alumniOf": {"@type": "Organization","name": "Georgia Institute of Technology"}
+  }
+  </script>
+
+  <!-- Early theme init to avoid FOUC -->
+  <script>
+    (function () {
+      try {
+        const saved = localStorage.getItem('theme');
+        if (saved) document.documentElement.setAttribute('data-theme', saved);
+        else if (window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches) {
+          document.documentElement.setAttribute('data-theme', 'dark');
+        } else {
+          document.documentElement.setAttribute('data-theme', 'light');
         }
-        .container {
-            width: 80%;
-            margin: auto;
-            overflow: hidden;
-            padding: 0 20px;
-        }
-        header {
-            background: #f4f4f4;
-            padding: 1rem 0;
-            position: sticky;
-            top: 0;
-            z-index: 1000;
-        }
-        nav {
-            display: flex;
-            justify-content: space-around;
-        }
-        nav a {
-            color: #333;
-            text-decoration: none;
-        }
-        .profile-image {
-            width: 200px;
-            height: 200px;
-            border-radius: 50%;
-            object-fit: cover;
-            margin: 20px auto;
-            display: block;
-        }
-        .section {
-            margin-bottom: 2rem;
-        }
-        .publication {
-            background: #f9f9f9;
-            padding: 1rem;
-            margin-bottom: 1rem;
-            border-radius: 5px;
-        }
-        .social-links a {
-            margin-right: 10px;
-            color: #333;
-            text-decoration: none;
-        }
-        .button {
-            display: inline-block;
-            background: #333;
-            color: #fff;
-            padding: 10px 20px;
-            text-decoration: none;
-            border-radius: 5px;
-        }
-        .updates {
-            display: flex;
-            margin-bottom: 10px;
-        }
-        .update-date {
-            width: 100px;
-            color: #666;
-        }
-        footer {
-            background: #333;
-            color: #fff;
-            text-align: center;
-            padding: 1rem;
-            margin-top: 2rem;
-        }
-    </style>
+      } catch (_) {}
+    })();
+  </script>
+
+  <style>
+    /* Design tokens */
+    :root {
+      --bg: #ffffff;
+      --fg: #0b1220;
+      --muted: #5b6475;
+      --primary: #1b4cff;
+      --primary-contrast: #ffffff;
+      --surface: #f6f8fc;
+      --border: #e4e7ee;
+      --accent: #ff6b6b;
+      --success: #00c851;
+      --warning: #ffbb33;
+      --radius: 14px;
+      --shadow: 0 4px 20px rgba(0,0,0,.06);
+      --shadow-lg: 0 8px 32px rgba(0,0,0,.12);
+      --font-sans: system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial, "Noto Sans", sans-serif;
+      --font-mono: "SFMono-Regular", Consolas, "Liberation Mono", Menlo, monospace;
+      --transition: all .2s ease;
+      --gradient: linear-gradient(135deg, var(--primary) 0%, #7c3aed 100%);
+    }
+    /* honor prefers-color-scheme by default */
+    @media (prefers-color-scheme: dark) {
+      :root {
+        --bg: #0b1020;
+        --fg: #e9edf7;
+        --muted: #a8b0c2;
+        --primary: #82a3ff;
+        --primary-contrast: #0b1020;
+        --surface: #141a2e;
+        --border: #202743;
+        --shadow: 0 4px 20px rgba(0,0,0,.3);
+        --shadow-lg: 0 8px 32px rgba(0,0,0,.4);
+      }
+    }
+    /* override with manual toggle */
+    :root[data-theme="light"] {
+      --bg: #ffffff;
+      --fg: #0b1220;
+      --muted: #5b6475;
+      --primary: #1b4cff;
+      --primary-contrast: #ffffff;
+      --surface: #f6f8fc;
+      --border: #e4e7ee;
+      --shadow: 0 4px 20px rgba(0,0,0,.06);
+      --shadow-lg: 0 8px 32px rgba(0,0,0,.12);
+    }
+    :root[data-theme="dark"] {
+      --bg: #0b1020;
+      --fg: #e9edf7;
+      --muted: #a8b0c2;
+      --primary: #82a3ff;
+      --primary-contrast: #0b1020;
+      --surface: #141a2e;
+      --border: #202743;
+      --shadow: 0 4px 20px rgba(0,0,0,.3);
+      --shadow-lg: 0 8px 32px rgba(0,0,0,.4);
+    }
+
+    /* Base */
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    html { scroll-behavior: smooth; }
+    body {
+      font-family: var(--font-sans);
+      background: var(--bg); color: var(--fg); line-height: 1.6;
+      overflow-x: hidden;
+    }
+    .container { max-width: 1200px; margin: 0 auto; padding: 0 2rem; }
+
+    /* Skip link */
+    .skip-link {
+      position: absolute; top: -40px; left: 6px; z-index: 1000;
+      background: var(--primary); color: var(--primary-contrast);
+      padding: 8px; border-radius: var(--radius); text-decoration: none; transition: var(--transition);
+    }
+    .skip-link:focus { top: 6px; }
+
+    /* Header */
+    .header {
+      position: sticky; top: 0; z-index: 100;
+      background: rgba(255,255,255,.95);
+      border-bottom: 1px solid var(--border);
+      backdrop-filter: blur(20px); transition: var(--transition);
+    }
+    @media (prefers-color-scheme: dark) { .header { background: rgba(11,16,32,.95); } }
+    .nav {
+      display: flex; justify-content: space-between; align-items: center; padding: 1rem 2rem;
+    }
+    .nav-brand { font-weight: 700; font-size: 1.25rem; }
+    .nav-brand a { color: var(--fg); text-decoration: none; }
+    .nav-links { display: flex; gap: 2rem; align-items: center; }
+    .nav-link {
+      color: var(--muted); text-decoration: none; font-weight: 500; padding: .5rem 0;
+      border-bottom: 2px solid transparent; transition: var(--transition);
+    }
+    .nav-link:hover, .nav-link.active { color: var(--primary); border-bottom-color: var(--primary); }
+    .theme-toggle {
+      background: none; border: none; color: var(--muted); cursor: pointer;
+      padding: .5rem; border-radius: var(--radius); transition: var(--transition);
+    }
+    .theme-toggle:hover { color: var(--primary); background: var(--surface); }
+
+    @media (max-width: 768px) { .nav { padding: 1rem; } .nav-links { gap: 1rem; } .nav-link { font-size: .9rem; } }
+
+    /* Hero */
+    .hero-section { padding: 4rem 0; background: linear-gradient(135deg, var(--surface) 0%, rgba(27,76,255,.05) 100%); }
+    .hero-content { display: grid; grid-template-columns: 2fr 1fr; gap: 4rem; align-items: center; }
+    .hero-title {
+      font-size: clamp(2rem, 5vw, 3.5rem); font-weight: 800; line-height: 1.1; margin-bottom: 1rem;
+      background: var(--gradient); -webkit-background-clip: text; -webkit-text-fill-color: transparent; background-clip: text;
+    }
+    .hero-affiliation { color: var(--muted); font-size: 1.25rem; margin-bottom: 2rem; }
+    .divider { margin: 0 .5rem; opacity: .5; }
+    .hero-bio { font-size: 1.125rem; line-height: 1.7; margin-bottom: 2rem; }
+    .current-focus { margin-bottom: 2rem; }
+    .focus-label { display: block; font-weight: 600; color: var(--muted); margin-bottom: .75rem; }
+    .focus-pills { display: flex; flex-wrap: wrap; gap: .5rem; }
+    .pill { background: var(--primary); color: var(--primary-contrast); padding: .5rem 1rem; border-radius: 2rem; font-size: .875rem; font-weight: 500; }
+    .hero-actions { display: flex; gap: 1rem; margin-bottom: 2rem; }
+    .btn {
+      display: inline-flex; align-items: center; gap: .5rem; padding: .875rem 1.5rem; border-radius: var(--radius);
+      text-decoration: none; font-weight: 600; font-size: .875rem; transition: var(--transition); cursor: pointer; border: none; min-height: 44px;
+    }
+    .btn-primary { background: var(--primary); color: var(--primary-contrast); }
+    .btn-primary:hover { background: color-mix(in srgb, var(--primary) 90%, black); transform: translateY(-1px); box-shadow: var(--shadow-lg); }
+    .btn-secondary { background: transparent; color: var(--primary); border: 1px solid var(--primary); }
+    .btn-secondary:hover { background: var(--primary); color: var(--primary-contrast); }
+    .social-links { display: flex; gap: 1rem; }
+    .social-links a {
+      display: flex; align-items: center; justify-content: center; width: 44px; height: 44px;
+      background: var(--surface); color: var(--muted); border-radius: var(--radius); transition: var(--transition); text-decoration: none;
+    }
+    .social-links a:hover { background: var(--primary); color: var(--primary-contrast); transform: translateY(-2px); }
+    .hero-image { display: flex; justify-content: center; }
+    .profile-image {
+      width: 300px; height: 300px; border-radius: 50%; object-fit: cover; border: 4px solid var(--border);
+      box-shadow: var(--shadow-lg); transition: var(--transition);
+    }
+    .profile-image:hover { transform: scale(1.05); box-shadow: 0 12px 40px rgba(0,0,0,.15); }
+
+    @media (max-width: 768px) {
+      .hero-content { grid-template-columns: 1fr; gap: 2rem; text-align: center; }
+      .hero-actions { justify-content: center; flex-wrap: wrap; }
+      .profile-image { width: 200px; height: 200px; }
+    }
+
+    /* Sections */
+    .section { padding: 4rem 0; }
+    .section-title { font-size: 2.5rem; font-weight: 700; margin-bottom: 3rem; text-align: center; }
+
+    /* Highlights */
+    .highlights-grid {
+      display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 2rem; margin-top: 2rem;
+    }
+    .highlight-card {
+      text-align: center; padding: 2rem; background: var(--surface); border-radius: var(--radius);
+      border: 1px solid var(--border); transition: var(--transition);
+    }
+    .highlight-card:hover { transform: translateY(-4px); box-shadow: var(--shadow-lg); }
+    .highlight-number { font-size: 3rem; font-weight: 800; color: var(--primary); line-height: 1; }
+    .highlight-label { font-weight: 600; margin: .5rem 0; }
+    .highlight-note { color: var(--muted); font-size: .875rem; }
+
+    /* Publications (no filters/search UI) */
+    .publication {
+      background: var(--surface); padding: 2rem; border-radius: var(--radius);
+      margin-bottom: 1.5rem; border: 1px solid var(--border); transition: var(--transition);
+    }
+    .publication:hover { transform: translateY(-2px); box-shadow: var(--shadow-lg); }
+    .publication-title { font-size: 1.25rem; font-weight: 700; margin-bottom: .75rem; color: var(--fg); }
+    .publication-authors { color: var(--muted); margin-bottom: 1rem; line-height: 1.5; }
+    .author-highlight { font-weight: 600; color: var(--fg); }
+    .publication-venue { font-style: italic; color: var(--muted); margin-bottom: 1rem; }
+    .publication-links { display: flex; gap: 1rem; flex-wrap: wrap; }
+    .publication-link {
+      display: inline-flex; align-items: center; gap: .5rem; padding: .5rem 1rem;
+      background: var(--primary); color: var(--primary-contrast); text-decoration: none;
+      border-radius: var(--radius); font-size: .875rem; font-weight: 500; transition: var(--transition);
+    }
+    .publication-link:hover { background: color-mix(in srgb, var(--primary) 90%, black); }
+    .publication-badges { display: flex; gap: .5rem; margin-bottom: 1rem; flex-wrap: wrap; }
+    .badge { background: var(--accent); color: #fff; padding: .25rem .75rem; border-radius: 1rem; font-size: .75rem; font-weight: 600; }
+
+    /* Updates */
+    .updates-list { max-width: 800px; margin: 0 auto; }
+    .update-item {
+      display: grid; grid-template-columns: 120px 1fr; gap: 2rem; padding: 2rem 0; border-bottom: 1px solid var(--border);
+    }
+    .update-item:last-child { border-bottom: none; }
+    .update-date { font-weight: 600; color: var(--primary); font-size: .875rem; }
+    .update-title { font-size: 1.125rem; font-weight: 600; margin-bottom: .5rem; }
+    .update-description { color: var(--muted); line-height: 1.6; }
+    @media (max-width: 768px) { .update-item { grid-template-columns: 1fr; gap: .5rem; } }
+
+    /* Modal */
+    .modal { display: none; position: fixed; z-index: 1000; inset: 0; background: rgba(0,0,0,.6); backdrop-filter: blur(4px); }
+    .modal.active { display: flex; align-items: center; justify-content: center; padding: 2rem; }
+    .modal-content {
+      background: var(--bg); border-radius: var(--radius); max-width: 600px; width: 100%;
+      max-height: 80vh; overflow-y: auto; box-shadow: var(--shadow-lg);
+    }
+    .modal-header {
+      display: flex; justify-content: space-between; align-items: center; padding: 1.5rem 2rem; border-bottom: 1px solid var(--border);
+    }
+    .modal-title { font-size: 1.25rem; font-weight: 600; }
+    .modal-close {
+      background: none; border: none; font-size: 1.5rem; cursor: pointer; color: var(--muted);
+      width: 32px; height: 32px; display: inline-flex; align-items: center; justify-content: center; border-radius: var(--radius);
+    }
+    .modal-close:hover { background: var(--surface); color: var(--fg); }
+    .modal-body { padding: 2rem; }
+    .citation-format-tabs { display: flex; gap: 1rem; margin-bottom: 1rem; }
+    .citation-tab {
+      background: none; border: 1px solid var(--border); color: var(--muted);
+      padding: .5rem 1rem; border-radius: var(--radius); cursor: pointer; transition: var(--transition);
+    }
+    .citation-tab.active { background: var(--primary); color: var(--primary-contrast); border-color: var(--primary); }
+    .citation-text {
+      background: var(--surface); padding: 1.5rem; border-radius: var(--radius); margin-bottom: 1rem;
+      font-family: var(--font-mono); font-size: .875rem; line-height: 1.4; white-space: pre-wrap; word-break: break-word; border: 1px solid var(--border);
+    }
+    .copy-status { margin-top: 1rem; font-size: .875rem; color: var(--success); opacity: 0; transition: var(--transition); }
+    .copy-status.show { opacity: 1; }
+
+    /* Footer */
+    .footer { background: var(--surface); padding: 2rem 0; text-align: center; border-top: 1px solid var(--border); margin-top: 4rem; }
+    .footer p { color: var(--muted); font-size: .875rem; }
+    .footer a { color: var(--primary); text-decoration: none; }
+    .footer a:hover { text-decoration: underline; }
+    .last-updated { margin-top: .5rem; opacity: .7; }
+
+    /* Utils */
+    .sr-only { position: absolute; width: 1px; height: 1px; padding: 0; margin: -1px; overflow: hidden; clip: rect(0,0,0,0); white-space: nowrap; border: 0; }
+
+    /* Reduced motion */
+    @media (prefers-reduced-motion: reduce) {
+      * { animation-duration: .01ms !important; animation-iteration-count: 1 !important; transition-duration: .01ms !important; }
+      html { scroll-behavior: auto; }
+    }
+
+    /* Print */
+    @media print {
+      .header, .theme-toggle, .social-links, .hero-actions, .modal, .footer { display: none !important; }
+      .hero-content { grid-template-columns: 1fr; text-align: center; }
+      .publication { break-inside: avoid; box-shadow: none; border: 1px solid #ccc; }
+    }
+  </style>
 </head>
 <body>
-<header>
-    <nav class="container">
-        <a href="#about">About</a>
-        <a href="#publications">Publications</a>
-        <a href="#cv">CV</a>
-        <a href="#updates">Updates</a>
+  <a class="skip-link" href="#main-content">Skip to main content</a>
+
+  <header class="header" role="banner">
+    <nav class="nav container" role="navigation" aria-label="Main navigation">
+      <div class="nav-brand"><a href="#home">Panagiotis Theodoropoulos</a></div>
+      <div class="nav-links">
+        <a href="#home" class="nav-link active">Home</a>
+        <a href="#publications" class="nav-link">Publications</a>
+        <a href="#updates" class="nav-link">Updates</a>
+        <a href="#contact" class="nav-link">Contact</a>
+        <button class="theme-toggle" aria-label="Toggle dark mode" title="Toggle theme">
+          <svg class="theme-icon" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true">
+            <circle cx="12" cy="12" r="5"></circle>
+            <path d="M12 1v2M12 21v2M4.22 4.22l1.42 1.42M18.36 18.36l1.42 1.42M1 12h2M21 12h2M4.22 19.78l1.42-1.42M18.36 5.64l1.42-1.42"></path>
+          </svg>
+        </button>
+      </div>
     </nav>
-</header>
+  </header>
 
-<main class="container">
-    <section id="about" class="section">
-        <img src="https://media.licdn.com/dms/image/v2/D4D03AQGDheP7HxJ0MQ/profile-displayphoto-shrink_800_800/profile-displayphoto-shrink_800_800/0/1715106458562?e=1733961600&v=beta&t=BXk0hZAumGLsSc_ofEgyg4Zwn2ann9QhbzO1EuCVLJQ" alt="Profile Picture" class="profile-image" id="profile-image">
-        <h1>PhD Student @ Georgia Tech </h1>
-        <p>I am a PhD student at Georgia Tech in Autonomous Control Decision System (ACDS) Lab at Georiga Institute of Technology advised by Professor.
-           I focus on incorporating optimality and domain-specific structures into diffusion models, aiming to deepen theoretical insights and create scalable algorithms. Fundamentally, my research interest lies in the intersection of dynamic optimal transport, stochastic optimal control.
-            I contribute mainly in the field of Schrödinger Bridge, i.e. non-linear diffusion models, for applications in generative modeling, unpaired image translation, crowd navigation, and opinion depolarization. 
-            Prior to this, I worked on robust architecture-aware neural optimizers.
-        <div class="social-links">
-            <a href="mailto:ptheodor3@gatech.edu">Email</a>
-            <a href="https://scholar.google.com/citations?user=1TNqTOYAAAAJ&hl=en" target="_blank" rel="noopener noreferrer">Google Scholar</a>
-            <a href="https://www.linkedin.com/in/panagiotis-theodoropoulos-93088a169/" target="_blank" rel="noopener noreferrer">LinkedIn</a>
-            <a href="https://x.com/panostheo_" target="_blank" rel="noopener noreferrer">Twitter</a>
+  <main id="main-content" class="main">
+    <!-- Home -->
+    <section id="home" class="hero-section">
+      <div class="container">
+        <div class="hero-content">
+          <div class="hero-text">
+            <h1 class="hero-title">PhD Student in Machine Learning</h1>
+            <div class="hero-affiliation">
+              <span>Georgia Institute of Technology</span><span class="divider">•</span><span>ACDS Lab</span>
+            </div>
+            <div class="hero-bio">
+              <p>I focus on incorporating optimality and domain-specific structures into diffusion models, aiming to deepen theoretical insights and create scalable algorithms. My research lies at the intersection of dynamic optimal transport and stochastic optimal control, contributing mainly in the field of Schrödinger Bridge for applications in generative modeling, unpaired image translation, crowd navigation, and opinion depolarization.</p>
+            </div>
+            <div class="current-focus">
+              <span class="focus-label">Current focus:</span>
+              <div class="focus-pills">
+                <span class="pill">Schrödinger Bridge</span>
+                <span class="pill">Non-linear Diffusion Models</span>
+                <span class="pill">Generative Modeling</span>
+                <span class="pill">Optimal Transport</span>
+              </div>
+            </div>
+            <div class="hero-actions">
+              <a href="mailto:ptheodor3@gatech.edu?subject=Research%20Collaboration%20Inquiry" class="btn btn-primary">I want to get in touch</a>
+              <a href="Panagiotis_Theodoropoulos_CV.pdf" class="btn btn-secondary" target="_blank" rel="noopener">View CV</a>
+            </div>
+            <div class="social-links" aria-label="Social links">
+              <a href="mailto:ptheodor3@gatech.edu" rel="me" aria-label="Email" title="Email">
+                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true">
+                  <path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"></path>
+                  <polyline points="22,6 12,13 2,6"></polyline>
+                </svg>
+              </a>
+              <a href="https://scholar.google.com/citations?user=1TNqTOYAAAAJ&hl=en" target="_blank" rel="noopener noreferrer me" aria-label="Google Scholar" title="Google Scholar">
+                <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
+                  <path d="M5.242 13.769L0 9.5 12 0l12 9.5-5.242 4.269C17.548 11.249 14.978 9.5 12 9.5c-2.977 0-5.548 1.748-6.758 4.269zM12 10a7 7 0 1 0 0 14 7 7 0 0 0 0-14z"/>
+                </svg>
+              </a>
+              <a href="https://www.linkedin.com/in/panagiotis-theodoropoulos-93088a169/" target="_blank" rel="noopener noreferrer me" aria-label="LinkedIn" title="LinkedIn">
+                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true">
+                  <path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"></path>
+                  <rect x="2" y="9" width="4" height="12"></rect>
+                  <circle cx="4" cy="4" r="2"></circle>
+                </svg>
+              </a>
+              <a href="https://x.com/panostheo_" target="_blank" rel="noopener noreferrer me" aria-label="X (Twitter)" title="X (Twitter)">
+                <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
+                  <path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z"/>
+                </svg>
+              </a>
+            </div>
+          </div>
+          <div class="hero-image">
+            <img
+              src="https://media.licdn.com/dms/image/v2/D4D03AQGDheP7HxJ0MQ/profile-displayphoto-shrink_800_800/profile-displayphoto-shrink_800_800/0/1715106458562?e=1733961600&v=beta&t=BXk0hZAumGLsSc_ofEgyg4Zwn2ann9QhbzO1EuCVLJQ"
+              alt="Panagiotis Theodoropoulos"
+              class="profile-image"
+              loading="eager"
+              width="300" height="300">
+          </div>
         </div>
+      </div>
     </section>
 
+    <!-- Highlights -->
+    <section class="section">
+      <div class="container">
+        <h2 class="section-title">Research Highlights</h2>
+        <div class="highlights-grid">
+          <div class="highlight-card">
+            <div class="highlight-number">3</div>
+            <div class="highlight-label">Publications</div>
+            <div class="highlight-note">Including ICLR 2024</div>
+          </div>
+          <div class="highlight-card">
+            <div class="highlight-number">2024</div>
+            <div class="highlight-label">Latest Paper</div>
+            <div class="highlight-note">Feedback Schrödinger Bridge</div>
+          </div>
+          <div class="highlight-card">
+            <div class="highlight-number">Open</div>
+            <div class="highlight-label">Summer 2025</div>
+            <div class="highlight-note">Seeking internship</div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Publications (kept as-is, filtering removed) -->
     <section id="publications" class="section">
-        <h2> Selected Publications</h2>
-        <div class="publication">
-            <h3>Feedback Schrödinger Bridge Matching</h3>
-            <p> Panagiotis Theodoropoulos, Nikolaos Komianos, Vincent Pacelli, Guan-Horng Liu, <span class="badge"> Evangelos A. Theodorou</span> </p>
-            <p></p>
-            <div>
-                <a href="https://arxiv.org/abs/2410.14055">Preprint</a> |
+      <div class="container">
+        <h2 class="section-title">Publications</h2>
+
+        <div id="publications-list" class="publications-list" aria-live="polite">
+          <article class="publication" data-year="2024" data-venue="ArXiv" data-first-author="true">
+            <div class="publication-badges">
+              <span class="badge">Preprint</span><span class="badge">First Author</span>
             </div>
-        </div>
-        <div class="publication">
-            <h3>A ROBUST DIFFERENTIAL NEURAL ODE OPTIMIZER </h3>
-            <p>Panagiotis Theodoropoulos, Guan-Horng Liu, Tianrong Chen, Augustinos D Saravanos, <span class="badge"></span> Evangelos Theodorou</p>
-            <p></p>
-            <div>
-                <a href="https://openreview.net/forum?id=zbOSJ3CATY">Paper</a> |
+            <h3 class="publication-title">Feedback Schrödinger Bridge Matching</h3>
+            <p class="publication-authors">
+              <span class="author-highlight">Panagiotis Theodoropoulos</span>, Nikolaos Komianos, Vincent Pacelli, Guan-Horng Liu, Evangelos A. Theodorou
+            </p>
+            <p class="publication-venue">ArXiv preprint, 2024</p>
+            <div class="publication-links">
+              <a href="https://arxiv.org/abs/2410.14055" class="publication-link" target="_blank" rel="noopener">
+                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true">
+                  <path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"></path>
+                  <polyline points="14,2 14,8 20,8"></polyline>
+                </svg> Paper
+              </a>
+              <button class="publication-link cite-btn" data-title="Feedback Schrödinger Bridge Matching" type="button">
+                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true">
+                  <path d="M16 4h2a2 2 0 0 1 2 2v14a2 2 0 0 1-2 2H6a2 2 0 0 1-2-2V6a2 2 0 0 1 2-2h2"></path>
+                  <rect x="8" y="2" width="8" height="4" rx="1" ry="1"></rect>
+                </svg> Cite
+              </button>
             </div>
-        </div>
-        <div class="publication">
-            <h3>Evaluation of deep learning approaches for oil & gas pipeline leak detection using wireless sensor networks</h3>
-            <p>Christos Spandonidis, Panagiotis Theodoropoulos, Fotis Giannopoulos, Nektarios Galiatsatos <span class="badge"></span> Areti Petsa</p>
-            <p></p>
-            <div>
-                <a href="https://www.sciencedirect.com/science/article/abs/pii/S0952197622001294">Paper</a> |
+          </article>
+
+          <article class="publication" data-year="2024" data-venue="ICLR" data-first-author="true">
+            <div class="publication-badges">
+              <span class="badge">Conference</span><span class="badge">First Author</span>
             </div>
+            <h3 class="publication-title">A Robust Differential Neural ODE Optimizer</h3>
+            <p class="publication-authors">
+              <span class="author-highlight">Panagiotis Theodoropoulos</span>, Guan-Horng Liu, Tianrong Chen, Augustinos D Saravanos, Evangelos Theodorou
+            </p>
+            <p class="publication-venue">International Conference on Learning Representations (ICLR), 2024</p>
+            <div class="publication-links">
+              <a href="https://openreview.net/forum?id=zbOSJ3CATY" class="publication-link" target="_blank" rel="noopener">
+                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true">
+                  <path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"></path>
+                  <polyline points="14,2 14,8 20,8"></polyline>
+                </svg> Paper
+              </a>
+              <button class="publication-link cite-btn" data-title="A Robust Differential Neural ODE Optimizer" type="button">
+                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true">
+                  <path d="M16 4h2a2 2 0 0 1 2 2v14a2 2 0 0 1-2 2H6a2 2 0 0 1-2-2V6a2 2 0 0 1 2-2h2"></path>
+                  <rect x="8" y="2" width="8" height="4" rx="1" ry="1"></rect>
+                </svg> Cite
+              </button>
+            </div>
+          </article>
+
+          <article class="publication" data-year="2022" data-venue="Engineering Applications" data-first-author="false">
+            <div class="publication-badges"><span class="badge">Journal</span></div>
+            <h3 class="publication-title">Evaluation of deep learning approaches for oil &amp; gas pipeline leak detection using wireless sensor networks</h3>
+            <p class="publication-authors">
+              Christos Spandonidis, <span class="author-highlight">Panagiotis Theodoropoulos</span>, Fotis Giannopoulos, Nektarios Galiatsatos, Areti Petsa
+            </p>
+            <p class="publication-venue">Engineering Applications of Artificial Intelligence, 2022</p>
+            <div class="publication-links">
+              <a href="https://www.sciencedirect.com/science/article/abs/pii/S0952197622001294" class="publication-link" target="_blank" rel="noopener">
+                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true">
+                  <path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"></path>
+                  <polyline points="14,2 14,8 20,8"></polyline>
+                </svg> Paper
+              </a>
+              <button class="publication-link cite-btn" data-title="Evaluation of deep learning approaches for oil & gas pipeline leak detection using wireless sensor networks" type="button">
+                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true">
+                  <path d="M16 4h2a2 2 0 0 1 2 2v14a2 2 0 0 1-2 2H6a2 2 0 0 1-2-2V6a2 2 0 0 1 2-2h2"></path>
+                  <rect x="8" y="2" width="8" height="4" rx="1" ry="1"></rect>
+                </svg> Cite
+              </button>
+            </div>
+          </article>
         </div>
+      </div>
     </section>
 
-    <section id="cv" class="section">
-        <h2>Curriculum Vitae</h2>
-        <p>My full CV is available for download (PDF format). Last updated: October 2024</p>
-        <a href="Panagiotis_Theodoropoulos_CV.pdf" class="button" id="open-cv"> Open CV</a>
-    </section>
-
+    <!-- Updates -->
     <section id="updates" class="section">
-        <h2>Recent Updates</h2>
-        <div class="updates">
-            <div class="update-date">Oct 2024</div>
-            <div>Looking for an internship for Summer 2025 </div>
+      <div class="container">
+        <h2 class="section-title">Recent Updates</h2>
+        <div class="updates-list">
+          <article class="update-item">
+            <time class="update-date" datetime="2024-10">Sep 2025</time>
+            <div class="update-content">
+              <h3 class="update-title">Looking for Summer 2026 internship opportunities</h3>
+              <p class="update-description">Seeking research internships in machine learning, optimal transport, diffusion models.</p>
+            </div>
+          </article>
+        <article class="update-item">
+            <time class="update-date" datetime="2024-10">Jun 2025</time>
+            <div class="update-content">
+              <h3 class="update-title">New preprint: Momentum Multi-Marginal Schrödinger Bridge Matching</h3>
+              <p class="update-description">Our latest work on mult-marginal Schrödinger Bridge Matching is now available on arXiv.</p>
+            </div>
+          </article>
+            <article class="update-item">
+            <time class="update-date" datetime="2024-10">Feb 2025</time>
+            <div class="update-content">
+              <h3 class="update-title">New preprint: Feedback Schrödinger Bridge Matching</h3>
+              <p class="update-description">Our latest work on semi-supervised Schrödinger Bridge Matching is now available on arXiv. This paper introduces feedback mechanisms to improve generative modeling performance.</p>
+            </div>
+          </article>
+          <article class="update-item">
+            <time class="update-date" datetime="2024-10">Oct 2024</time>
+            <div class="update-content">
+              <h3 class="update-title">New preprint: Feedback Schrödinger Bridge Matching</h3>
+              <p class="update-description">Our latest work on semi-supervised Schrödinger Bridge Matching is now available on arXiv. This paper introduces feedback mechanisms to improve generative modeling performance.</p>
+            </div>
+          </article>
+          <article class="update-item">
+            <time class="update-date" datetime="2024-01">Jan 2024</time>
+            <div class="update-content">
+              <h3 class="update-title">Paper accepted at ICLR 2024</h3>
+              <p class="update-description">Our work "A Robust Differential Neural ODE Optimizer" was accepted to the International Conference on Learning Representations (ICLR 2024).</p>
+            </div>
+          </article>
         </div>
-        <div class="updates">
-            <div class="update-date">Oct 2024</div>
-            <div>Paper on semi-supervised Schrodinger Bridge Matching is now on arxiv! </div>
-        </div>
-        <div class="updates">
-            <div class="update-date">Jan 2024</div>
-            <div>Paper on Robust Neural ODE optimizer got accepted to ICLR 2024</div>
-        </div>
+      </div>
     </section>
-</main>
 
-<footer>
-    <p>&copy; 2023 [Researcher Name]. All rights reserved.</p>
-</footer>
+    <!-- Contact -->
+    <section id="contact" class="section">
+      <div class="container">
+        <h2 class="section-title">Get In Touch</h2>
+        <div style="max-width: 600px; margin: 0 auto; text-align: center;">
+          <p style="font-size: 1.125rem; color: var(--muted); margin-bottom: 2rem;">
+            I'm always interested in discussing research collaborations, internship opportunities, or anything related to optimal transport and diffusion models.
+          </p>
+          <div class="hero-actions" style="justify-content: center;">
+            <a href="mailto:ptheodor3@gatech.edu?subject=Research%20Inquiry&body=Hi%20Panagiotis,%0A%0AI'm%20interested%20in%20discussing..." class="btn btn-primary">Send me an email</a>
+            <a href="Panagiotis_Theodoropoulos_CV.pdf" class="btn btn-secondary" target="_blank" rel="noopener">Download CV</a>
+          </div>
+          <div class="social-links" style="justify-content: center; margin-top: 2rem;" aria-label="Social links">
+            <a href="mailto:ptheodor3@gatech.edu" rel="me" aria-label="Email" title="Email">
+              <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true">
+                <path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"></path>
+                <polyline points="22,6 12,13 2,6"></polyline>
+              </svg>
+            </a>
+            <a href="https://scholar.google.com/citations?user=1TNqTOYAAAAJ&hl=en" target="_blank" rel="noopener noreferrer me" aria-label="Google Scholar" title="Google Scholar">
+              <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
+                <path d="M5.242 13.769L0 9.5 12 0l12 9.5-5.242 4.269C17.548 11.249 14.978 9.5 12 9.5c-2.977 0-5.548 1.748-6.758 4.269zM12 10a7 7 0 1 0 0 14 7 7 0 0 0 0-14z"/>
+              </svg>
+            </a>
+            <a href="https://www.linkedin.com/in/panagiotis-theodoropoulos-93088a169/" target="_blank" rel="noopener noreferrer me" aria-label="LinkedIn" title="LinkedIn">
+              <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true">
+                <path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"></path>
+                <rect x="2" y="9" width="4" height="12"></rect>
+                <circle cx="4" cy="4" r="2"></circle>
+              </svg>
+            </a>
+            <a href="https://x.com/panostheo_" target="_blank" rel="noopener noreferrer me" aria-label="X (Twitter)" title="X (Twitter)">
+              <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
+                <path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z"/>
+              </svg>
+            </a>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
 
-<script>
-        document.querySelectorAll('nav a').forEach(anchor => {
-            anchor.addEventListener('click', function (e) {
-                e.preventDefault();
-                document.querySelector(this.getAttribute('href')).scrollIntoView({
-                    behavior: 'smooth',
-                    block: 'center'
-                });
-            });
+  <!-- Citation Modal -->
+  <div id="citation-modal" class="modal" role="dialog" aria-labelledby="modal-title" aria-modal="true" aria-hidden="true">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h3 id="modal-title" class="modal-title"></h3>
+        <button class="modal-close" aria-label="Close citation modal" type="button">&times;</button>
+      </div>
+      <div class="modal-body">
+        <div class="citation-format-tabs" role="tablist" aria-label="Citation format">
+          <button class="citation-tab active" data-format="bibtex" role="tab" aria-selected="true" type="button">BibTeX</button>
+          <button class="citation-tab" data-format="apa" role="tab" aria-selected="false" type="button">APA</button>
+        </div>
+        <div class="citation-content">
+          <pre id="citation-text" class="citation-text"></pre>
+        </div>
+        <button class="btn btn-primary copy-citation-btn" type="button">Copy to clipboard</button>
+        <div id="copy-status" aria-live="polite" class="copy-status" role="status"></div>
+      </div>
+    </div>
+  </div>
+
+  <footer class="footer" role="contentinfo">
+    <div class="container">
+      <p>&copy; 2024 Panagiotis Theodoropoulos. Website content available under <a href="https://creativecommons.org/licenses/by/4.0/" target="_blank" rel="noopener">CC BY 4.0</a>.</p>
+      <p class="last-updated">Last updated: December 2024</p>
+    </div>
+  </footer>
+
+  <script>
+    // --- Publications data for citations ---
+    const publicationsData = {
+      'Feedback Schrödinger Bridge Matching': {
+        bibtex: `@misc{theodoropoulos2024feedback,
+  title={Feedback Schrödinger Bridge Matching},
+  author={Panagiotis Theodoropoulos and Nikolaos Komianos and Vincent Pacelli and Guan-Horng Liu and Evangelos A. Theodorou},
+  year={2024},
+  eprint={2410.14055},
+  archivePrefix={arXiv},
+  primaryClass={cs.LG}
+}`,
+        apa: `Theodoropoulos, P., Komianos, N., Pacelli, V., Liu, G. H., & Theodorou, E. A. (2024). Feedback Schrödinger Bridge Matching. arXiv preprint arXiv:2410.14055.`
+      },
+      'A Robust Differential Neural ODE Optimizer': {
+        bibtex: `@inproceedings{theodoropoulos2024robust,
+  title={A Robust Differential Neural {ODE} Optimizer},
+  author={Panagiotis Theodoropoulos and Guan-Horng Liu and Tianrong Chen and Augustinos D Saravanos and Evangelos Theodorou},
+  booktitle={The Twelfth International Conference on Learning Representations},
+  year={2024},
+  url={https://openreview.net/forum?id=zbOSJ3CATY}
+}`,
+        apa: `Theodoropoulos, P., Liu, G. H., Chen, T., Saravanos, A. D., & Theodorou, E. (2024). A Robust Differential Neural ODE Optimizer. In The Twelfth International Conference on Learning Representations.`
+      },
+      'Evaluation of deep learning approaches for oil & gas pipeline leak detection using wireless sensor networks': {
+        bibtex: `@article{spandonidis2022evaluation,
+  title={Evaluation of deep learning approaches for oil \\& gas pipeline leak detection using wireless sensor networks},
+  author={Christos Spandonidis and Panagiotis Theodoropoulos and Fotis Giannopoulos and Nektarios Galiatsatos and Areti Petsa},
+  journal={Engineering Applications of Artificial Intelligence},
+  volume={113},
+  pages={104890},
+  year={2022},
+  publisher={Elsevier}
+}`,
+        apa: `Spandonidis, C., Theodoropoulos, P., Giannopoulos, F., Galiatsatos, N., & Petsa, A. (2022). Evaluation of deep learning approaches for oil & gas pipeline leak detection using wireless sensor networks. Engineering Applications of Artificial Intelligence, 113, 104890.`
+      }
+    };
+
+    // --- Theme ---
+    function toggleTheme() {
+      const root = document.documentElement;
+      const next = root.getAttribute('data-theme') === 'dark' ? 'light' : 'dark';
+      root.setAttribute('data-theme', next);
+      try { localStorage.setItem('theme', next); } catch (_) {}
+    }
+
+    // --- Nav active state + smooth scroll ---
+    function initNavigation() {
+      document.querySelectorAll('.nav-link[href^="#"]').forEach(link => {
+        link.addEventListener('click', (e) => {
+          const targetId = link.getAttribute('href');
+          const target = document.querySelector(targetId);
+          if (!target) return;
+          e.preventDefault();
+
+          document.querySelectorAll('.nav-link').forEach(l => l.classList.remove('active'));
+          link.classList.add('active');
+
+          const headerHeight = document.querySelector('.header').offsetHeight;
+          const y = target.getBoundingClientRect().top + window.scrollY - headerHeight - 20;
+          window.scrollTo({ top: y, behavior: 'smooth' });
+          target.setAttribute('tabindex', '-1'); target.focus({ preventScroll: true });
+          setTimeout(() => target.removeAttribute('tabindex'), 1000);
         });
-</script>
+      });
+
+      const sections = document.querySelectorAll('section[id]');
+      const navLinks = document.querySelectorAll('.nav-link[href^="#"]');
+      window.addEventListener('scroll', () => {
+        const pos = window.scrollY + 100;
+        sections.forEach(sec => {
+          const top = sec.offsetTop, bottom = top + sec.offsetHeight;
+          if (pos >= top && pos < bottom) {
+            navLinks.forEach(l => l.classList.remove('active'));
+            const active = document.querySelector(`.nav-link[href="#${sec.id}"]`);
+            if (active) active.classList.add('active');
+          }
+        });
+      });
+    }
+
+    // --- Citation modal (BibTeX/APA + copy) ---
+    function initCitationModal() {
+      const modal = document.getElementById('citation-modal');
+      const modalTitle = document.getElementById('modal-title');
+      const citationText = document.getElementById('citation-text');
+      const copyStatus = document.getElementById('copy-status');
+      const copyBtn = document.querySelector('.copy-citation-btn');
+      const closeBtn = document.querySelector('.modal-close');
+      const tabs = Array.from(document.querySelectorAll('.citation-tab'));
+
+      let current = { title: '', format: 'bibtex' };
+      let lastFocusedButton = null;
+
+      function openModal(title) {
+        const data = publicationsData[title];
+        if (!data) return;
+        current.title = title;
+        current.format = 'bibtex';
+        modalTitle.textContent = title;
+        tabs.forEach(t => t.classList.toggle('active', t.dataset.format === 'bibtex'));
+        citationText.textContent = data.bibtex;
+        copyStatus.textContent = '';
+        copyStatus.classList.remove('show');
+
+        modal.classList.add('active');
+        modal.setAttribute('aria-hidden', 'false');
+
+        // focus first interactive element
+        tabs[0].focus();
+        trapFocus(true);
+        document.addEventListener('keydown', onKeydown);
+      }
+
+      function closeModal() {
+        modal.classList.remove('active');
+        modal.setAttribute('aria-hidden', 'true');
+        trapFocus(false);
+        document.removeEventListener('keydown', onKeydown);
+        if (lastFocusedButton) lastFocusedButton.focus();
+      }
+
+      function onKeydown(e) {
+        if (e.key === 'Escape') closeModal();
+        if (e.key === 'Tab') handleFocusTrap(e);
+      }
+
+      // Basic focus trap
+      let focusables = [];
+      function trapFocus(activate) {
+        if (!activate) return;
+        focusables = Array.from(modal.querySelectorAll('button, [href], textarea, [tabindex]:not([tabindex="-1"])'))
+          .filter(el => !el.hasAttribute('disabled'));
+      }
+      function handleFocusTrap(e) {
+        if (focusables.length === 0) return;
+        const first = focusables[0], last = focusables[focusables.length - 1];
+        if (e.shiftKey && document.activeElement === first) {
+          e.preventDefault(); last.focus();
+        } else if (!e.shiftKey && document.activeElement === last) {
+          e.preventDefault(); first.focus();
+        }
+      }
+
+      // Open from any "Cite" button
+      document.addEventListener('click', (e) => {
+        const btn = e.target.closest('.cite-btn');
+        if (btn) {
+          lastFocusedButton = btn;
+          openModal(btn.getAttribute('data-title'));
+        }
+      });
+
+      // Switch format
+      tabs.forEach(tab => {
+        tab.addEventListener('click', () => {
+          tabs.forEach(t => t.classList.remove('active'));
+          tab.classList.add('active');
+          current.format = tab.dataset.format;
+          const data = publicationsData[current.title];
+          citationText.textContent = current.format === 'apa' ? data.apa : data.bibtex;
+          copyStatus.textContent = '';
+          copyStatus.classList.remove('show');
+        });
+      });
+
+      // Copy
+      copyBtn.addEventListener('click', async () => {
+        try {
+          await navigator.clipboard.writeText(citationText.textContent);
+          copyStatus.textContent = 'Copied!';
+          copyStatus.classList.add('show');
+          setTimeout(() => copyStatus.classList.remove('show'), 1800);
+        } catch {
+          copyStatus.textContent = 'Copy failed. Select and copy manually.';
+          copyStatus.classList.add('show');
+        }
+      });
+
+      // Close interactions
+      closeBtn.addEventListener('click', closeModal);
+      modal.addEventListener('click', (e) => {
+        if (e.target === modal) closeModal();
+      });
+    }
+
+    // Init
+    document.addEventListener('DOMContentLoaded', () => {
+      document.querySelector('.theme-toggle')?.addEventListener('click', toggleTheme);
+      initNavigation();
+      initCitationModal();
+    });
+  </script>
 </body>
 </html>
