@@ -201,17 +201,17 @@
       background: var(--surface); color: var(--muted); border-radius: var(--radius); transition: var(--transition); text-decoration: none;
     }
     .social-links a:hover { background: var(--primary); color: var(--primary-contrast); transform: translateY(-2px); }
-    .hero-image { display: flex; justify-content: center; }
+    .hero-image { position: relative; width: 300px; height: 300px; justify-self: center; overflow: hidden; border-radius: 50%; border: 4px solid var(--border); box-shadow: var(--shadow-lg); }
     .profile-image {
-      width: 300px; height: 300px; border-radius: 50%; object-fit: cover; border: 4px solid var(--border);
-      box-shadow: var(--shadow-lg); transition: var(--transition);
+      position: absolute; width: 180%; max-width: none; height: auto; left: -80%; top: -126%;
+      transition: transform .2s ease;
     }
-    .profile-image:hover { transform: scale(1.05); box-shadow: 0 12px 40px rgba(0,0,0,.15); }
+    .profile-image:hover { transform: scale(1.03); }
 
     @media (max-width: 768px) {
       .hero-content { grid-template-columns: 1fr; gap: 2rem; text-align: center; }
       .hero-actions { justify-content: center; flex-wrap: wrap; }
-      .profile-image { width: 200px; height: 200px; }
+      .hero-image { width: 200px; height: 200px; }
     }
 
     /* Sections */
