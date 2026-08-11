@@ -214,7 +214,7 @@
 
     .hero-grid {
       display: grid;
-      grid-template-columns: minmax(220px, 285px) minmax(0, 1fr);
+      grid-template-columns: minmax(0, 1fr) minmax(220px, 285px);
       gap: 2rem 3.25rem;
       align-items: start;
     }
@@ -222,7 +222,15 @@
     .hero-media {
       display: flex;
       flex-direction: column;
+      grid-column: 2;
+      grid-row: 1;
       gap: 0.95rem;
+      justify-self: end;
+    }
+
+    .hero-copy {
+      grid-column: 1;
+      grid-row: 1;
     }
 
     .profile-frame {
@@ -597,7 +605,12 @@
       .hero-grid,
       .card-grid,
       .professional-grid { grid-template-columns: 1fr; }
-      .hero-media { max-width: 285px; }
+      .hero-media,
+      .hero-copy {
+        grid-column: auto;
+        grid-row: auto;
+      }
+      .hero-media { max-width: 285px; justify-self: start; }
     }
 
     @media (max-width: 760px) {
@@ -818,14 +831,6 @@
           </article>
         </div>
 
-        <details class="details-box">
-          <summary>Earlier publications</summary>
-          <ol class="publication-list" start="5">
-            <li><strong>Panagiotis Theodoropoulos</strong>, Christos Spandonidis, and Spilios Fassois. Use of Convolutional Neural Networks for vessel performance optimization and safety enhancement. <em>Ocean Engineering</em>, 2022.</li>
-            <li>Christos Spandonidis*, <strong>Panagiotis Theodoropoulos</strong>*, Fotis Giannopoulos, Nektarios Galiatsatos, and Areti Petsa. Evaluation of deep learning approaches for oil &amp; gas pipeline leak detection using wireless sensor networks. <em>Engineering Applications of Artificial Intelligence</em>, 2022.</li>
-            <li><strong>Panagiotis Theodoropoulos</strong>, Christos Spandonidis, Fotis Giannopoulos, and Spilios Fassois. A deep learning-based fault detection model for optimization of shipping operations and enhancement of maritime safety. <em>Sensors</em>, 2022.</li>
-          </ol>
-        </details>
       </div>
     </section>
 

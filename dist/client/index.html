@@ -214,7 +214,7 @@
 
     .hero-grid {
       display: grid;
-      grid-template-columns: minmax(220px, 285px) minmax(0, 1fr);
+      grid-template-columns: minmax(0, 1fr) minmax(220px, 285px);
       gap: 2rem 3.25rem;
       align-items: start;
     }
@@ -222,7 +222,15 @@
     .hero-media {
       display: flex;
       flex-direction: column;
+      grid-column: 2;
+      grid-row: 1;
       gap: 0.95rem;
+      justify-self: end;
+    }
+
+    .hero-copy {
+      grid-column: 1;
+      grid-row: 1;
     }
 
     .profile-frame {
@@ -597,7 +605,12 @@
       .hero-grid,
       .card-grid,
       .professional-grid { grid-template-columns: 1fr; }
-      .hero-media { max-width: 285px; }
+      .hero-media,
+      .hero-copy {
+        grid-column: auto;
+        grid-row: auto;
+      }
+      .hero-media { max-width: 285px; justify-self: start; }
     }
 
     @media (max-width: 760px) {
@@ -818,14 +831,6 @@
           </article>
         </div>
 
-        <details class="details-box">
-          <summary>Earlier publications</summary>
-          <ol class="publication-list" start="5">
-            <li><strong>Panagiotis Theodoropoulos</strong>, Christos Spandonidis, and Spilios Fassois. Use of Convolutional Neural Networks for vessel performance optimization and safety enhancement. <em>Ocean Engineering</em>, 2022.</li>
-            <li>Christos Spandonidis*, <strong>Panagiotis Theodoropoulos</strong>*, Fotis Giannopoulos, Nektarios Galiatsatos, and Areti Petsa. Evaluation of deep learning approaches for oil &amp; gas pipeline leak detection using wireless sensor networks. <em>Engineering Applications of Artificial Intelligence</em>, 2022.</li>
-            <li><strong>Panagiotis Theodoropoulos</strong>, Christos Spandonidis, Fotis Giannopoulos, and Spilios Fassois. A deep learning-based fault detection model for optimization of shipping operations and enhancement of maritime safety. <em>Sensors</em>, 2022.</li>
-          </ol>
-        </details>
       </div>
     </section>
 
@@ -834,13 +839,15 @@
         <section aria-labelledby="service-title">
           <div class="section-header">
             <h2 id="service-title" class="section-title">Service</h2>
-            <p class="section-intro">Peer review service limited to machine learning conferences and journals.</p>
+            <p class="section-intro">Peer review service for machine learning conferences, workshops, and journals.</p>
           </div>
           <ul class="bullet-list">
             <li>Reviewer, International Conference on Machine Learning (ICML), since 2025.</li>
             <li>Reviewer, International Conference on Learning Representations (ICLR), since 2025.</li>
             <li>Reviewer, AAAI Conference on Artificial Intelligence (AAAI), since 2026.</li>
             <li>Reviewer, Transactions on Machine Learning Research (TMLR), since 2026.</li>
+            <li>Reviewer, New Frontiers in Learning, Control, and Dynamical Systems workshop at ICML 2023.</li>
+            <li>Reviewer, Workshop on Combining Theory and Benchmarks: Towards A Virtuous Cycle to Understand and Guarantee Foundation Model Performance (CTB@ICML 2026).</li>
             <li>Reviewer, Engineering Applications of Artificial Intelligence.</li>
           </ul>
         </section>
@@ -851,7 +858,7 @@
               <h2 id="talks-title" class="section-title">Invited Talks</h2>
             </div>
             <ul class="bullet-list">
-              <li><strong>2026:</strong> “Stochastic Optimal Control and Optimal Transport for Generative Modeling,” Morgan Stanley ML Research Speaker Series.</li>
+              <li><strong>Mar 2026:</strong> “Stochastic Optimal Control and Optimal Transport for Generative Modeling,” Morgan Stanley ML Research Speaker Series.</li>
             </ul>
           </section>
 
