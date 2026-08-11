@@ -384,6 +384,19 @@
       font-size: 1.01rem;
     }
 
+    .research-list {
+      max-width: 900px;
+      margin: 0;
+      padding-left: 1.35rem;
+    }
+
+    .research-list li {
+      margin-bottom: 0.8rem;
+      padding-left: 0.2rem;
+    }
+
+    .research-list li:last-child { margin-bottom: 0; }
+
     .card-grid {
       display: grid;
       grid-template-columns: repeat(2, minmax(0, 1fr));
@@ -732,31 +745,12 @@
           My research spans four main areas that contribute to a principled understanding of deep learning systems and their optimization dynamics. You can find a list of my papers in the <a href="#publications">Selected Publications</a> section. Here are some of my main research directions:
         </p>
 
-        <div class="card-grid">
-          <article class="card">
-            <p class="card-kicker">Research Area 01</p>
-            <h3><a href="https://openreview.net/forum?id=zbOSJ3CATY" target="_blank" rel="noopener noreferrer">Game-Theoretical Robust Optimization for Deep Learning</a></h3>
-            <p>Robust, control-inspired optimization methods for neural networks and neural ODEs.</p>
-          </article>
-
-          <article class="card">
-            <p class="card-kicker">Research Area 02</p>
-            <h3><a href="https://arxiv.org/abs/2410.14055" target="_blank" rel="noopener noreferrer">Diffusion Models for Generative Modeling</a></h3>
-            <p>Feedback-based Schrödinger bridge methods for scalable and structured generative modeling.</p>
-          </article>
-
-          <article class="card">
-            <p class="card-kicker">Research Area 03</p>
-            <h3><a href="https://arxiv.org/abs/2506.10168" target="_blank" rel="noopener noreferrer">Multi-Marginal Diffusion Models for Time-Series Imputation and Biological Sequencing</a></h3>
-            <p>Multi-marginal stochastic bridges with momentum for complex temporal and sequential data.</p>
-          </article>
-
-          <article class="card">
-            <p class="card-kicker">Research Area 04</p>
-            <h3><a href="https://arxiv.org/abs/2602.04675" target="_blank" rel="noopener noreferrer">Stochastic Optimal Control on General Graph Topologies</a></h3>
-            <p>Generalized Schrödinger bridge formulations for graph-structured domains.</p>
-          </article>
-        </div>
+        <ul class="research-list">
+          <li><a href="https://openreview.net/forum?id=zbOSJ3CATY" target="_blank" rel="noopener noreferrer">Game-Theoretical Robust Optimization for Deep Learning</a></li>
+          <li><a href="https://arxiv.org/abs/2410.14055" target="_blank" rel="noopener noreferrer">Diffusion Models for Generative Modeling</a></li>
+          <li><a href="https://arxiv.org/abs/2506.10168" target="_blank" rel="noopener noreferrer">Multi-Marginal Diffusion Models for Time-Series Imputation and Biological Sequencing</a></li>
+          <li><a href="https://arxiv.org/abs/2602.04675" target="_blank" rel="noopener noreferrer">Stochastic Optimal Control on General Graph Topologies</a></li>
+        </ul>
       </div>
     </section>
 
