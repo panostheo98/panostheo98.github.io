@@ -377,6 +377,13 @@
       font-size: 0.96rem;
     }
 
+    .research-copy {
+      max-width: 820px;
+      margin: 0 0 1.5rem;
+      color: var(--text-soft);
+      font-size: 1.01rem;
+    }
+
     .card-grid {
       display: grid;
       grid-template-columns: repeat(2, minmax(0, 1fr));
@@ -408,6 +415,21 @@
       font-weight: 750;
       letter-spacing: 0.055em;
       text-transform: uppercase;
+    }
+
+    .oral-badge {
+      display: inline-flex;
+      align-items: center;
+      margin-left: 0.35rem;
+      padding: 0.18rem 0.48rem;
+      color: #a51515;
+      background: #fee2e2;
+      border: 1px solid #fecaca;
+      border-radius: 999px;
+      font-size: 0.72rem;
+      font-weight: 800;
+      line-height: 1;
+      letter-spacing: 0.06em;
     }
 
     .card h3 {
@@ -595,6 +617,12 @@
       }
 
       .site-header { background: rgba(16, 23, 34, 0.86); }
+
+      .oral-badge {
+        color: #fecaca;
+        background: rgba(220, 38, 38, 0.2);
+        border-color: rgba(248, 113, 113, 0.4);
+      }
     }
 
     @media (prefers-reduced-motion: reduce) {
@@ -698,32 +726,35 @@
       <div class="container">
         <div class="section-header">
           <h2 class="section-title">Selected Research</h2>
-          <p class="section-intro">Recent work on stochastic control, optimal transport, and generative modeling.</p>
         </div>
+
+        <p class="research-copy">
+          My research spans four main areas that contribute to a principled understanding of deep learning systems and their optimization dynamics. You can find a list of my papers in the <a href="#publications">Selected Publications</a> section. Here are some of my main research directions:
+        </p>
 
         <div class="card-grid">
           <article class="card">
-            <p class="card-kicker">ICML 2026</p>
-            <h3><a href="https://arxiv.org/abs/2602.04675" target="_blank" rel="noopener noreferrer">Generalized Schrödinger Bridge on Graphs</a></h3>
-            <p>Extending Schrödinger bridge formulations to graph-structured domains for principled transport and learning.</p>
+            <p class="card-kicker">Research Area 01</p>
+            <h3><a href="https://openreview.net/forum?id=zbOSJ3CATY" target="_blank" rel="noopener noreferrer">Game-Theoretical Robust Optimization for Deep Learning</a></h3>
+            <p>Robust, control-inspired optimization methods for neural networks and neural ODEs.</p>
           </article>
 
           <article class="card">
-            <p class="card-kicker">NeurIPS 2025</p>
-            <h3><a href="https://arxiv.org/abs/2506.10168" target="_blank" rel="noopener noreferrer">Momentum Multi-Marginal Schrödinger Bridge Matching</a></h3>
-            <p>Learning multi-marginal stochastic bridges with momentum for richer generative transport.</p>
+            <p class="card-kicker">Research Area 02</p>
+            <h3><a href="https://arxiv.org/abs/2410.14055" target="_blank" rel="noopener noreferrer">Diffusion Models for Generative Modeling</a></h3>
+            <p>Feedback-based Schrödinger bridge methods for scalable and structured generative modeling.</p>
           </article>
 
           <article class="card">
-            <p class="card-kicker">ICLR 2025 · Oral</p>
-            <h3><a href="https://arxiv.org/abs/2410.14055" target="_blank" rel="noopener noreferrer">Feedback Schrödinger Bridge Matching</a></h3>
-            <p>A feedback-based formulation for efficient Schrödinger bridge matching and generative modeling.</p>
+            <p class="card-kicker">Research Area 03</p>
+            <h3><a href="https://arxiv.org/abs/2506.10168" target="_blank" rel="noopener noreferrer">Multi-Marginal Diffusion Models for Time-Series Imputation and Biological Sequencing</a></h3>
+            <p>Multi-marginal stochastic bridges with momentum for complex temporal and sequential data.</p>
           </article>
 
           <article class="card">
-            <p class="card-kicker">ICLR 2024</p>
-            <h3><a href="https://openreview.net/forum?id=zbOSJ3CATY" target="_blank" rel="noopener noreferrer">A Robust Differential Neural ODE Optimizer</a></h3>
-            <p>A robust, control-inspired approach to learning optimizers through differential neural ODEs.</p>
+            <p class="card-kicker">Research Area 04</p>
+            <h3><a href="https://arxiv.org/abs/2602.04675" target="_blank" rel="noopener noreferrer">Stochastic Optimal Control on General Graph Topologies</a></h3>
+            <p>Generalized Schrödinger bridge formulations for graph-structured domains.</p>
           </article>
         </div>
       </div>
@@ -761,34 +792,37 @@
     </section>
 
     <section id="publications" class="section">
-      <div class="container narrow">
+      <div class="container">
         <div class="section-header">
           <h2 class="section-title">Selected Publications</h2>
           <p class="section-intro">See my <a href="https://scholar.google.com/citations?user=1TNqTOYAAAAJ&amp;hl=en" target="_blank" rel="noopener noreferrer">Google Scholar</a> profile for the complete list.</p>
         </div>
 
-        <ol class="publication-list">
-          <li>
-            <strong>Panagiotis Theodoropoulos</strong>, Juno Nam, Evangelos A. Theodorou, and Jaemoo Choi.
-            <a href="https://arxiv.org/abs/2602.04675" target="_blank" rel="noopener noreferrer">Generalized Schrödinger Bridge on Graphs</a>.
-            <em>ICML</em>, 2026.
-          </li>
-          <li>
-            <strong>Panagiotis Theodoropoulos</strong>, Augustinos D. Saravanos, Evangelos A. Theodorou, and Guan-Horng Liu.
-            <a href="https://arxiv.org/abs/2506.10168" target="_blank" rel="noopener noreferrer">Momentum Multi-Marginal Schrödinger Bridge Matching</a>.
-            <em>NeurIPS</em>, 2025.
-          </li>
-          <li>
-            <strong>Panagiotis Theodoropoulos</strong>, Nikolaos Komianos, Vincent Pacelli, Guan-Horng Liu, and Evangelos A. Theodorou.
-            <a href="https://arxiv.org/abs/2410.14055" target="_blank" rel="noopener noreferrer">Feedback Schrödinger Bridge Matching</a>.
-            <em>ICLR</em>, 2025. Oral presentation.
-          </li>
-          <li>
-            <strong>Panagiotis Theodoropoulos</strong>, Guan-Horng Liu, Tianrong Chen, Augustinos D. Saravanos, and Evangelos A. Theodorou.
-            <a href="https://openreview.net/forum?id=zbOSJ3CATY" target="_blank" rel="noopener noreferrer">A Robust Differential Neural ODE Optimizer</a>.
-            <em>ICLR</em>, 2024.
-          </li>
-        </ol>
+        <div class="card-grid">
+          <article class="card">
+            <p class="card-kicker">ICML 2026</p>
+            <h3><a href="https://arxiv.org/abs/2602.04675" target="_blank" rel="noopener noreferrer">Generalized Schrödinger Bridge on Graphs</a></h3>
+            <p><strong>Panagiotis Theodoropoulos</strong>, Juno Nam, Evangelos A. Theodorou, and Jaemoo Choi.</p>
+          </article>
+
+          <article class="card">
+            <p class="card-kicker">NeurIPS 2025</p>
+            <h3><a href="https://arxiv.org/abs/2506.10168" target="_blank" rel="noopener noreferrer">Momentum Multi-Marginal Schrödinger Bridge Matching</a></h3>
+            <p><strong>Panagiotis Theodoropoulos</strong>, Augustinos D. Saravanos, Evangelos A. Theodorou, and Guan-Horng Liu.</p>
+          </article>
+
+          <article class="card">
+            <p class="card-kicker">ICLR 2025 <span class="oral-badge">Oral</span></p>
+            <h3><a href="https://arxiv.org/abs/2410.14055" target="_blank" rel="noopener noreferrer">Feedback Schrödinger Bridge Matching</a></h3>
+            <p><strong>Panagiotis Theodoropoulos</strong>, Nikolaos Komianos, Vincent Pacelli, Guan-Horng Liu, and Evangelos A. Theodorou.</p>
+          </article>
+
+          <article class="card">
+            <p class="card-kicker">ICLR 2024</p>
+            <h3><a href="https://openreview.net/forum?id=zbOSJ3CATY" target="_blank" rel="noopener noreferrer">A Robust Differential Neural ODE Optimizer</a></h3>
+            <p><strong>Panagiotis Theodoropoulos</strong>, Guan-Horng Liu, Tianrong Chen, Augustinos D. Saravanos, and Evangelos A. Theodorou.</p>
+          </article>
+        </div>
 
         <details class="details-box">
           <summary>Earlier publications</summary>
