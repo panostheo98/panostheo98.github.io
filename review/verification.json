@@ -13,7 +13,7 @@
     "structuredData": true
   },
   "tests": {
-    "passed": 33,
+    "passed": 39,
     "failed": 0,
     "projects": [
       "desktop-chromium",
@@ -111,15 +111,23 @@
   },
   "searchDiscovery": {
     "canonical": "https://panostheo98.github.io/",
-    "pageBodyUnchanged": true,
     "originalPersonFactsPreserved": true,
-    "structuredData": ["ProfilePage", "Person", "ScholarlyArticle", "DigitalDocument"],
+    "structuredData": [
+      "ProfilePage",
+      "Person",
+      "ScholarlyArticle",
+      "DigitalDocument"
+    ],
     "selectedPublicationsMatchedToVisibleContent": 4,
     "sitemapEntries": 2,
     "robotsAndSitemapServeSuccessfully": true,
     "verifiedWithoutJavaScript": true,
-    "socialImageDimensions": [1731, 909],
-    "productionIndexingSubmitted": false
+    "socialImageDimensions": [
+      1731,
+      909
+    ],
+    "productionIndexingSubmitted": false,
+    "originalTextAndLinksPreserved": true
   },
   "visualReview": [
     "1440px desktop",
@@ -136,5 +144,24 @@
       "Physical devices",
       "Spoken VoiceOver/NVDA session"
     ]
+  },
+  "focusAlignment": {
+    "widths": [
+      320,
+      390,
+      768,
+      1024,
+      1440
+    ],
+    "alignedColumns": true
+  },
+  "oralExplanation": {
+    "hover": true,
+    "keyboardFocus": true,
+    "tapToggle": true,
+    "escapeDismissal": true,
+    "outsideTapDismissal": true,
+    "withinViewport": true,
+    "nativeTitleWithoutJavaScript": true
   }
 }

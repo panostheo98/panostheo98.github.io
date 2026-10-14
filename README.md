@@ -52,9 +52,9 @@ npx playwright install chromium webkit
 npm test
 ```
 
-The 33 Playwright checks cover desktop Chromium, mobile Chromium and iPhone WebKit emulation. They verify content preservation, metadata, original asset hashes, resource loading, anchor destinations, current navigation state, keyboard focus, menu dismissal, and the CV download. Discovery checks compare structured data with visible publications, verify social image dimensions, and follow the sitemap to working resources with JavaScript disabled. Axe checks cover light and dark modes, including the expanded mobile menu.
+The 39 Playwright checks cover desktop Chromium, mobile Chromium and iPhone WebKit emulation. They verify content preservation, metadata, original asset hashes, resource loading, anchor destinations, current navigation state, keyboard focus, menu dismissal, and the CV download. Discovery checks compare structured data with visible publications, verify social image dimensions, and follow the sitemap to working resources with JavaScript disabled. Axe checks cover light and dark modes, including the expanded mobile menu.
 
-Reflow checks cover widths from 320 to 1920 pixels and doubled text size. The site also works with JavaScript disabled and web fonts blocked. Motion respects the system preference. Desktop, tablet, mobile, dark mode and mobile navigation were visually inspected; the browser's accessibility tree exposes the menu name and expanded state.
+Focus-grid checks verify column alignment when terms wrap. The Oral badge explains the presentation format on hover, keyboard focus or tap; Escape and outside taps dismiss it. Interaction checks cover Chromium and WebKit. Reflow checks cover widths from 320 to 1920 pixels and doubled text size. The site also works with JavaScript disabled and web fonts blocked. Motion respects the system preference. Desktop, tablet, mobile, dark mode and mobile navigation were visually inspected; the browser's accessibility tree exposes the menu name and expanded state.
 
 Local Lighthouse 13.5.0 audits on 14 October 2026, before the search metadata and discovery files were added:
 
@@ -69,4 +69,4 @@ Local Lighthouse 13.5.0 audits on 14 October 2026, before the search metadata an
 
 These are local lab measurements, not production field results. No actionable accessibility findings remain in the inspected coverage. Physical-device testing and a spoken VoiceOver/NVDA session were not performed. External destinations are preserved exactly; third-party site availability is outside this change.
 
-Screenshots: [desktop](review/desktop.png), [mobile](review/mobile.png), [tablet](review/tablet.png), [dark mode](review/dark.png), [mobile menu](review/mobile-menu.png). Machine-readable results are in [verification.json](review/verification.json).
+Screenshots: [desktop](review/desktop.png), [mobile](review/mobile.png), [tablet](review/tablet.png), [dark mode](review/dark.png), [mobile menu](review/mobile-menu.png), [oral explanation](review/oral-tooltip.png). Machine-readable results are in [verification.json](review/verification.json).

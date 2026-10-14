@@ -168,3 +168,59 @@ test('all original section destinations exist and the CV remains downloadable', 
   expect(response.headers()['content-type']).toContain('application/pdf');
   expect((await response.body()).subarray(0, 4).toString()).toBe('%PDF');
 });
+
+test('focus dots keep consistent columns when topics wrap', async ({ page }) => {
+  for (const width of [320, 390, 768, 1024, 1440]) {
+    await page.setViewportSize({ width, height: 900 });
+    await page.goto('/');
+    await page.evaluate(() => document.fonts.ready);
+    const boxes = await page.locator('.focus-list li').evaluateAll(items => items.map(item => {
+      const { x, y, width } = item.getBoundingClientRect();
+      return { x, y, width };
+    }));
+    const firstRow = boxes.filter(box => Math.abs(box.y - boxes[0].y) < 1);
+    for (const [index, box] of boxes.entries()) {
+      expect(Math.abs(box.x - firstRow[index % firstRow.length].x)).toBeLessThan(1);
+      expect(Math.abs(box.width - firstRow[index % firstRow.length].width)).toBeLessThan(1);
+    }
+  }
+});
+
+test('oral explanation supports hover, keyboard, touch and dismissal', async ({ page, isMobile, browserName }) => {
+  await page.emulateMedia({ reducedMotion: 'reduce' });
+  await page.goto('/');
+  const oral = page.getByRole('button', { name: 'Oral', exact: true });
+  const tooltip = page.getByRole('tooltip');
+  await oral.scrollIntoViewIfNeeded();
+  await expect(oral).toHaveAccessibleDescription('Selected for an oral presentation (a talk) at ICLR 2025.');
+  await expect(oral).toHaveCSS('cursor', 'help');
+  if (isMobile) {
+    await oral.tap();
+    await expect(tooltip).toBeVisible();
+    await oral.tap();
+    await expect(tooltip).toBeHidden();
+    await oral.tap();
+    await page.locator('#publications h2').tap();
+    await expect(tooltip).toBeHidden();
+  } else {
+    await oral.hover();
+    await expect(tooltip).toBeVisible();
+    await tooltip.hover();
+    await expect(tooltip).toBeVisible();
+    await page.keyboard.press('Escape');
+    await expect(tooltip).toBeHidden();
+  }
+  await page.mouse.move(0, 0);
+  await oral.focus();
+  await page.keyboard.press(browserName === 'webkit' ? 'Alt+Tab' : 'Tab');
+  await page.keyboard.press(browserName === 'webkit' ? 'Alt+Shift+Tab' : 'Shift+Tab');
+  await expect(oral).toBeFocused();
+  await expect(tooltip).toBeVisible();
+  await expect(tooltip).toBeInViewport();
+  const bounds = await tooltip.boundingBox();
+  expect(bounds.x).toBeGreaterThanOrEqual(0);
+  expect(bounds.x + bounds.width).toBeLessThanOrEqual(page.viewportSize().width);
+  await page.keyboard.press('Escape');
+  await expect(tooltip).toBeHidden();
+  await expect(oral).toBeFocused();
+});
