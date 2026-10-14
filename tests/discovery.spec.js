@@ -39,7 +39,7 @@ test('profile and publication metadata match the content available without JavaS
   }
 
   const cv = nodes.get(person.subjectOf['@id']);
-  const cvLink = await page.locator('.primary-nav a').filter({ hasText: /^CV$/ }).getAttribute('href');
+  const cvLink = await page.locator('.hero-cv a').getAttribute('href');
   expect(cv['@type']).toBe('DigitalDocument');
   expect(cv.url).toBe(new URL(cvLink, canonical).href);
   expect(cv.about['@id']).toBe(person['@id']);
@@ -82,7 +82,7 @@ test('crawler discovery files lead to the canonical page and a working CV', asyn
   }, await sitemapResponse.text());
   expect(sitemap.error).toBeNull();
   expect(sitemap.namespace).toBe('http://www.sitemaps.org/schemas/sitemap/0.9');
-  const cvLink = await page.locator('.primary-nav a').filter({ hasText: /^CV$/ }).getAttribute('href');
+  const cvLink = await page.locator('.hero-cv a').getAttribute('href');
   expect(sitemap.locations).toEqual([canonical, new URL(cvLink, canonical).href]);
   for (const location of sitemap.locations) {
     const url = new URL(location);

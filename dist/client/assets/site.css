@@ -134,13 +134,6 @@ section[id], main { scroll-margin-top: 6.5rem; }
   background: currentColor;
   content: "";
 }
-.nav-list li:last-child a {
-  justify-content: center;
-  min-width: 3.4rem;
-  border: 1px solid var(--line);
-  border-radius: 3px;
-  color: var(--ink);
-}
 .menu-toggle { display: none; }
 
 /* The name and portrait form the opening composition; biography stays readable. */

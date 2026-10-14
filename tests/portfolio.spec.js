@@ -7,7 +7,11 @@ const original = JSON.parse(readFileSync(new URL('./fixtures/original-content.js
 const cvFilename = 'Panagiotis_Theodoropoulos_CV.pdf';
 // The requested CV rename is the only URL change from the original snapshot.
 const currentFilename = file => file === 'MyCV.pdf' ? cvFilename : file;
-const expectedLinks = original.links.map(link => ({ ...link, href: currentFilename(link.href) }));
+// These four header shortcuts were explicitly removed at the owner's request.
+const removedHeaderLinks = new Set(['#service|Service', '#talks|Talks', '#teaching|Teaching', 'MyCV.pdf|CV']);
+const expectedLinks = original.links
+  .filter(link => !removedHeaderLinks.has(`${link.href}|${link.text}`))
+  .map(link => ({ ...link, href: currentFilename(link.href) }));
 const normalize = text => text.replace(/\s+/g, ' ').trim();
 
 async function openMenuIfNeeded(page) {
@@ -31,7 +35,7 @@ test('preserves every original text block, link, metadata field and source asset
     text: a.textContent.replace(/\s+/g, ' ').trim(),
     label: a.getAttribute('aria-label'),
   })));
-  expect(actualLinks).toHaveLength(original.links.length);
+  expect(actualLinks).toHaveLength(expectedLinks.length);
   for (const link of expectedLinks) {
     const matches = items => items.filter(item => item.href === link.href && item.label === link.label &&
       (link.label || item.text === link.text));
@@ -74,7 +78,8 @@ test('all page resources load locally with no browser errors', async ({ page }) 
 test('section links reach visible headings and expose the current location', async ({ page }) => {
   await page.emulateMedia({ reducedMotion: 'reduce' });
   await page.goto('/');
-  for (const id of ['research', 'publications', 'news', 'service', 'talks', 'teaching', 'about']) {
+  await expect(page.locator('.primary-nav a')).toHaveText(['About', 'Research', 'Publications', 'News']);
+  for (const id of ['research', 'publications', 'news', 'about']) {
     await openMenuIfNeeded(page);
     const link = page.locator(`.primary-nav a[href="#${id}"]`);
     await link.click();
@@ -168,6 +173,7 @@ test('all original section destinations exist and the CV remains downloadable', 
   const broken = await page.locator('a[href^="#"]').evaluateAll(links => links
     .filter(a => !document.getElementById(a.hash.slice(1))).map(a => a.hash));
   expect(broken).toEqual([]);
+  for (const id of ['service', 'talks', 'teaching']) await expect(page.locator(`#${id}`)).toHaveCount(1);
   await expect(page.locator('h1')).toHaveCount(1);
   const response = await page.request.get('/' + cvFilename);
   expect(response.headers()['content-type']).toContain('application/pdf');

@@ -3,14 +3,20 @@
   "baseline": "9041d5a",
   "preservation": {
     "textBlocks": 65,
-    "links": 35,
+    "links": 31,
     "originalAssets": [
       "Panagiotis_Theodoropoulos_CV.pdf",
       "IMG_6206.jpeg",
       "og.png"
     ],
     "metadata": true,
-    "structuredData": true
+    "structuredData": true,
+    "requestedHeaderRemovals": [
+      "Service",
+      "Talks",
+      "Teaching",
+      "CV"
+    ]
   },
   "tests": {
     "passed": 39,
@@ -337,5 +343,11 @@
         ]
       }
     ]
-  }
+  },
+  "headerNavigation": [
+    "About",
+    "Research",
+    "Publications",
+    "News"
+  ]
 }

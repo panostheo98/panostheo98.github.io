@@ -19,9 +19,9 @@ The CV is served as `Panagiotis_Theodoropoulos_CV.pdf`, with its contents unchan
 
 ## Content preservation
 
-The source of truth is the root `index.html` and original assets at upstream commit `9041d5a`. The regression fixture records all 65 text blocks, 35 links, metadata, structured data, and SHA-256 hashes of the original CV and images. Tests check the rendered page against that fixture, including link labels, destinations and multiplicity. The requested CV filename change is the only destination exception.
+The source of truth is the root `index.html` and original assets at upstream commit `9041d5a`. The regression fixture records all 65 text blocks, 35 links, metadata, structured data, and SHA-256 hashes of the original CV and images. Tests check the rendered page against that fixture, including link labels, destinations and multiplicity. Explicit exceptions cover the CV filename change, the refreshed footer date, and removal of the Service, Talks, Teaching and CV header shortcuts. Those sections and the hero CV link remain available.
 
-The pre-existing `dist/client` was stale: it lacked the September news item, contained an older version of the CV, and retained a sentence already removed from the root source. The build now synchronizes the distribution with the current source. The root CV is byte-for-byte unchanged; its existing preprint addition now also reaches the built copy. No source biography, publication, author, date, service entry, talk, teaching detail or link was rewritten or removed.
+The pre-existing `dist/client` was stale: it lacked the September news item, contained an older version of the CV, and retained a sentence already removed from the root source. The build now synchronizes the distribution with the current source. The root CV is byte-for-byte unchanged; its existing preprint addition now also reaches the built copy. The biography, publications, authors, service entries, talks, teaching details and external destinations remain intact.
 
 ## Search discovery
 
