@@ -297,22 +297,18 @@ h1 span { display: block; }
   list-style: none;
 }
 .research-list h3 {
-  max-width: 28ch;
-  font-family: var(--serif);
-  font-size: clamp(1.75rem, 2.5vw, 2.5rem);
-  line-height: 1.25;
-  letter-spacing: -0.015em;
+  font-family: var(--sans);
+  font-size: clamp(1.125rem, 1rem + 0.5vw, 1.5rem);
+  font-weight: 500;
+  line-height: 1.45;
 }
 .research-list a {
   display: block;
   min-block-size: 2.75rem;
-  text-decoration-line: underline;
-  text-decoration-color: #7394a8;
-  text-decoration-thickness: 1px;
-  text-underline-offset: 0.18em;
+  text-decoration: none;
   overflow-wrap: break-word;
 }
-.publication h3 a::after {
+.research-list a::after, .publication h3 a::after {
   flex: 0 0 auto;
   width: 0.6rem;
   height: 0.6rem;
@@ -320,6 +316,11 @@ h1 span { display: block; }
   border-right: 1px solid currentColor;
   background: linear-gradient(135deg, transparent 44%, currentColor 46% 54%, transparent 56%) center / 100% 100% no-repeat;
   content: "";
+}
+.research-list a::after {
+  display: inline-block;
+  margin-inline-start: 0.5rem;
+  vertical-align: 0.1em;
 }
 .publications-section { padding-block: 5.5rem; background: var(--surface); }
 .publications-section .section-header { display: flex; align-items: baseline; justify-content: space-between; gap: 2rem; padding-bottom: 2.5rem; }
@@ -403,7 +404,6 @@ h1 span { display: block; }
   .hero-social a:hover { border-color: currentColor; }
   .button:hover { color: var(--paper); background: var(--ink); }
   .research-section a:hover { color: #ffffff; }
-  .research-list a:hover { text-decoration-color: currentColor; }
   .publication h3 a:hover { text-decoration: underline; text-decoration-thickness: 1px; }
 }
 
@@ -572,7 +572,7 @@ h1 span { display: block; }
   .research-section { padding-block: 1.5rem; color: #000; background: #fff; border-block: 1px solid #bbb; }
   .research-copy, .research-copy a { color: #000; }
   .research-grid { gap: 2rem; }
-  .research-list h3 { font-size: 18pt; }
+  .research-list h3 { font-size: 13pt; }
   .research-list li { break-inside: avoid; }
   .section-title, .research-grid .section-title { font-size: 24pt; }
   .publication, .news-list li, .subsection, .teaching-card { break-inside: avoid; }

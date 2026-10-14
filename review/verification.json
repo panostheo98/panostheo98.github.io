@@ -224,7 +224,17 @@
     ],
     "noOverflow": true,
     "visibleKeyboardFocus": true,
-    "designReference": "https://mobbin.com/sites/sections/1b665755-3726-48ea-9f9c-32e8c2c7914b"
+    "designReference": "https://mobbin.com/sites/sections/1b665755-3726-48ea-9f9c-32e8c2c7914b",
+    "typography": {
+      "family": "Public Sans",
+      "weight": 500,
+      "fontSizeRangeRem": [
+        1.125,
+        1.5
+      ],
+      "titleUnderlines": false,
+      "inlineExternalLinkArrows": true
+    }
   },
   "readability": {
     "bodyTextPixels": 17,
