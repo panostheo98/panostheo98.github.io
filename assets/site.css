@@ -379,7 +379,7 @@ h1 span { display: block; }
 
 @media (hover: hover) {
   a:hover { color: var(--accent); text-decoration-color: currentColor; }
-  .nav-list a:hover, .hero-social a:hover { text-decoration: underline; }
+  .nav-list a:hover { text-decoration: underline; }
   .hero-social a:hover { border-color: currentColor; }
   .button:hover { color: var(--paper); background: var(--ink); }
   .research-section a:hover { color: #ffffff; }
