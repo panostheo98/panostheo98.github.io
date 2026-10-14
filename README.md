@@ -72,3 +72,5 @@ These are local lab measurements, not production field results. No actionable ac
 Screenshots: [desktop](review/desktop.png), [mobile](review/mobile.png), [tablet](review/tablet.png), [dark mode](review/dark.png), [mobile menu](review/mobile-menu.png), [oral explanation](review/oral-tooltip.png). Machine-readable results are in [verification.json](review/verification.json).
 
 The Oral explanation uses the [official ICLR 2025 fact sheet](https://media.iclr.cc/Conferences/ICLR2025/ICLR2025_Fact_Sheet.pdf): 213 oral presentations from 11,603 submissions, approximately 1.8%.
+
+Profile links use aligned text rows with external-link cues and an envelope for email. Desktop uses two columns below the portrait; mobile places four rows beside it and the CV below. Chromium and WebKit checks at 12 widths from 320 to 1920 pixels verify targets of at least 44 × 44 pixels without overlaps, including doubled text. All four links retain visible keyboard focus in DOM order. The grouped text links in [Mother Design on Mobbin](https://mobbin.com/sites/sections/ecbaa0a2-e865-4b45-a5ea-0f67b4cb9794) informed this arrangement.

@@ -170,5 +170,35 @@
       "submissions": 11603,
       "percentageRounded": 1.8
     }
+  },
+  "heroSocial": {
+    "layout": "Two columns below portrait on desktop; full-width link rows beside portrait and CV below on mobile",
+    "widths": [
+      320,
+      375,
+      390,
+      430,
+      600,
+      688,
+      689,
+      768,
+      1024,
+      1280,
+      1440,
+      1920
+    ],
+    "engines": [
+      "Chromium",
+      "WebKit"
+    ],
+    "textScales": [
+      1,
+      2
+    ],
+    "minimumTargetPixels": 44,
+    "noOverlappingTargets": true,
+    "visibleKeyboardFocus": true,
+    "originalLinksAndLabelsPreserved": true,
+    "designReference": "https://mobbin.com/sites/sections/ecbaa0a2-e865-4b45-a5ea-0f67b4cb9794"
   }
 }
