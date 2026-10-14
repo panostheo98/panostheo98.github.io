@@ -4,6 +4,10 @@ import { readFileSync } from 'node:fs';
 import { createHash } from 'node:crypto';
 
 const original = JSON.parse(readFileSync(new URL('./fixtures/original-content.json', import.meta.url)));
+const cvFilename = 'Panagiotis_Theodoropoulos_CV.pdf';
+// The requested CV rename is the only URL change from the original snapshot.
+const currentFilename = file => file === 'MyCV.pdf' ? cvFilename : file;
+const expectedLinks = original.links.map(link => ({ ...link, href: currentFilename(link.href) }));
 const normalize = text => text.replace(/\s+/g, ' ').trim();
 
 async function openMenuIfNeeded(page) {
@@ -23,10 +27,10 @@ test('preserves every original text block, link, metadata field and source asset
     label: a.getAttribute('aria-label'),
   })));
   expect(actualLinks).toHaveLength(original.links.length);
-  for (const link of original.links) {
+  for (const link of expectedLinks) {
     const matches = items => items.filter(item => item.href === link.href && item.label === link.label &&
       (link.label || item.text === link.text));
-    expect(matches(actualLinks), JSON.stringify(link)).toHaveLength(matches(original.links).length);
+    expect(matches(actualLinks), JSON.stringify(link)).toHaveLength(matches(expectedLinks).length);
   }
   for (const meta of original.metadata) {
     const selector = meta.tag + Object.entries(meta.attrs).filter(([key]) => key !== 'content' && key !== 'href')
@@ -38,7 +42,7 @@ test('preserves every original text block, link, metadata field and source asset
   expect(JSON.parse(await page.locator('script[type="application/ld+json"]').textContent()))
     .toEqual(JSON.parse(original.structuredData));
   for (const [file, digest] of Object.entries(original.assets)) {
-    const response = await request.get('/' + file);
+    const response = await request.get('/' + currentFilename(file));
     expect(response.ok()).toBeTruthy();
     expect(createHash('sha256').update(await response.body()).digest('hex')).toBe(digest);
   }
@@ -157,7 +161,7 @@ test('all original section destinations exist and the CV remains downloadable', 
     .filter(a => !document.getElementById(a.hash.slice(1))).map(a => a.hash));
   expect(broken).toEqual([]);
   await expect(page.locator('h1')).toHaveCount(1);
-  const response = await page.request.get('/MyCV.pdf');
+  const response = await page.request.get('/' + cvFilename);
   expect(response.headers()['content-type']).toContain('application/pdf');
   expect((await response.body()).subarray(0, 4).toString()).toBe('%PDF');
 });

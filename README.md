@@ -15,11 +15,11 @@ npm run build
 
 Node.js and Python 3 are needed for these commands. The build itself only uses a POSIX shell. All content lives in `index.html`; styles live in `assets/site.css`. The menu initializes inline before the main content renders to prevent layout shift. `assets/site.js` updates the current navigation section.
 
-The original CV, portrait JPEG and social preview image remain at their original URLs. Responsive WebP copies reduce portrait transfer size. Fonts and their OFL licenses are included in `assets/fonts`.
+The CV is served as `Panagiotis_Theodoropoulos_CV.pdf`, with its contents unchanged. The portrait JPEG and social preview image remain at their original URLs. Responsive WebP copies reduce portrait transfer size. Fonts and their OFL licenses are included in `assets/fonts`.
 
 ## Content preservation
 
-The source of truth is the root `index.html` and original assets at upstream commit `9041d5a`. The regression fixture records all 65 text blocks, 35 links, metadata, structured data, and SHA-256 hashes of the original CV and images. Tests check the rendered page against that fixture, including link labels, destinations and multiplicity.
+The source of truth is the root `index.html` and original assets at upstream commit `9041d5a`. The regression fixture records all 65 text blocks, 35 links, metadata, structured data, and SHA-256 hashes of the original CV and images. Tests check the rendered page against that fixture, including link labels, destinations and multiplicity. The requested CV filename change is the only destination exception.
 
 The pre-existing `dist/client` was stale: it lacked the September news item, contained an older version of the CV, and retained a sentence already removed from the root source. The build now synchronizes the distribution with the current source. The root CV is byte-for-byte unchanged; its existing preprint addition now also reaches the built copy. No source biography, publication, author, date, service entry, talk, teaching detail or link was rewritten or removed.
 
