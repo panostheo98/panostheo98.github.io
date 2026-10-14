@@ -397,12 +397,14 @@ h1 span { display: block; }
   .hero-social a:hover { border-color: currentColor; }
   .button:hover { color: var(--paper); background: var(--ink); }
   .research-section a:hover { color: #ffffff; }
+  .research-list a:hover { text-shadow: 0 0 12px #d0eaff55; }
   .publication h3 a:hover { text-decoration: underline; text-decoration-thickness: 1px; }
 }
 
 @media (prefers-reduced-motion: no-preference) {
   html { scroll-behavior: smooth; }
   a, .menu-toggle { transition: color 160ms ease, background-color 160ms ease; }
+  .research-list a { transition: color 160ms ease, text-shadow 160ms ease; }
   .publication h3 a::after { transition: transform 160ms ease; }
   @media (hover: hover) {
     .publication h3 a:hover::after { transform: translate(2px, -2px); }
