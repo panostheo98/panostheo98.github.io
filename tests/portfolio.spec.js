@@ -19,7 +19,12 @@ test('preserves every original text block, link, metadata field and source asset
   await page.goto('/');
   await openMenuIfNeeded(page);
   const text = normalize(await page.locator('body').innerText());
-  for (const block of original.textBlocks) expect(text, block).toContain(block);
+  // The user explicitly requested refreshing the footer date after the redesign.
+  for (const block of original.textBlocks) {
+    const expected = block === 'Last updated Aug 11, 2026' ? 'Last updated Oct 14, 2026' : block;
+    expect(text, block).toContain(expected);
+  }
+  await expect(page.locator('.footer-updated time')).toHaveAttribute('datetime', '2026-10-14');
 
   const actualLinks = await page.locator('a').evaluateAll(links => links.map(a => ({
     href: a.getAttribute('href'),
