@@ -242,7 +242,7 @@
       "inlineExternalLinkArrows": true
     },
     "hover": {
-      "effect": "Neutral off-white links and arrows brighten to white; no shimmer or glow",
+      "effect": "Links and arrows shift from #f5f5f5 to soft gray-white #c7c7c7; no shimmer or glow",
       "outerShadow": false,
       "engines": [
         "Chromium",

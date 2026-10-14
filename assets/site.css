@@ -273,7 +273,7 @@ h1 span { display: block; }
 .research-section {
   --accent: var(--research-text);
   --focus: #ffffff;
-  --link-hover: #ffffff;
+  --link-hover: #c7c7c7;
   padding-block: 4.5rem;
   color: var(--research-text);
   background: linear-gradient(125deg, var(--research), var(--paper));
@@ -410,7 +410,7 @@ h1 span { display: block; }
   .nav-list a:hover { text-decoration: underline; }
   .hero-social a:hover { border-color: currentColor; }
   .button:hover { color: var(--paper); background: var(--ink); }
-  .research-list a:hover { color: #ffffff; }
+  .research-list a:hover { color: var(--link-hover); }
   .publication h3 a:hover { text-decoration: underline; text-decoration-thickness: 1px; }
 }
 
