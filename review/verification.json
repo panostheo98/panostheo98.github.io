@@ -225,5 +225,107 @@
     "noOverflow": true,
     "visibleKeyboardFocus": true,
     "designReference": "https://mobbin.com/sites/sections/1b665755-3726-48ea-9f9c-32e8c2c7914b"
+  },
+  "readability": {
+    "bodyTextPixels": 17,
+    "secondaryTextPixels": 16,
+    "uiTextPixels": 15,
+    "labelTextPixels": 14,
+    "contrastMeasurements": [
+      {
+        "theme": "light",
+        "measurements": [
+          {
+            "selector": ".hero-support",
+            "fontSize": "17px",
+            "foreground": "rgb(64, 86, 102)",
+            "background": "rgb(247, 250, 252)",
+            "contrast": 7.31
+          },
+          {
+            "selector": ".section-intro",
+            "fontSize": "16px",
+            "foreground": "rgb(64, 86, 102)",
+            "background": "rgb(255, 255, 255)",
+            "contrast": 7.66
+          },
+          {
+            "selector": ".research-copy",
+            "fontSize": "17px",
+            "foreground": "rgb(208, 223, 232)",
+            "background": "rgb(23, 61, 86)",
+            "contrast": 8.38
+          },
+          {
+            "selector": ".publication p:not(.publication-venue)",
+            "fontSize": "16px",
+            "foreground": "rgb(64, 86, 102)",
+            "background": "rgb(255, 255, 255)",
+            "contrast": 7.66
+          },
+          {
+            "selector": ".focus-list",
+            "fontSize": "15px",
+            "foreground": "rgb(64, 86, 102)",
+            "background": "rgb(247, 250, 252)",
+            "contrast": 7.31
+          },
+          {
+            "selector": ".teaching-card p + p",
+            "fontSize": "17px",
+            "foreground": "rgb(64, 86, 102)",
+            "background": "rgb(255, 255, 255)",
+            "contrast": 7.66
+          }
+        ]
+      },
+      {
+        "theme": "dark",
+        "measurements": [
+          {
+            "selector": ".hero-support",
+            "fontSize": "17px",
+            "foreground": "rgb(196, 210, 220)",
+            "background": "rgb(18, 39, 53)",
+            "contrast": 9.95
+          },
+          {
+            "selector": ".section-intro",
+            "fontSize": "16px",
+            "foreground": "rgb(196, 210, 220)",
+            "background": "rgb(23, 47, 63)",
+            "contrast": 8.98
+          },
+          {
+            "selector": ".research-copy",
+            "fontSize": "17px",
+            "foreground": "rgb(208, 223, 232)",
+            "background": "rgb(14, 34, 48)",
+            "contrast": 11.94
+          },
+          {
+            "selector": ".publication p:not(.publication-venue)",
+            "fontSize": "16px",
+            "foreground": "rgb(196, 210, 220)",
+            "background": "rgb(23, 47, 63)",
+            "contrast": 8.98
+          },
+          {
+            "selector": ".focus-list",
+            "fontSize": "15px",
+            "foreground": "rgb(196, 210, 220)",
+            "background": "rgb(18, 39, 53)",
+            "contrast": 9.95
+          },
+          {
+            "selector": ".teaching-card p + p",
+            "fontSize": "17px",
+            "foreground": "rgb(196, 210, 220)",
+            "background": "rgb(23, 47, 63)",
+            "contrast": 8.98
+          }
+        ]
+      }
+    ]
   }
 }
