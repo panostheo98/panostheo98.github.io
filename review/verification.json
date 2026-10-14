@@ -200,5 +200,30 @@
     "visibleKeyboardFocus": true,
     "originalLinksAndLabelsPreserved": true,
     "designReference": "https://mobbin.com/sites/sections/ecbaa0a2-e865-4b45-a5ea-0f67b4cb9794"
+  },
+  "selectedResearch": {
+    "layout": "Two-column linked headings, single column on mobile",
+    "originalTitlesAndDestinationsPreserved": true,
+    "widths": [
+      320,
+      390,
+      688,
+      689,
+      768,
+      1024,
+      1440,
+      1920
+    ],
+    "textScales": [
+      1,
+      2
+    ],
+    "engines": [
+      "Chromium",
+      "WebKit"
+    ],
+    "noOverflow": true,
+    "visibleKeyboardFocus": true,
+    "designReference": "https://mobbin.com/sites/sections/1b665755-3726-48ea-9f9c-32e8c2c7914b"
   }
 }
