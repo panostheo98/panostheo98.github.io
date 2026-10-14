@@ -143,7 +143,7 @@
     "mobile navigation"
   ],
   "accessibility": {
-    "automated": "No axe WCAG A/AA violations in light/dark modes, including expanded mobile navigation.",
+    "automated": "No axe WCAG A/AA violations with light/dark system preferences and the requested dark palette, including expanded mobile navigation.",
     "keyboard": "Skip link, disclosure, Escape restoration, section focus, active links and anchor placement verified.",
     "accessibilityTree": "Menu name, button role, expanded state and navigation links inspected.",
     "notVerified": [
@@ -247,102 +247,46 @@
     "secondaryTextPixels": 16,
     "uiTextPixels": 15,
     "labelTextPixels": 14,
-    "contrastMeasurements": [
-      {
-        "theme": "light",
-        "measurements": [
-          {
-            "selector": ".hero-support",
-            "fontSize": "17px",
-            "foreground": "rgb(64, 86, 102)",
-            "background": "rgb(247, 250, 252)",
-            "contrast": 7.31
-          },
-          {
-            "selector": ".section-intro",
-            "fontSize": "16px",
-            "foreground": "rgb(64, 86, 102)",
-            "background": "rgb(255, 255, 255)",
-            "contrast": 7.66
-          },
-          {
-            "selector": ".research-copy",
-            "fontSize": "17px",
-            "foreground": "rgb(208, 223, 232)",
-            "background": "rgb(23, 61, 86)",
-            "contrast": 8.38
-          },
-          {
-            "selector": ".publication p:not(.publication-venue)",
-            "fontSize": "16px",
-            "foreground": "rgb(64, 86, 102)",
-            "background": "rgb(255, 255, 255)",
-            "contrast": 7.66
-          },
-          {
-            "selector": ".focus-list",
-            "fontSize": "15px",
-            "foreground": "rgb(64, 86, 102)",
-            "background": "rgb(247, 250, 252)",
-            "contrast": 7.31
-          },
-          {
-            "selector": ".teaching-card p + p",
-            "fontSize": "17px",
-            "foreground": "rgb(64, 86, 102)",
-            "background": "rgb(255, 255, 255)",
-            "contrast": 7.66
-          }
-        ]
+    "darkPalette": {
+      "palette": {
+        "paper": "#101722",
+        "surface": "#16202d",
+        "research": "#131e2c",
+        "ink": "#f4f6f8",
+        "muted": "#d1d9e4",
+        "accent": "#91b9ff"
       },
-      {
-        "theme": "dark",
-        "measurements": [
-          {
-            "selector": ".hero-support",
-            "fontSize": "17px",
-            "foreground": "rgb(196, 210, 220)",
-            "background": "rgb(18, 39, 53)",
-            "contrast": 9.95
-          },
-          {
-            "selector": ".section-intro",
-            "fontSize": "16px",
-            "foreground": "rgb(196, 210, 220)",
-            "background": "rgb(23, 47, 63)",
-            "contrast": 8.98
-          },
-          {
-            "selector": ".research-copy",
-            "fontSize": "17px",
-            "foreground": "rgb(208, 223, 232)",
-            "background": "rgb(14, 34, 48)",
-            "contrast": 11.94
-          },
-          {
-            "selector": ".publication p:not(.publication-venue)",
-            "fontSize": "16px",
-            "foreground": "rgb(196, 210, 220)",
-            "background": "rgb(23, 47, 63)",
-            "contrast": 8.98
-          },
-          {
-            "selector": ".focus-list",
-            "fontSize": "15px",
-            "foreground": "rgb(196, 210, 220)",
-            "background": "rgb(18, 39, 53)",
-            "contrast": 9.95
-          },
-          {
-            "selector": ".teaching-card p + p",
-            "fontSize": "17px",
-            "foreground": "rgb(196, 210, 220)",
-            "background": "rgb(23, 47, 63)",
-            "contrast": 8.98
-          }
-        ]
-      }
-    ]
+      "method": "Contrast against all opaque surfaces and a conservative upper bound with both radial gradient tints at maximum opacity.",
+      "measurements": [
+        {
+          "role": "ink",
+          "color": "#f4f6f8",
+          "minimumContrast": 13.75
+        },
+        {
+          "role": "muted",
+          "color": "#d1d9e4",
+          "minimumContrast": 10.47
+        },
+        {
+          "role": "accent",
+          "color": "#91b9ff",
+          "minimumContrast": 7.51
+        }
+      ]
+    },
+    "reference": "https://panostheo98.github.io/",
+    "inlineLinks": {
+      "color": "#91b9ff",
+      "weight": 600,
+      "underlineAtRest": false,
+      "underlineOnHoverAndFocus": true,
+      "motionPreferenceRespected": true,
+      "engines": [
+        "Chromium",
+        "WebKit"
+      ]
+    }
   },
   "headerNavigation": [
     "About",

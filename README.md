@@ -42,7 +42,7 @@ Eight Mobbin MCP searches returned 27 references, all inspected before implement
 - [Read.cv's profile](https://mobbin.com/screens/072d6e31-1bf0-4c5f-b32c-0b9b33845567) informed the compact professional record.
 - [IntegratedBio's publications](https://mobbin.com/sites/sections/593eb726-d6e4-4872-a1d5-51fb4d4a9893) informed the unboxed article links.
 
-Newsreader headings and Public Sans text sit on cool white and deep blue. The original photograph supplies the color context. Research directions and publications use text and direct links to the papers. Publications precede news, and all four papers remain immediately visible without filters or collapsed content.
+Newsreader section headings and Public Sans text sit on a dark navy palette with restrained blue gradients, adapted from the [production site](https://panostheo98.github.io/). Off-white body text and brighter secondary text provide strong contrast. Inline links use soft blue and medium-bold weight, with underlines appearing on hover or keyboard focus. The dark appearance is consistent across system color preferences. Research directions and publications use text and direct links to the papers. Publications precede news, and all four papers remain immediately visible without filters or collapsed content.
 
 ## Verification
 
@@ -52,9 +52,9 @@ npx playwright install chromium webkit
 npm test
 ```
 
-The 39 Playwright checks cover desktop Chromium, mobile Chromium and iPhone WebKit emulation. They verify content preservation, metadata, original asset hashes, resource loading, anchor destinations, current navigation state, keyboard focus, menu dismissal, and the CV download. Discovery checks compare structured data with visible publications, verify social image dimensions, and follow the sitemap to working resources with JavaScript disabled. Axe checks cover light and dark modes, including the expanded mobile menu.
+The 39 Playwright checks cover desktop Chromium, mobile Chromium and iPhone WebKit emulation. They verify content preservation, metadata, original asset hashes, resource loading, anchor destinations, current navigation state, keyboard focus, menu dismissal, and the CV download. Discovery checks compare structured data with visible publications, verify social image dimensions, and follow the sitemap to working resources with JavaScript disabled. Axe checks run with both light and dark system preferences, including the expanded mobile menu.
 
-Focus-grid checks verify column alignment when terms wrap. The Oral badge explains the presentation format and its selectivity on hover, keyboard focus or tap; Escape and outside taps dismiss it. Interaction checks cover Chromium and WebKit. Reflow checks cover widths from 320 to 1920 pixels and doubled text size. The site also works with JavaScript disabled and web fonts blocked. Motion respects the system preference. Desktop, tablet, mobile, dark mode and mobile navigation were visually inspected; the browser's accessibility tree exposes the menu name and expanded state.
+Focus-grid checks verify column alignment when terms wrap. The Oral badge explains the presentation format and its selectivity on hover, keyboard focus or tap; Escape and outside taps dismiss it. Interaction checks cover Chromium and WebKit. Reflow checks cover widths from 320 to 1920 pixels and doubled text size. The site also works with JavaScript disabled and web fonts blocked. Motion respects the system preference. Desktop, tablet, mobile and mobile navigation were visually inspected with the dark palette; the browser's accessibility tree exposes the menu name and expanded state.
 
 Local Lighthouse 13.5.0 audits on 14 October 2026, before the search metadata and discovery files were added:
 
@@ -69,7 +69,7 @@ Local Lighthouse 13.5.0 audits on 14 October 2026, before the search metadata an
 
 These are local lab measurements, not production field results. No actionable accessibility findings remain in the inspected coverage. Physical-device testing and a spoken VoiceOver/NVDA session were not performed. External destinations are preserved exactly; third-party site availability is outside this change.
 
-Screenshots: [desktop](review/desktop.png), [mobile](review/mobile.png), [tablet](review/tablet.png), [dark mode](review/dark.png), [mobile menu](review/mobile-menu.png), [oral explanation](review/oral-tooltip.png). Machine-readable results are in [verification.json](review/verification.json).
+Screenshots: [desktop](review/desktop.png), [mobile](review/mobile.png), [tablet](review/tablet.png), [dark system preference](review/dark.png), [mobile menu](review/mobile-menu.png), [oral explanation](review/oral-tooltip.png). Machine-readable results are in [verification.json](review/verification.json).
 
 The Oral explanation uses the [official ICLR 2025 fact sheet](https://media.iclr.cc/Conferences/ICLR2025/ICLR2025_Fact_Sheet.pdf): 213 oral presentations from 11,603 submissions, approximately 1.8%.
 
@@ -79,4 +79,4 @@ The footer update date was changed to October 14, 2026 at the owner's request. T
 
 Selected Research presents the four original directions as medium-weight Public Sans headings in two columns, stacking on mobile. Titles scale from 18 to 24px at the default browser size, with no underlines and small inline external-link arrows. Open spacing replaces divider rows. The research layouts in [Overmind on Mobbin](https://mobbin.com/sites/sections/1b665755-3726-48ea-9f9c-32e8c2c7914b) informed the grouping. Chromium and WebKit checks cover reflow, enlarged text and accessible links.
 
-Readability adjustments reduce the hero name by roughly 12–14% and use 17px body text, 16px secondary text, 15px interface text and 14px small labels at the default browser size, expressed in rem. Muted text is darker in light mode and lighter in dark mode. Measurements against the rendered backgrounds range from 7.31:1 to 11.94:1 for the inspected biography, introduction, research, author, focus and teaching text.
+Readability adjustments reduce the hero name by roughly 12–14% and use 17px body text, 16px secondary text, 15px interface text and 14px small labels at the default browser size, expressed in rem. Calculated minimum contrast across the dark surfaces and a conservative bound for the brightest gradient colors is 13.75:1 for primary text, 10.47:1 for secondary text and 7.51:1 for blue inline links. Hover/focus feedback and reduced-motion behavior were checked in Chromium and WebKit.
