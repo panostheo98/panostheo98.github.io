@@ -186,6 +186,6 @@
       "body": "Public Sans, weights 400–700"
     },
     "layout": "Large name and biography left, original portrait right; a blue research section; publication archive; dated news; service, talks and teaching; contact footer.",
-    "review": "Rejected a generic centered hero and a grid of matching cards. The typography and static transport-path motif are specific to a researcher working on stochastic control and optimal transport. The motif is decorative, not a figure representing research results."
+    "review": "The name appears as plain text in the header, with a simple P favicon. Research directions use a compact heading column and a wider reading column. Publications give priority to the paper titles, venues and authors."
   }
 }

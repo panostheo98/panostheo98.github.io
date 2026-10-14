@@ -32,7 +32,7 @@ Eight Mobbin MCP searches returned 27 references, all inspected before implement
 - [Read.cv's profile](https://mobbin.com/screens/072d6e31-1bf0-4c5f-b32c-0b9b33845567) informed the compact professional record.
 - [IntegratedBio's publications](https://mobbin.com/sites/sections/593eb726-d6e4-4872-a1d5-51fb4d4a9893) informed the unboxed article links.
 
-Newsreader headings and Public Sans text sit on cool white and deep blue. The original photograph supplies the color context. A static transport-path motif refers to the research subject; it is decorative rather than a representation of research results. Publications precede news, and all four papers remain immediately visible without filters or collapsed content.
+Newsreader headings and Public Sans text sit on cool white and deep blue. The original photograph supplies the color context. Research directions and publications use text and direct links to the papers. Publications precede news, and all four papers remain immediately visible without filters or collapsed content.
 
 ## Verification
 
