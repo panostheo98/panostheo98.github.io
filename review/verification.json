@@ -162,6 +162,13 @@
     "escapeDismissal": true,
     "outsideTapDismissal": true,
     "withinViewport": true,
-    "nativeTitleWithoutJavaScript": true
+    "nativeTitleWithoutJavaScript": true,
+    "source": "https://media.iclr.cc/Conferences/ICLR2025/ICLR2025_Fact_Sheet.pdf",
+    "selectionStats": {
+      "year": 2025,
+      "oralPresentations": 213,
+      "submissions": 11603,
+      "percentageRounded": 1.8
+    }
   }
 }

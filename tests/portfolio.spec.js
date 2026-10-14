@@ -192,7 +192,7 @@ test('oral explanation supports hover, keyboard, touch and dismissal', async ({ 
   const oral = page.getByRole('button', { name: 'Oral', exact: true });
   const tooltip = page.getByRole('tooltip');
   await oral.scrollIntoViewIfNeeded();
-  await expect(oral).toHaveAccessibleDescription('Selected for an oral presentation (a talk) at ICLR 2025.');
+  await expect(oral).toHaveAccessibleDescription('Selected for an oral presentation at ICLR 2025, a highly selective distinction: 213 oral presentations from 11,603 submissions (about 1.8%).');
   await expect(oral).toHaveCSS('cursor', 'help');
   if (isMobile) {
     await oral.tap();
