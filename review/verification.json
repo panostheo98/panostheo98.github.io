@@ -13,7 +13,7 @@
     "structuredData": true
   },
   "tests": {
-    "passed": 33,
+    "passed": 36,
     "failed": 0,
     "projects": [
       "desktop-chromium",
@@ -23,31 +23,31 @@
     "command": "npm test"
   },
   "lighthouse": {
-    "scope": "Local design audit before the search metadata and discovery-file additions.",
+    "scope": "Research-profile revision, including search metadata and discovery files.",
     "mobile": {
       "version": "13.5.0",
       "environment": "Local Python static server; Lighthouse default simulated throttling",
       "scores": {
-        "performance": 100,
+        "performance": 99,
         "accessibility": 100,
         "best-practices": 100,
         "seo": 100
       },
       "metrics": {
         "first-contentful-paint": {
-          "value": 902.1815999999999,
+          "value": 1075.205,
           "unit": "millisecond",
-          "display": "0.9 s"
+          "display": "1.1 s"
         },
         "largest-contentful-paint": {
-          "value": 1802.1816,
+          "value": 1801.205,
           "unit": "millisecond",
           "display": "1.8 s"
         },
         "speed-index": {
-          "value": 902.1815999999999,
+          "value": 1075.205,
           "unit": "millisecond",
-          "display": "0.9 s"
+          "display": "1.1 s"
         },
         "total-blocking-time": {
           "value": 0,
@@ -60,15 +60,15 @@
           "display": "0"
         },
         "total-byte-weight": {
-          "value": 141691,
+          "value": 138011,
           "unit": "byte",
-          "display": "Total size was 138 KiB"
+          "display": "Total size was 135 KiB"
         }
       }
     },
     "desktop": {
       "version": "13.5.0",
-      "environment": "Local Python static server; Lighthouse default simulated throttling",
+      "environment": "Local Python static server; Lighthouse desktop preset",
       "scores": {
         "performance": 100,
         "accessibility": 100,
@@ -77,17 +77,17 @@
       },
       "metrics": {
         "first-contentful-paint": {
-          "value": 288.1665,
+          "value": 286.5317,
           "unit": "millisecond",
           "display": "0.3 s"
         },
         "largest-contentful-paint": {
-          "value": 441.1665,
+          "value": 441.5317,
           "unit": "millisecond",
           "display": "0.4 s"
         },
         "speed-index": {
-          "value": 290.5054957629769,
+          "value": 286.5317,
           "unit": "millisecond",
           "display": "0.3 s"
         },
@@ -102,28 +102,37 @@
           "display": "0"
         },
         "total-byte-weight": {
-          "value": 141691,
+          "value": 138082,
           "unit": "byte",
-          "display": "Total size was 138 KiB"
+          "display": "Total size was 135 KiB"
         }
       }
     }
   },
   "searchDiscovery": {
     "canonical": "https://panostheo98.github.io/",
-    "pageBodyUnchanged": true,
     "originalPersonFactsPreserved": true,
-    "structuredData": ["ProfilePage", "Person", "ScholarlyArticle", "DigitalDocument"],
+    "structuredData": [
+      "ProfilePage",
+      "Person",
+      "ScholarlyArticle",
+      "DigitalDocument"
+    ],
     "selectedPublicationsMatchedToVisibleContent": 4,
     "sitemapEntries": 2,
     "robotsAndSitemapServeSuccessfully": true,
     "verifiedWithoutJavaScript": true,
-    "socialImageDimensions": [1731, 909],
-    "productionIndexingSubmitted": false
+    "socialImageDimensions": [
+      1731,
+      909
+    ],
+    "productionIndexingSubmitted": false,
+    "originalTextAndLinksPreserved": true
   },
   "visualReview": [
     "1440px desktop",
     "390px mobile",
+    "320px mobile",
     "768px tablet",
     "dark mode",
     "mobile navigation"
@@ -136,5 +145,27 @@
       "Physical devices",
       "Spoken VoiceOver/NVDA session"
     ]
+  },
+  "layout": {
+    "focusColumnsAlignedAcrossRows": true,
+    "geometryWidths": [
+      320,
+      390,
+      600,
+      768,
+      1024,
+      1280,
+      1440
+    ],
+    "sectionOrder": [
+      "about",
+      "publications",
+      "research",
+      "news",
+      "service",
+      "talks",
+      "teaching"
+    ],
+    "firstPaperVisibleAt1440x1000": true
   }
 }
