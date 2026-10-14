@@ -3,8 +3,8 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <meta name="theme-color" content="#ffffff" media="(prefers-color-scheme: light)">
-  <meta name="theme-color" content="#101722" media="(prefers-color-scheme: dark)">
+  <meta name="theme-color" content="#f7fafc" media="(prefers-color-scheme: light)">
+  <meta name="theme-color" content="#122735" media="(prefers-color-scheme: dark)">
 
   <title>Panagiotis Theodoropoulos — Machine Learning PhD at Georgia Tech</title>
   <meta name="description" content="Panagiotis Theodoropoulos is a Machine Learning PhD student in the ACDS Lab at Georgia Tech, working on stochastic optimal control, LLM alignment, Schrödinger bridges, and generative modeling.">
@@ -58,652 +58,11 @@
   }
   </script>
 
-  <style>
-    :root {
-      --accent: #173f91;
-      --accent-soft: rgba(23, 63, 145, 0.08);
-      --bg: #ffffff;
-      --surface: #ffffff;
-      --surface-muted: #f6f8fc;
-      --text: #111827;
-      --text-soft: #566174;
-      --border: rgba(17, 24, 39, 0.09);
-      --border-strong: rgba(17, 24, 39, 0.16);
-      --shadow-sm: 0 8px 24px rgba(15, 23, 42, 0.05);
-      --shadow-md: 0 18px 44px rgba(15, 23, 42, 0.09);
-      --radius-sm: 10px;
-      --radius-md: 18px;
-      --radius-lg: 24px;
-      --site-width: 1060px;
-      --content-width: 790px;
-    }
-
-    * { box-sizing: border-box; }
-    html { min-height: 100%; scroll-behavior: smooth; }
-    body {
-      min-height: 100%;
-      margin: 0;
-      color: var(--text);
-      background: var(--bg);
-      background-image:
-        radial-gradient(60rem 40rem at 100% -10%, var(--accent-soft), transparent 60%),
-        radial-gradient(48rem 32rem at -10% 0%, var(--accent-soft), transparent 55%);
-      background-repeat: no-repeat;
-      background-attachment: fixed;
-      font-family: "Avenir Next", Avenir, "Segoe UI", system-ui, -apple-system, sans-serif;
-      font-size: 18px;
-      line-height: 1.65;
-      text-rendering: optimizeLegibility;
-      -webkit-font-smoothing: antialiased;
-    }
-
-    a {
-      color: var(--accent);
-      text-decoration: none;
-      text-underline-offset: 0.18em;
-    }
-
-    a:hover,
-    a:focus { text-decoration: underline; }
-
-    a:focus-visible,
-    summary:focus-visible,
-    .button:focus-visible,
-    .skip-link:focus-visible {
-      outline: 2px solid color-mix(in srgb, var(--accent) 42%, transparent);
-      outline-offset: 3px;
-    }
-
-    img { display: block; max-width: 100%; }
-    p, ul, ol { margin-top: 0; }
-
-    .container {
-      width: min(calc(100% - 2rem), var(--site-width));
-      margin-inline: auto;
-    }
-
-    .container.narrow {
-      width: min(calc(100% - 2rem), var(--content-width));
-    }
-
-    .skip-link {
-      position: absolute;
-      top: -4rem;
-      left: 1rem;
-      z-index: 100;
-      padding: 0.65rem 0.9rem;
-      color: var(--text);
-      background: var(--surface);
-      border: 1px solid var(--border-strong);
-      border-radius: var(--radius-sm);
-    }
-
-    .skip-link:focus { top: 1rem; }
-
-    .site-header {
-      position: sticky;
-      top: 0;
-      z-index: 20;
-      background: rgba(255, 255, 255, 0.88);
-      border-bottom: 1px solid var(--border);
-      backdrop-filter: blur(12px);
-    }
-
-    .header-inner {
-      display: flex;
-      align-items: center;
-      justify-content: space-between;
-      gap: 1.25rem;
-      min-height: 4.25rem;
-      padding-block: 0.8rem;
-    }
-
-    .site-title {
-      flex: 0 0 auto;
-      color: var(--text);
-      font-weight: 700;
-      letter-spacing: -0.025em;
-    }
-
-    .site-title:hover,
-    .site-title:focus { color: var(--accent); text-decoration: none; }
-
-    .nav-list {
-      display: flex;
-      flex-wrap: wrap;
-      justify-content: flex-end;
-      gap: 0.75rem 1.2rem;
-      margin: 0;
-      padding: 0;
-      list-style: none;
-      font-size: 0.91rem;
-    }
-
-    .nav-list a {
-      position: relative;
-      color: var(--text-soft);
-      white-space: nowrap;
-      transition: color 0.18s ease;
-    }
-
-    .nav-list a:hover,
-    .nav-list a:focus,
-    .nav-list a.is-active { color: var(--accent); text-decoration: none; }
-
-    .nav-list a::after {
-      position: absolute;
-      right: 0;
-      bottom: -0.38rem;
-      left: 0;
-      height: 2px;
-      content: "";
-      background: var(--accent);
-      border-radius: 2px;
-      transform: scaleX(0);
-      transition: transform 0.2s ease;
-    }
-
-    .nav-list a.is-active::after { transform: scaleX(1); }
-
-    .section {
-      padding: 0 0 4.75rem;
-      scroll-margin-top: 5.5rem;
-    }
-
-    .hero { padding-top: 3.8rem; padding-bottom: 3.6rem; }
-
-    .hero-grid {
-      display: grid;
-      grid-template-columns: minmax(0, 1fr) minmax(250px, 315px);
-      gap: 2rem 3.25rem;
-      align-items: start;
-    }
-
-    .hero-media {
-      display: flex;
-      flex-direction: column;
-      grid-column: 2;
-      grid-row: 1;
-      gap: 0.95rem;
-      align-self: start;
-      justify-self: end;
-    }
-
-    .hero-copy {
-      grid-column: 1;
-      grid-row: 1;
-      align-self: start;
-    }
-
-    .profile-frame {
-      position: relative;
-      width: 100%;
-      max-width: 315px;
-      aspect-ratio: 1 / 1;
-      overflow: hidden;
-      background: var(--surface-muted);
-      border: 1px solid var(--border);
-      border-radius: var(--radius-lg);
-      box-shadow: var(--shadow-md);
-      transition: transform 0.3s ease, box-shadow 0.3s ease;
-    }
-
-    .profile-frame:hover { transform: translateY(-2px); }
-
-    .profile-picture {
-      position: absolute;
-      top: -126%;
-      left: -80%;
-      width: 180%;
-      max-width: none;
-      height: auto;
-    }
-
-    .hero-social {
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      gap: 0.65rem;
-      max-width: 315px;
-      color: var(--text-soft);
-    }
-
-    .hero-social a {
-      display: inline-flex;
-      align-items: center;
-      justify-content: center;
-      width: 2.7rem;
-      height: 2.7rem;
-      color: var(--text-soft);
-      background: var(--surface-muted);
-      border: 1px solid var(--border-strong);
-      border-radius: 50%;
-      transition: color 0.18s ease, background 0.18s ease, border-color 0.18s ease, transform 0.08s ease;
-    }
-
-    .hero-social a:hover,
-    .hero-social a:focus {
-      color: #ffffff;
-      background: var(--accent);
-      border-color: var(--accent);
-      text-decoration: none;
-    }
-
-    .hero-social a:active { transform: translateY(1px); }
-
-    .social-icon {
-      width: 1.2rem;
-      height: 1.2rem;
-      background: currentColor;
-      -webkit-mask: var(--icon) center / contain no-repeat;
-      mask: var(--icon) center / contain no-repeat;
-    }
-
-    .icon-scholar { --icon: url("https://api.iconify.design/simple-icons/googlescholar.svg"); }
-    .icon-linkedin { --icon: url("https://api.iconify.design/simple-icons/linkedin.svg"); }
-    .icon-x { --icon: url("https://api.iconify.design/simple-icons/x.svg"); }
-    .icon-mail { --icon: url("https://api.iconify.design/lucide/mail.svg"); }
-
-    .hero-cv {
-      display: flex;
-      justify-content: center;
-      max-width: 315px;
-    }
-
-    .hero-cv .button { min-width: 10rem; }
-
-    .hero-copy h1 {
-      margin: 0 0 0.55rem;
-      font-size: clamp(2.3rem, 5vw, 3.65rem);
-      line-height: 1.03;
-      letter-spacing: -0.045em;
-    }
-
-    .hero-meta {
-      margin-bottom: 1.35rem;
-      color: var(--text-soft);
-      font-size: 1.02rem;
-      font-weight: 600;
-    }
-
-    .lead {
-      margin-bottom: 1rem;
-      font-size: 1.08rem;
-      line-height: 1.75;
-    }
-
-    .hero-support { color: var(--text-soft); }
-
-    .focus-block {
-      margin-top: 1.25rem;
-      padding: 1.15rem 1.25rem;
-      background: var(--surface);
-      border: 1px solid var(--border);
-      border-radius: var(--radius-md);
-      box-shadow: var(--shadow-sm);
-    }
-
-    .focus-label {
-      margin: 0 0 0.7rem;
-      color: var(--accent);
-      font-size: 0.82rem;
-      font-weight: 750;
-      letter-spacing: 0.055em;
-      text-transform: uppercase;
-    }
-
-    .focus-list {
-      display: flex;
-      flex-wrap: wrap;
-      gap: 0.55rem;
-      margin: 0;
-      padding: 0;
-      list-style: none;
-    }
-
-    .focus-list li {
-      padding: 0.42rem 0.7rem;
-      color: var(--text-soft);
-      background: var(--surface-muted);
-      border: 1px solid var(--border);
-      border-radius: 999px;
-      font-size: 0.84rem;
-      font-weight: 650;
-    }
-
-    .button {
-      display: inline-flex;
-      align-items: center;
-      justify-content: center;
-      min-height: 2.75rem;
-      padding: 0.68rem 1rem;
-      color: var(--accent);
-      background: var(--accent-soft);
-      border: 1px solid color-mix(in srgb, var(--accent) 20%, transparent);
-      border-radius: 999px;
-      font-size: 0.94rem;
-      font-weight: 700;
-      transition: transform 0.08s ease, box-shadow 0.18s ease, background 0.18s ease;
-    }
-
-    .button:hover,
-    .button:focus {
-      text-decoration: none;
-      transform: translateY(-1px);
-    }
-
-    .section-header { margin-bottom: 1.45rem; }
-
-    .section-title {
-      position: relative;
-      margin: 0;
-      padding-left: 0.9rem;
-      color: var(--accent);
-      font-size: 1.5rem;
-      line-height: 1.2;
-      letter-spacing: -0.02em;
-    }
-
-    .section-title::before {
-      position: absolute;
-      top: 0.16em;
-      bottom: 0.16em;
-      left: 0;
-      width: 3px;
-      content: "";
-      background: var(--accent);
-      border-radius: 3px;
-      opacity: 0.55;
-    }
-
-    .section-intro {
-      margin: 0.55rem 0 0;
-      color: var(--text-soft);
-      font-size: 0.96rem;
-    }
-
-    .research-copy {
-      max-width: 820px;
-      margin: 0 0 1.5rem;
-      color: var(--text-soft);
-      font-size: 1.01rem;
-    }
-
-    .research-list {
-      max-width: 900px;
-      margin: 0;
-      padding-left: 1.35rem;
-    }
-
-    .research-list li {
-      margin-bottom: 0.8rem;
-      padding-left: 0.2rem;
-    }
-
-    .research-list li:last-child { margin-bottom: 0; }
-
-    .card-grid {
-      display: grid;
-      grid-template-columns: repeat(2, minmax(0, 1fr));
-      gap: 1rem;
-    }
-
-    .card {
-      display: flex;
-      flex-direction: column;
-      min-height: 100%;
-      padding: 1.35rem;
-      background: var(--surface);
-      border: 1px solid var(--border);
-      border-radius: var(--radius-md);
-      box-shadow: var(--shadow-sm);
-      transition: transform 0.2s ease, box-shadow 0.2s ease, border-color 0.2s ease;
-    }
-
-    .card:hover {
-      border-color: var(--border-strong);
-      box-shadow: var(--shadow-md);
-      transform: translateY(-3px);
-    }
-
-    .card-kicker {
-      margin-bottom: 0.62rem;
-      color: var(--accent);
-      font-size: 0.81rem;
-      font-weight: 750;
-      letter-spacing: 0.055em;
-      text-transform: uppercase;
-    }
-
-    .oral-badge {
-      display: inline-flex;
-      align-items: center;
-      margin-left: 0.35rem;
-      padding: 0.18rem 0.48rem;
-      color: #a51515;
-      background: #fee2e2;
-      border: 1px solid #fecaca;
-      border-radius: 999px;
-      font-size: 0.72rem;
-      font-weight: 800;
-      line-height: 1;
-      letter-spacing: 0.06em;
-    }
-
-    .card h3 {
-      margin: 0 0 0.72rem;
-      font-size: 1.08rem;
-      line-height: 1.38;
-    }
-
-    .card p:not(.card-kicker) {
-      margin-bottom: 0;
-      color: var(--text-soft);
-      font-size: 0.95rem;
-    }
-
-    .news-list {
-      margin: 0;
-      padding: 0;
-      list-style: none;
-    }
-
-    .news-list li {
-      display: grid;
-      grid-template-columns: 8.5rem minmax(0, 1fr);
-      gap: 1rem;
-      padding: 0.95rem 0;
-      border-bottom: 1px solid var(--border);
-    }
-
-    .news-list li:first-child { padding-top: 0; }
-    .news-list li:last-child { border-bottom: 0; }
-
-    .news-list time {
-      color: var(--accent);
-      font-size: 0.91rem;
-      font-weight: 700;
-      white-space: nowrap;
-    }
-
-    .publication-list {
-      margin: 0;
-      padding-left: 1.35rem;
-    }
-
-    .publication-list li { margin-bottom: 1rem; padding-left: 0.2rem; }
-    .publication-list li:last-child { margin-bottom: 0; }
-    .publication-list em { color: var(--text-soft); }
-
-    .details-box {
-      margin-top: 1.25rem;
-      padding: 1.15rem 1.3rem;
-      background: var(--surface);
-      border: 1px solid var(--border);
-      border-radius: var(--radius-md);
-      box-shadow: var(--shadow-sm);
-    }
-
-    .details-box summary {
-      cursor: pointer;
-      color: var(--accent);
-      font-weight: 700;
-    }
-
-    .details-box .publication-list { margin-top: 1rem; }
-
-    .professional-grid {
-      display: grid;
-      grid-template-columns: repeat(2, minmax(0, 1fr));
-      gap: 2rem 3rem;
-    }
-
-    .professional-grid > div,
-    .professional-grid > section { min-width: 0; }
-
-    .subsection + .subsection { margin-top: 3rem; }
-
-    .bullet-list {
-      margin: 0;
-      padding-left: 1.2rem;
-    }
-
-    .bullet-list li { margin-bottom: 0.82rem; }
-    .bullet-list li:last-child { margin-bottom: 0; }
-
-    .teaching-card {
-      padding: 1.2rem 1.25rem;
-      background: var(--surface);
-      border: 1px solid var(--border);
-      border-radius: var(--radius-md);
-      box-shadow: var(--shadow-sm);
-    }
-
-    .teaching-card p { margin-bottom: 0.35rem; }
-    .teaching-card ul { margin: 0.65rem 0 0; padding-left: 1.2rem; color: var(--text-soft); }
-
-    .site-footer {
-      padding: 1.55rem 0 3rem;
-      border-top: 1px solid var(--border);
-    }
-
-    .footer-inner {
-      display: flex;
-      flex-wrap: wrap;
-      justify-content: space-between;
-      gap: 1rem;
-      color: var(--text-soft);
-      font-size: 0.91rem;
-    }
-
-    .footer-inner p { margin: 0; }
-
-    .lead a,
-    .hero-support a,
-    .card a,
-    .news-list a,
-    .publication-list a,
-    .bullet-list a,
-    .teaching-card a {
-      background-image: linear-gradient(currentColor, currentColor);
-      background-position: 0 100%;
-      background-repeat: no-repeat;
-      background-size: 0% 1.5px;
-      text-decoration: none;
-      transition: background-size 0.25s ease;
-    }
-
-    .lead a:hover,
-    .hero-support a:hover,
-    .card a:hover,
-    .news-list a:hover,
-    .publication-list a:hover,
-    .bullet-list a:hover,
-    .teaching-card a:hover,
-    .lead a:focus-visible,
-    .hero-support a:focus-visible,
-    .card a:focus-visible,
-    .news-list a:focus-visible,
-    .publication-list a:focus-visible,
-    .bullet-list a:focus-visible,
-    .teaching-card a:focus-visible { background-size: 100% 1.5px; text-decoration: none; }
-
-    @media (prefers-reduced-motion: no-preference) {
-      .reveal {
-        opacity: 0;
-        transform: translateY(14px);
-        transition: opacity 0.5s ease, transform 0.5s ease;
-      }
-
-      .reveal.is-visible { opacity: 1; transform: none; }
-    }
-
-    @media (max-width: 920px) {
-      .hero-grid,
-      .card-grid,
-      .professional-grid { grid-template-columns: 1fr; }
-      .hero-media,
-      .hero-copy {
-        grid-column: auto;
-        grid-row: auto;
-      }
-      .hero-media { max-width: 315px; justify-self: start; }
-    }
-
-    @media (max-width: 760px) {
-      body { font-size: 17px; }
-      .header-inner { align-items: flex-start; flex-direction: column; padding-block: 0.85rem; }
-      .nav-list { justify-content: flex-start; gap: 0.65rem 1rem; }
-      .hero { padding-top: 2.5rem; }
-      .news-list li { grid-template-columns: 1fr; gap: 0.3rem; }
-    }
-
-    @media (max-width: 480px) {
-      .nav-list { font-size: 0.87rem; }
-      .button { width: 100%; }
-    }
-
-    @media (prefers-color-scheme: dark) {
-      :root {
-        --accent: #78a7ff;
-        --accent-soft: rgba(120, 167, 255, 0.13);
-        --bg: #101722;
-        --surface: #16202d;
-        --surface-muted: #1b2736;
-        --text: #f4f6f8;
-        --text-soft: #bac4d1;
-        --border: rgba(255, 255, 255, 0.11);
-        --border-strong: rgba(255, 255, 255, 0.2);
-        --shadow-sm: 0 10px 24px rgba(0, 0, 0, 0.35);
-        --shadow-md: 0 18px 44px rgba(0, 0, 0, 0.45);
-      }
-
-      .site-header { background: rgba(16, 23, 34, 0.86); }
-
-      .oral-badge {
-        color: #fecaca;
-        background: rgba(220, 38, 38, 0.2);
-        border-color: rgba(248, 113, 113, 0.4);
-      }
-    }
-
-    @media (prefers-reduced-motion: reduce) {
-      html { scroll-behavior: auto; }
-      *, *::before, *::after { transition-duration: 0.01ms !important; }
-    }
-
-    @media print {
-      .site-header,
-      .hero-social,
-      .hero-cv,
-      .site-footer { display: none; }
-      body { background: #fff; color: #000; }
-      .section { padding-bottom: 2rem; }
-      .card,
-      .teaching-card,
-      .details-box { break-inside: avoid; box-shadow: none; }
-    }
-  </style>
+  <link rel="preload" href="assets/fonts/newsreader-latin.woff2" as="font" type="font/woff2" crossorigin>
+  <link rel="preload" href="assets/fonts/public-sans-latin.woff2" as="font" type="font/woff2" crossorigin>
+  <link rel="icon" href="assets/favicon.svg" type="image/svg+xml">
+  <link rel="stylesheet" href="assets/site.css">
+  <script src="assets/site.js" defer></script>
 </head>
 
 <body>
@@ -711,13 +70,14 @@
 
   <header class="site-header">
     <div class="container header-inner">
-      <a class="site-title" href="#about">Panagiotis Theodoropoulos</a>
-      <nav aria-label="Primary navigation">
+      <a class="site-title" href="#about"><svg class="site-mark" viewBox="0 0 32 32" width="28" height="28" aria-hidden="true"><path d="M3 23C10 23 9 8 16 8s6 15 13 15M3 16c7 0 6-8 13-8s6 8 13 8M3 9c7 0 6 14 13 14s6-14 13-14"/><circle cx="3" cy="16" r="2"/><circle cx="29" cy="16" r="2"/></svg><span>Panagiotis Theodoropoulos</span></a>
+      <button class="menu-toggle" type="button" aria-expanded="false" aria-controls="primary-nav" hidden><span>Menu</span><svg viewBox="0 0 24 24" width="20" height="20" aria-hidden="true"><path d="M4 8h16M4 16h16"/></svg></button>
+      <nav id="primary-nav" class="primary-nav" aria-label="Primary navigation">
         <ul class="nav-list">
-          <li><a class="is-active" href="#about">About</a></li>
+          <li><a class="is-active" aria-current="location" href="#about">About</a></li>
           <li><a href="#research">Research</a></li>
-          <li><a href="#news">News</a></li>
           <li><a href="#publications">Publications</a></li>
+          <li><a href="#news">News</a></li>
           <li><a href="#service">Service</a></li>
           <li><a href="#talks">Talks</a></li>
           <li><a href="#teaching">Teaching</a></li>
@@ -727,28 +87,90 @@
     </div>
   </header>
 
-  <main id="content">
-    <section id="about" class="hero section">
+  <!-- Initialize the menu before the page paints to avoid shifting the content. -->
+  <script>
+(() => {
+  const header = document.querySelector('.site-header');
+  const toggle = document.querySelector('.menu-toggle');
+  const navigation = document.querySelector('.primary-nav');
+  const mobile = window.matchMedia('(max-width: 77rem)');
+
+  function closeMenu(restoreFocus = false) {
+    toggle.setAttribute('aria-expanded', 'false');
+    navigation.classList.remove('is-open');
+    if (restoreFocus) toggle.focus();
+  }
+
+  toggle.addEventListener('click', () => {
+    const open = toggle.getAttribute('aria-expanded') !== 'true';
+    toggle.setAttribute('aria-expanded', String(open));
+    navigation.classList.toggle('is-open', open);
+  });
+
+  document.addEventListener('keydown', (event) => {
+    if (event.key === 'Escape' && toggle.getAttribute('aria-expanded') === 'true') {
+      closeMenu(true);
+    }
+  });
+
+  document.addEventListener('click', (event) => {
+    if (!header.contains(event.target)) closeMenu();
+  });
+
+  navigation.addEventListener('click', (event) => {
+    const link = event.target.closest('a');
+    if (!link) return;
+    closeMenu();
+    // A disclosure closes after navigation. Move focus to the destination so it
+    // never remains in a hidden menu, including when the same link is reused.
+    if (mobile.matches && link.hash && link.origin === location.origin) {
+      const target = document.getElementById(link.hash.slice(1));
+      if (target) {
+        target.setAttribute('tabindex', '-1');
+        target.focus({ preventScroll: true });
+      }
+    } else if (mobile.matches) {
+      toggle.focus();
+    }
+  });
+
+  header.addEventListener('focusout', (event) => {
+    if (event.relatedTarget && !header.contains(event.relatedTarget)) closeMenu();
+  });
+
+  mobile.addEventListener('change', () => closeMenu());
+  toggle.hidden = false;
+  header.dataset.enhanced = '';
+
+})();
+  </script>
+
+  <main id="content" tabindex="-1">
+    <section id="about" class="hero section" aria-labelledby="profile-title">
       <div class="container hero-grid">
+        <div class="hero-heading">
+          <h1 id="profile-title"><span>Panagiotis</span> <span>Theodoropoulos</span></h1>
+          <p class="hero-meta">PhD Student in Machine Learning · Georgia Tech · ACDS Lab</p>
+        </div>
         <div class="hero-media">
           <div class="profile-frame">
-            <img class="profile-picture" src="IMG_6206.jpeg" alt="Portrait of Panagiotis Theodoropoulos" width="285" height="285" loading="eager" decoding="async">
+            <picture>
+              <source type="image/webp" srcset="assets/portrait-900.webp 900w, assets/portrait-1600.webp 1600w" sizes="(max-width: 43rem) 470px, (max-width: 64rem) 550px, 650px">
+              <img class="profile-picture" src="IMG_6206.jpeg" alt="Portrait of Panagiotis Theodoropoulos" width="3024" height="4032" loading="eager" fetchpriority="high" decoding="async">
+            </picture>
           </div>
           <nav class="hero-social" aria-label="Profile links">
-            <a href="https://scholar.google.com/citations?user=1TNqTOYAAAAJ&amp;hl=en" target="_blank" rel="me noopener noreferrer" aria-label="Google Scholar" title="Google Scholar"><span class="social-icon icon-scholar" aria-hidden="true"></span></a>
-            <a href="https://www.linkedin.com/in/panagiotis-theodoropoulos-93088a169/" target="_blank" rel="me noopener noreferrer" aria-label="LinkedIn" title="LinkedIn"><span class="social-icon icon-linkedin" aria-hidden="true"></span></a>
-            <a href="https://x.com/panostheo_" target="_blank" rel="me noopener noreferrer" aria-label="X" title="X"><span class="social-icon icon-x" aria-hidden="true"></span></a>
-            <a href="mailto:ptheodor3@gatech.edu" aria-label="Email Panagiotis Theodoropoulos" title="Email"><span class="social-icon icon-mail" aria-hidden="true"></span></a>
+            <a href="https://scholar.google.com/citations?user=1TNqTOYAAAAJ&amp;hl=en" target="_blank" rel="me noopener noreferrer" aria-label="Google Scholar" title="Google Scholar"><span>Google Scholar</span></a>
+            <a href="https://www.linkedin.com/in/panagiotis-theodoropoulos-93088a169/" target="_blank" rel="me noopener noreferrer" aria-label="LinkedIn" title="LinkedIn"><span>LinkedIn</span></a>
+            <a href="https://x.com/panostheo_" target="_blank" rel="me noopener noreferrer" aria-label="X" title="X"><span>X</span></a>
+            <a href="mailto:ptheodor3@gatech.edu" aria-label="Email Panagiotis Theodoropoulos" title="Email"><span>Email</span></a>
           </nav>
           <div class="hero-cv">
             <a class="button" href="MyCV.pdf" target="_blank" rel="noopener">View my CV</a>
           </div>
         </div>
 
-        <div class="hero-copy">
-          <h1>Panagiotis Theodoropoulos</h1>
-          <p class="hero-meta">PhD Student in Machine Learning · Georgia Tech · ACDS Lab</p>
-
+        <div class="biography">
           <p class="lead">
             I am a Machine Learning PhD student in the
             <a href="https://sites.gatech.edu/acds/" target="_blank" rel="noopener noreferrer">Autonomous Control and Decision Systems (ACDS) Lab</a>
@@ -765,9 +187,10 @@
             <a href="https://scholar.google.com/citations?user=IYiyxssAAAAJ&amp;hl=en" target="_blank" rel="noopener noreferrer">Wei Deng</a>.
           </p>
 
+        </div>
           <div class="focus-block">
             <p class="focus-label">Current focus</p>
-            <ul class="focus-list" aria-label="Current research focus">
+            <ul role="list" class="focus-list" aria-label="Current research focus">
               <li>Stochastic optimal control</li>
               <li>LLM alignment</li>
               <li>Schrödinger bridges</li>
@@ -776,37 +199,74 @@
               <li>Nonlinear diffusion models</li>
             </ul>
           </div>
-
-        </div>
       </div>
     </section>
 
-    <section id="research" class="section">
-      <div class="container">
+    <section id="research" class="section research-section" aria-labelledby="research-title">
+      <div class="container research-grid">
         <div class="section-header">
-          <h2 class="section-title">Selected Research</h2>
+          <h2 id="research-title" class="section-title">Selected Research</h2>
+          <svg class="transport-motif" viewBox="0 0 434 244" fill="none" aria-hidden="true"><path d="M4 20 C100 20, 120 160, 225 160 S340 20, 430 20"/><path d="M4 34 C100 34, 120 153, 225 153 S340 34, 430 34"/><path d="M4 48 C100 48, 120 146, 225 146 S340 48, 430 48"/><path d="M4 62 C100 62, 120 139, 225 139 S340 62, 430 62"/><path d="M4 76 C100 76, 120 132, 225 132 S340 76, 430 76"/><path d="M4 90 C100 90, 120 125, 225 125 S340 90, 430 90"/><path d="M4 104 C100 104, 120 118, 225 118 S340 104, 430 104"/><path d="M4 118 C100 118, 120 111, 225 111 S340 118, 430 118"/><path d="M4 132 C100 132, 120 104, 225 104 S340 132, 430 132"/><path d="M4 146 C100 146, 120 97, 225 97 S340 146, 430 146"/><path d="M4 160 C100 160, 120 90, 225 90 S340 160, 430 160"/><path d="M4 174 C100 174, 120 83, 225 83 S340 174, 430 174"/><path d="M4 188 C100 188, 120 76, 225 76 S340 188, 430 188"/><path d="M4 202 C100 202, 120 69, 225 69 S340 202, 430 202"/><path d="M4 216 C100 216, 120 62, 225 62 S340 216, 430 216"/></svg>
         </div>
 
+        <div class="research-body">
         <p class="research-copy">
           My research spans four main areas that contribute to a principled understanding of deep learning systems and their optimization dynamics. You can find a list of my papers in the <a href="#publications">Selected Publications</a> section. Here are some of my main research directions:
         </p>
 
-        <ul class="research-list">
+        <ul role="list" class="research-list">
           <li><a href="https://openreview.net/forum?id=zbOSJ3CATY" target="_blank" rel="noopener noreferrer">Game-Theoretical Robust Optimization for Deep Learning</a></li>
           <li><a href="https://arxiv.org/abs/2410.14055" target="_blank" rel="noopener noreferrer">Diffusion Models for Generative Modeling</a></li>
           <li><a href="https://arxiv.org/abs/2506.10168" target="_blank" rel="noopener noreferrer">Multi-Marginal Diffusion Models for Time-Series Imputation and Biological Sequencing</a></li>
           <li><a href="https://arxiv.org/abs/2602.04675" target="_blank" rel="noopener noreferrer">Stochastic Optimal Control on General Graph Topologies</a></li>
         </ul>
+        </div>
       </div>
     </section>
 
-    <section id="news" class="section">
-      <div class="container narrow">
+    <section id="publications" class="section publications-section" aria-labelledby="publications-title">
+      <div class="container">
         <div class="section-header">
-          <h2 class="section-title">News</h2>
+          <h2 id="publications-title" class="section-title">Selected Publications</h2>
+          <p class="section-intro">See my <a href="https://scholar.google.com/citations?user=1TNqTOYAAAAJ&amp;hl=en" target="_blank" rel="noopener noreferrer">Google Scholar</a> profile for the complete list.</p>
         </div>
 
-        <ul class="news-list">
+        <div class="publications">
+          <article class="publication">
+            <p class="publication-venue">ICML 2026</p>
+            <h3><a href="https://arxiv.org/abs/2602.04675" target="_blank" rel="noopener noreferrer">Generalized Schrödinger Bridge on Graphs</a></h3>
+            <p><strong>Panagiotis Theodoropoulos</strong>, Juno Nam, Evangelos A. Theodorou, and Jaemoo Choi.</p>
+          </article>
+
+          <article class="publication">
+            <p class="publication-venue">NeurIPS 2025</p>
+            <h3><a href="https://arxiv.org/abs/2506.10168" target="_blank" rel="noopener noreferrer">Momentum Multi-Marginal Schrödinger Bridge Matching</a></h3>
+            <p><strong>Panagiotis Theodoropoulos</strong>, Augustinos D. Saravanos, Evangelos A. Theodorou, and Guan-Horng Liu.</p>
+          </article>
+
+          <article class="publication">
+            <p class="publication-venue">ICLR 2025 <span class="oral-badge">Oral</span></p>
+            <h3><a href="https://arxiv.org/abs/2410.14055" target="_blank" rel="noopener noreferrer">Feedback Schrödinger Bridge Matching</a></h3>
+            <p><strong>Panagiotis Theodoropoulos</strong>, Nikolaos Komianos, Vincent Pacelli, Guan-Horng Liu, and Evangelos A. Theodorou.</p>
+          </article>
+
+          <article class="publication">
+            <p class="publication-venue">ICLR 2024</p>
+            <h3><a href="https://openreview.net/forum?id=zbOSJ3CATY" target="_blank" rel="noopener noreferrer">A Robust Differential Neural ODE Optimizer</a></h3>
+            <p><strong>Panagiotis Theodoropoulos</strong>, Guan-Horng Liu, Tianrong Chen, Augustinos D. Saravanos, and Evangelos A. Theodorou.</p>
+          </article>
+        </div>
+
+      </div>
+    </section>
+
+    <section id="news" class="section news-section" aria-labelledby="news-title">
+      <div class="container section-grid">
+        <div class="section-header">
+          <h2 id="news-title" class="section-title">News</h2>
+        </div>
+
+        <ul role="list" class="news-list">
           <li>
             <time datetime="2026-09">Sep 2026</time>
             <div><a href="https://arxiv.org/abs/2609.38104" target="_blank" rel="noopener noreferrer">Explore Broadly, Reason Sharply: Push Small Models toward the Frontier via Sampling</a> is now on arXiv.</div>
@@ -835,43 +295,7 @@
       </div>
     </section>
 
-    <section id="publications" class="section">
-      <div class="container">
-        <div class="section-header">
-          <h2 class="section-title">Selected Publications</h2>
-          <p class="section-intro">See my <a href="https://scholar.google.com/citations?user=1TNqTOYAAAAJ&amp;hl=en" target="_blank" rel="noopener noreferrer">Google Scholar</a> profile for the complete list.</p>
-        </div>
-
-        <div class="card-grid">
-          <article class="card">
-            <p class="card-kicker">ICML 2026</p>
-            <h3><a href="https://arxiv.org/abs/2602.04675" target="_blank" rel="noopener noreferrer">Generalized Schrödinger Bridge on Graphs</a></h3>
-            <p><strong>Panagiotis Theodoropoulos</strong>, Juno Nam, Evangelos A. Theodorou, and Jaemoo Choi.</p>
-          </article>
-
-          <article class="card">
-            <p class="card-kicker">NeurIPS 2025</p>
-            <h3><a href="https://arxiv.org/abs/2506.10168" target="_blank" rel="noopener noreferrer">Momentum Multi-Marginal Schrödinger Bridge Matching</a></h3>
-            <p><strong>Panagiotis Theodoropoulos</strong>, Augustinos D. Saravanos, Evangelos A. Theodorou, and Guan-Horng Liu.</p>
-          </article>
-
-          <article class="card">
-            <p class="card-kicker">ICLR 2025 <span class="oral-badge">Oral</span></p>
-            <h3><a href="https://arxiv.org/abs/2410.14055" target="_blank" rel="noopener noreferrer">Feedback Schrödinger Bridge Matching</a></h3>
-            <p><strong>Panagiotis Theodoropoulos</strong>, Nikolaos Komianos, Vincent Pacelli, Guan-Horng Liu, and Evangelos A. Theodorou.</p>
-          </article>
-
-          <article class="card">
-            <p class="card-kicker">ICLR 2024</p>
-            <h3><a href="https://openreview.net/forum?id=zbOSJ3CATY" target="_blank" rel="noopener noreferrer">A Robust Differential Neural ODE Optimizer</a></h3>
-            <p><strong>Panagiotis Theodoropoulos</strong>, Guan-Horng Liu, Tianrong Chen, Augustinos D. Saravanos, and Evangelos A. Theodorou.</p>
-          </article>
-        </div>
-
-      </div>
-    </section>
-
-    <section id="service" class="section">
+    <section id="service" class="section professional-section" aria-labelledby="service-title">
       <div class="container professional-grid">
         <section aria-labelledby="service-title">
           <div class="section-header">
@@ -919,57 +343,10 @@
 
   <footer class="site-footer">
     <div class="container footer-inner">
-      <p>Panagiotis Theodoropoulos · <a href="mailto:ptheodor3@gatech.edu">ptheodor3@gatech.edu</a></p>
-      <p>Last updated <time datetime="2026-08-11">Aug 11, 2026</time></p>
+      <p class="footer-contact"><span class="footer-name">Panagiotis Theodoropoulos</span> <span class="footer-separator">·</span> <a href="mailto:ptheodor3@gatech.edu">ptheodor3@gatech.edu</a></p>
+      <p class="footer-updated">Last updated <time datetime="2026-08-11">Aug 11, 2026</time></p>
     </div>
   </footer>
 
-  <script>
-    (function () {
-      const links = Array.from(document.querySelectorAll('.nav-list a[href^="#"]'));
-      const sections = links
-        .map((link) => document.getElementById(link.hash.slice(1)))
-        .filter(Boolean);
-
-      if ('IntersectionObserver' in window && sections.length) {
-        const linkById = new Map(links.map((link) => [link.hash.slice(1), link]));
-        const visible = new Set();
-
-        const observer = new IntersectionObserver((entries) => {
-          entries.forEach((entry) => {
-            if (entry.isIntersecting) visible.add(entry.target);
-            else visible.delete(entry.target);
-          });
-
-          const current = Array.from(visible).sort(
-            (a, b) => Math.abs(a.getBoundingClientRect().top) - Math.abs(b.getBoundingClientRect().top)
-          )[0];
-
-          if (!current) return;
-          links.forEach((link) => link.classList.toggle('is-active', link === linkById.get(current.id)));
-        }, { rootMargin: '-35% 0px -55% 0px', threshold: 0 });
-
-        sections.forEach((section) => observer.observe(section));
-      }
-
-      const motionOk = window.matchMedia('(prefers-reduced-motion: no-preference)').matches;
-      if (motionOk && 'IntersectionObserver' in window) {
-        const targets = document.querySelectorAll('.hero-grid, .card, .news-list > li, .publication-list, .professional-grid > *');
-        const revealObserver = new IntersectionObserver((entries, observer) => {
-          entries.forEach((entry) => {
-            if (!entry.isIntersecting) return;
-            entry.target.classList.add('is-visible');
-            observer.unobserve(entry.target);
-          });
-        }, { rootMargin: '0px 0px -8% 0px', threshold: 0.06 });
-
-        targets.forEach((target, index) => {
-          target.classList.add('reveal');
-          target.style.transitionDelay = `${Math.min(index % 4, 3) * 50}ms`;
-          revealObserver.observe(target);
-        });
-      }
-    })();
-  </script>
 </body>
 </html>

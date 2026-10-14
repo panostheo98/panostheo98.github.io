@@ -1,0 +1,14 @@
+{
+  "name": "panagiotis-research-portfolio",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "build": "sh scripts/build.sh",
+    "dev": "python3 -m http.server 4173 --bind 127.0.0.1",
+    "test": "npm run build && playwright test"
+  },
+  "devDependencies": {
+    "@axe-core/playwright": "4.13.0",
+    "@playwright/test": "1.64.1"
+  }
+}

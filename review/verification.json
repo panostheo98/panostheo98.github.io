@@ -1,0 +1,127 @@
+{
+  "date": "2026-10-14",
+  "baseline": "9041d5a",
+  "preservation": {
+    "textBlocks": 65,
+    "links": 35,
+    "originalAssets": [
+      "MyCV.pdf",
+      "IMG_6206.jpeg",
+      "og.png"
+    ],
+    "metadata": true,
+    "structuredData": true
+  },
+  "tests": {
+    "passed": 27,
+    "failed": 0,
+    "projects": [
+      "desktop-chromium",
+      "mobile-chromium",
+      "mobile-webkit"
+    ],
+    "command": "npm test"
+  },
+  "lighthouse": {
+    "mobile": {
+      "version": "13.5.0",
+      "environment": "Local Python static server; Lighthouse default simulated throttling",
+      "scores": {
+        "performance": 100,
+        "accessibility": 100,
+        "best-practices": 100,
+        "seo": 100
+      },
+      "metrics": {
+        "first-contentful-paint": {
+          "value": 902.1815999999999,
+          "unit": "millisecond",
+          "display": "0.9 s"
+        },
+        "largest-contentful-paint": {
+          "value": 1802.1816,
+          "unit": "millisecond",
+          "display": "1.8 s"
+        },
+        "speed-index": {
+          "value": 902.1815999999999,
+          "unit": "millisecond",
+          "display": "0.9 s"
+        },
+        "total-blocking-time": {
+          "value": 0,
+          "unit": "millisecond",
+          "display": "0 ms"
+        },
+        "cumulative-layout-shift": {
+          "value": 0,
+          "unit": "unitless",
+          "display": "0"
+        },
+        "total-byte-weight": {
+          "value": 141691,
+          "unit": "byte",
+          "display": "Total size was 138 KiB"
+        }
+      }
+    },
+    "desktop": {
+      "version": "13.5.0",
+      "environment": "Local Python static server; Lighthouse default simulated throttling",
+      "scores": {
+        "performance": 100,
+        "accessibility": 100,
+        "best-practices": 100,
+        "seo": 100
+      },
+      "metrics": {
+        "first-contentful-paint": {
+          "value": 288.1665,
+          "unit": "millisecond",
+          "display": "0.3 s"
+        },
+        "largest-contentful-paint": {
+          "value": 441.1665,
+          "unit": "millisecond",
+          "display": "0.4 s"
+        },
+        "speed-index": {
+          "value": 290.5054957629769,
+          "unit": "millisecond",
+          "display": "0.3 s"
+        },
+        "total-blocking-time": {
+          "value": 0,
+          "unit": "millisecond",
+          "display": "0 ms"
+        },
+        "cumulative-layout-shift": {
+          "value": 0,
+          "unit": "unitless",
+          "display": "0"
+        },
+        "total-byte-weight": {
+          "value": 141691,
+          "unit": "byte",
+          "display": "Total size was 138 KiB"
+        }
+      }
+    }
+  },
+  "visualReview": [
+    "1440px desktop",
+    "390px mobile",
+    "768px tablet",
+    "dark mode",
+    "mobile navigation"
+  ],
+  "accessibility": {
+    "automated": "No axe WCAG A/AA violations in light/dark modes, including expanded mobile navigation.",
+    "keyboard": "Skip link, disclosure, Escape restoration, section focus, active links and anchor placement verified.",
+    "accessibilityTree": "Menu name, button role, expanded state and navigation links inspected.",
+    "notVerified": [
+      "Physical devices",
+      "Spoken VoiceOver/NVDA session"
+    ]
+  }
+}
