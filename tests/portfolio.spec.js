@@ -39,8 +39,11 @@ test('preserves every original text block, link, metadata field and source asset
       await expect(page.locator(selector)).toHaveAttribute(key, value);
     }
   }
-  expect(JSON.parse(await page.locator('script[type="application/ld+json"]').textContent()))
-    .toEqual(JSON.parse(original.structuredData));
+  const structuredData = JSON.parse(await page.locator('script[type="application/ld+json"]').textContent());
+  const person = structuredData['@graph'].find(node => node['@type'] === 'Person');
+  // SEO adds relationships, while every original fact about the researcher stays intact.
+  expect({ '@context': structuredData['@context'], ...person })
+    .toMatchObject(JSON.parse(original.structuredData));
   for (const [file, digest] of Object.entries(original.assets)) {
     const response = await request.get('/' + currentFilename(file));
     expect(response.ok()).toBeTruthy();

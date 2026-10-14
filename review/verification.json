@@ -13,7 +13,7 @@
     "structuredData": true
   },
   "tests": {
-    "passed": 27,
+    "passed": 33,
     "failed": 0,
     "projects": [
       "desktop-chromium",
@@ -23,6 +23,7 @@
     "command": "npm test"
   },
   "lighthouse": {
+    "scope": "Local design audit before the search metadata and discovery-file additions.",
     "mobile": {
       "version": "13.5.0",
       "environment": "Local Python static server; Lighthouse default simulated throttling",
@@ -107,6 +108,18 @@
         }
       }
     }
+  },
+  "searchDiscovery": {
+    "canonical": "https://panostheo98.github.io/",
+    "pageBodyUnchanged": true,
+    "originalPersonFactsPreserved": true,
+    "structuredData": ["ProfilePage", "Person", "ScholarlyArticle", "DigitalDocument"],
+    "selectedPublicationsMatchedToVisibleContent": 4,
+    "sitemapEntries": 2,
+    "robotsAndSitemapServeSuccessfully": true,
+    "verifiedWithoutJavaScript": true,
+    "socialImageDimensions": [1731, 909],
+    "productionIndexingSubmitted": false
   },
   "visualReview": [
     "1440px desktop",

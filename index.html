@@ -17,43 +17,131 @@
   <meta property="og:title" content="Panagiotis Theodoropoulos — Machine Learning PhD">
   <meta property="og:description" content="Stochastic optimal control, LLM alignment, Schrödinger bridges, and generative modeling at Georgia Tech.">
   <meta property="og:image" content="https://panostheo98.github.io/og.png">
+  <meta property="og:image:type" content="image/png">
+  <meta property="og:image:width" content="1731">
+  <meta property="og:image:height" content="909">
   <meta property="og:image:alt" content="Panagiotis Theodoropoulos, Machine Learning PhD student at Georgia Tech">
 
   <meta name="twitter:card" content="summary_large_image">
   <meta name="twitter:title" content="Panagiotis Theodoropoulos — Machine Learning PhD">
   <meta name="twitter:description" content="Stochastic optimal control, LLM alignment, Schrödinger bridges, and generative modeling at Georgia Tech.">
   <meta name="twitter:image" content="https://panostheo98.github.io/og.png">
+  <meta name="twitter:image:alt" content="Panagiotis Theodoropoulos, Machine Learning PhD student at Georgia Tech">
 
   <script type="application/ld+json">
   {
     "@context": "https://schema.org",
-    "@type": "Person",
-    "name": "Panagiotis Theodoropoulos",
-    "jobTitle": "PhD Student in Machine Learning",
-    "url": "https://panostheo98.github.io/",
-    "image": "https://panostheo98.github.io/IMG_6206.jpeg",
-    "email": "mailto:ptheodor3@gatech.edu",
-    "affiliation": {
-      "@type": "CollegeOrUniversity",
-      "name": "Georgia Institute of Technology",
-      "url": "https://www.gatech.edu/"
-    },
-    "memberOf": {
-      "@type": "Organization",
-      "name": "Autonomous Control and Decision Systems Laboratory",
-      "url": "https://sites.gatech.edu/acds/"
-    },
-    "knowsAbout": [
-      "Stochastic Optimal Control",
-      "LLM Alignment",
-      "Schrodinger Bridges",
-      "Generative Modeling",
-      "Optimal Transport"
-    ],
-    "sameAs": [
-      "https://scholar.google.com/citations?user=1TNqTOYAAAAJ&hl=en",
-      "https://www.linkedin.com/in/panagiotis-theodoropoulos-93088a169/",
-      "https://x.com/panostheo_"
+    "@graph": [
+      {
+        "@type": "ProfilePage",
+        "@id": "https://panostheo98.github.io/#profile",
+        "url": "https://panostheo98.github.io/",
+        "name": "Panagiotis Theodoropoulos — Machine Learning PhD at Georgia Tech",
+        "description": "Panagiotis Theodoropoulos is a Machine Learning PhD student in the ACDS Lab at Georgia Tech, working on stochastic optimal control, LLM alignment, Schrödinger bridges, and generative modeling.",
+        "inLanguage": "en",
+        "mainEntity": { "@id": "https://panostheo98.github.io/#person" },
+        "hasPart": [
+          { "@id": "https://arxiv.org/abs/2602.04675" },
+          { "@id": "https://arxiv.org/abs/2506.10168" },
+          { "@id": "https://arxiv.org/abs/2410.14055" },
+          { "@id": "https://openreview.net/forum?id=zbOSJ3CATY" }
+        ]
+      },
+      {
+        "@type": "Person",
+        "@id": "https://panostheo98.github.io/#person",
+        "name": "Panagiotis Theodoropoulos",
+        "jobTitle": "PhD Student in Machine Learning",
+        "url": "https://panostheo98.github.io/",
+        "image": "https://panostheo98.github.io/IMG_6206.jpeg",
+        "email": "mailto:ptheodor3@gatech.edu",
+        "affiliation": {
+          "@type": "CollegeOrUniversity",
+          "name": "Georgia Institute of Technology",
+          "url": "https://www.gatech.edu/"
+        },
+        "memberOf": {
+          "@type": "Organization",
+          "name": "Autonomous Control and Decision Systems Laboratory",
+          "url": "https://sites.gatech.edu/acds/"
+        },
+        "knowsAbout": [
+          "Stochastic Optimal Control",
+          "LLM Alignment",
+          "Schrodinger Bridges",
+          "Generative Modeling",
+          "Optimal Transport"
+        ],
+        "sameAs": [
+          "https://scholar.google.com/citations?user=1TNqTOYAAAAJ&hl=en",
+          "https://www.linkedin.com/in/panagiotis-theodoropoulos-93088a169/",
+          "https://x.com/panostheo_"
+        ],
+        "mainEntityOfPage": { "@id": "https://panostheo98.github.io/#profile" },
+        "subjectOf": { "@id": "https://panostheo98.github.io/Panagiotis_Theodoropoulos_CV.pdf" }
+      },
+      {
+        "@type": "ScholarlyArticle",
+        "@id": "https://arxiv.org/abs/2602.04675",
+        "url": "https://arxiv.org/abs/2602.04675",
+        "headline": "Generalized Schrödinger Bridge on Graphs",
+        "author": [
+          { "@id": "https://panostheo98.github.io/#person" },
+          { "@type": "Person", "name": "Juno Nam" },
+          { "@type": "Person", "name": "Evangelos A. Theodorou" },
+          { "@type": "Person", "name": "Jaemoo Choi" }
+        ],
+        "publication": { "@type": "PublicationEvent", "name": "ICML 2026" }
+      },
+      {
+        "@type": "ScholarlyArticle",
+        "@id": "https://arxiv.org/abs/2506.10168",
+        "url": "https://arxiv.org/abs/2506.10168",
+        "headline": "Momentum Multi-Marginal Schrödinger Bridge Matching",
+        "author": [
+          { "@id": "https://panostheo98.github.io/#person" },
+          { "@type": "Person", "name": "Augustinos D. Saravanos" },
+          { "@type": "Person", "name": "Evangelos A. Theodorou" },
+          { "@type": "Person", "name": "Guan-Horng Liu" }
+        ],
+        "publication": { "@type": "PublicationEvent", "name": "NeurIPS 2025" }
+      },
+      {
+        "@type": "ScholarlyArticle",
+        "@id": "https://arxiv.org/abs/2410.14055",
+        "url": "https://arxiv.org/abs/2410.14055",
+        "headline": "Feedback Schrödinger Bridge Matching",
+        "author": [
+          { "@id": "https://panostheo98.github.io/#person" },
+          { "@type": "Person", "name": "Nikolaos Komianos" },
+          { "@type": "Person", "name": "Vincent Pacelli" },
+          { "@type": "Person", "name": "Guan-Horng Liu" },
+          { "@type": "Person", "name": "Evangelos A. Theodorou" }
+        ],
+        "publication": { "@type": "PublicationEvent", "name": "ICLR 2025", "description": "Oral" }
+      },
+      {
+        "@type": "ScholarlyArticle",
+        "@id": "https://openreview.net/forum?id=zbOSJ3CATY",
+        "url": "https://openreview.net/forum?id=zbOSJ3CATY",
+        "headline": "A Robust Differential Neural ODE Optimizer",
+        "author": [
+          { "@id": "https://panostheo98.github.io/#person" },
+          { "@type": "Person", "name": "Guan-Horng Liu" },
+          { "@type": "Person", "name": "Tianrong Chen" },
+          { "@type": "Person", "name": "Augustinos D. Saravanos" },
+          { "@type": "Person", "name": "Evangelos A. Theodorou" }
+        ],
+        "publication": { "@type": "PublicationEvent", "name": "ICLR 2024" }
+      },
+      {
+        "@type": "DigitalDocument",
+        "@id": "https://panostheo98.github.io/Panagiotis_Theodoropoulos_CV.pdf",
+        "url": "https://panostheo98.github.io/Panagiotis_Theodoropoulos_CV.pdf",
+        "name": "Panagiotis Theodoropoulos CV",
+        "encodingFormat": "application/pdf",
+        "about": { "@id": "https://panostheo98.github.io/#person" }
+      }
     ]
   }
   </script>

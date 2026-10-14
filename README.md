@@ -23,6 +23,16 @@ The source of truth is the root `index.html` and original assets at upstream com
 
 The pre-existing `dist/client` was stale: it lacked the September news item, contained an older version of the CV, and retained a sentence already removed from the root source. The build now synchronizes the distribution with the current source. The root CV is byte-for-byte unchanged; its existing preprint addition now also reaches the built copy. No source biography, publication, author, date, service entry, talk, teaching detail or link was rewritten or removed.
 
+## Search discovery
+
+The page supplies its content and JSON-LD directly in HTML, so crawlers do not need JavaScript. The structured data connects a `ProfilePage` to the existing `Person`, the four selected `ScholarlyArticle` entries and the CV. It preserves the original researcher metadata and uses the publication titles, author order and venues shown on the page. When updating publications, edit both the visible entry and its JSON-LD record in `index.html`; the tests compare them.
+
+`robots.txt` allows crawlers and advertises `sitemap.xml`. The sitemap lists the production homepage and renamed CV, with no preview URLs or invented modification dates. The build copies both files to `dist/client`. Social preview metadata includes the original image's dimensions and alternative text.
+
+These changes follow [Google's guidance for AI search](https://developers.google.com/search/docs/fundamentals/ai-optimization-guide) and [profile pages](https://developers.google.com/search/docs/appearance/structured-data/profile-page). The crawler policy also permits [OpenAI's search crawler](https://developers.openai.com/api/docs/bots). Indexing, rich results and AI citations are not guaranteed.
+
+After merging and deploying, the site owner should [submit the sitemap in Google Search Console](https://developers.google.com/search/docs/crawling-indexing/sitemaps/build-sitemap#addsitemap) at `https://panostheo98.github.io/sitemap.xml` and inspect the homepage's indexing status. This requires access to the verified production property. No production indexing submission has been made from this branch.
+
 ## Design research
 
 Eight Mobbin MCP searches returned 27 references, all inspected before implementation. The complete search record and design decisions are in [design-references.json](review/design-references.json).
@@ -42,11 +52,11 @@ npx playwright install chromium webkit
 npm test
 ```
 
-The 27 Playwright checks cover desktop Chromium, mobile Chromium and iPhone WebKit emulation. They verify content preservation, metadata, original asset hashes, resource loading, anchor destinations, current navigation state, keyboard focus, menu dismissal, and the CV download. Axe checks cover light and dark modes, including the expanded mobile menu.
+The 33 Playwright checks cover desktop Chromium, mobile Chromium and iPhone WebKit emulation. They verify content preservation, metadata, original asset hashes, resource loading, anchor destinations, current navigation state, keyboard focus, menu dismissal, and the CV download. Discovery checks compare structured data with visible publications, verify social image dimensions, and follow the sitemap to working resources with JavaScript disabled. Axe checks cover light and dark modes, including the expanded mobile menu.
 
 Reflow checks cover widths from 320 to 1920 pixels and doubled text size. The site also works with JavaScript disabled and web fonts blocked. Motion respects the system preference. Desktop, tablet, mobile, dark mode and mobile navigation were visually inspected; the browser's accessibility tree exposes the menu name and expanded state.
 
-Local Lighthouse 13.5.0 audits on 14 October 2026:
+Local Lighthouse 13.5.0 audits on 14 October 2026, before the search metadata and discovery files were added:
 
 | Audit | Mobile | Desktop |
 | --- | ---: | ---: |
