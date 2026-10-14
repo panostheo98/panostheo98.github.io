@@ -271,6 +271,9 @@ h1 span { display: block; }
 }
 .section-intro { margin-top: 1rem; color: var(--muted); font-size: var(--text-secondary); line-height: 1.8; }
 .research-section {
+  --accent: var(--research-text);
+  --focus: #ffffff;
+  --link-hover: #ffffff;
   padding-block: 4.5rem;
   color: var(--research-text);
   background: linear-gradient(125deg, var(--research), var(--paper));
@@ -302,12 +305,6 @@ h1 span { display: block; }
   min-block-size: 2.75rem;
   text-decoration: none;
   overflow-wrap: break-word;
-}
-@supports (background-clip: text) {
-  .research-list a {
-    background-image: linear-gradient(110deg, #c5d9ff, #ffffff 45%, #c5d9ff);
-    background-clip: text;
-  }
 }
 .research-list a::after, .publication h3 a::after {
   flex: 0 0 auto;
@@ -408,16 +405,12 @@ h1 span { display: block; }
 :is(.biography, .research-copy, .section-intro, .news-list, .bullet-list, .teaching-card, .footer-contact) a:focus-visible { text-decoration-color: currentColor; }
 
 @media (hover: hover) {
-  :is(.biography, .research-copy, .section-intro, .news-list, .bullet-list, .teaching-card, .footer-contact) a:hover { color: #b9d2ff; text-decoration-color: currentColor; }
+  :is(.biography, .research-copy, .section-intro, .news-list, .bullet-list, .teaching-card, .footer-contact) a:hover { color: var(--link-hover, #b9d2ff); text-decoration-color: currentColor; }
   a:hover { color: var(--accent); text-decoration-color: currentColor; }
   .nav-list a:hover { text-decoration: underline; }
   .hero-social a:hover { border-color: currentColor; }
   .button:hover { color: var(--paper); background: var(--ink); }
   .research-list a:hover { color: #ffffff; }
-  @supports (background-clip: text) {
-    .research-list a:hover { color: transparent; }
-    .research-list a:hover::after { color: var(--accent); }
-  }
   .publication h3 a:hover { text-decoration: underline; text-decoration-thickness: 1px; }
 }
 
@@ -552,9 +545,7 @@ h1 span { display: block; }
 }
 
 @media (forced-colors: active) {
-  .research-list a { background-image: none; }
   .research-list a:hover { color: LinkText; }
-  .research-list a:hover::after { color: LinkText; }
   :where(a, button):focus-visible { outline-color: Highlight; }
   .button, .oral-badge { border: 1px solid ButtonText; }
 }
@@ -575,6 +566,7 @@ h1 span { display: block; }
   .research-copy, .research-copy a { color: #000; }
   .research-grid { gap: 2rem; }
   .research-list h3 { font-size: 13pt; }
+  .research-list a, .research-list a:hover { color: #000; }
   .research-list li { break-inside: avoid; }
   .section-title, .research-grid .section-title { font-size: 24pt; }
   .publication, .news-list li, .subsection, .teaching-card { break-inside: avoid; }
