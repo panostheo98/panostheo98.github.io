@@ -17,7 +17,7 @@
       current = destination >= 0 && tops[destination] >= header.offsetHeight && tops[destination] < innerHeight
         ? destination : sections.length - 1;
     } else if (destination >= 0 && Math.abs(tops[destination] - tops[current]) < 2) {
-      // If headings share a position, keep the explicitly chosen destination.
+      // Service and Talks share a desktop row. Keep the explicitly chosen link.
       current = destination;
     }
     links.forEach((link, index) => {

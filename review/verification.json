@@ -13,7 +13,7 @@
     "structuredData": true
   },
   "tests": {
-    "passed": 36,
+    "passed": 33,
     "failed": 0,
     "projects": [
       "desktop-chromium",
@@ -23,52 +23,10 @@
     "command": "npm test"
   },
   "lighthouse": {
-    "scope": "Research-profile revision, including search metadata and discovery files.",
+    "scope": "Local design audit before the search metadata and discovery-file additions.",
     "mobile": {
       "version": "13.5.0",
       "environment": "Local Python static server; Lighthouse default simulated throttling",
-      "scores": {
-        "performance": 99,
-        "accessibility": 100,
-        "best-practices": 100,
-        "seo": 100
-      },
-      "metrics": {
-        "first-contentful-paint": {
-          "value": 1075.205,
-          "unit": "millisecond",
-          "display": "1.1 s"
-        },
-        "largest-contentful-paint": {
-          "value": 1801.205,
-          "unit": "millisecond",
-          "display": "1.8 s"
-        },
-        "speed-index": {
-          "value": 1075.205,
-          "unit": "millisecond",
-          "display": "1.1 s"
-        },
-        "total-blocking-time": {
-          "value": 0,
-          "unit": "millisecond",
-          "display": "0 ms"
-        },
-        "cumulative-layout-shift": {
-          "value": 0,
-          "unit": "unitless",
-          "display": "0"
-        },
-        "total-byte-weight": {
-          "value": 138011,
-          "unit": "byte",
-          "display": "Total size was 135 KiB"
-        }
-      }
-    },
-    "desktop": {
-      "version": "13.5.0",
-      "environment": "Local Python static server; Lighthouse desktop preset",
       "scores": {
         "performance": 100,
         "accessibility": 100,
@@ -77,17 +35,59 @@
       },
       "metrics": {
         "first-contentful-paint": {
-          "value": 286.5317,
+          "value": 902.1815999999999,
+          "unit": "millisecond",
+          "display": "0.9 s"
+        },
+        "largest-contentful-paint": {
+          "value": 1802.1816,
+          "unit": "millisecond",
+          "display": "1.8 s"
+        },
+        "speed-index": {
+          "value": 902.1815999999999,
+          "unit": "millisecond",
+          "display": "0.9 s"
+        },
+        "total-blocking-time": {
+          "value": 0,
+          "unit": "millisecond",
+          "display": "0 ms"
+        },
+        "cumulative-layout-shift": {
+          "value": 0,
+          "unit": "unitless",
+          "display": "0"
+        },
+        "total-byte-weight": {
+          "value": 141691,
+          "unit": "byte",
+          "display": "Total size was 138 KiB"
+        }
+      }
+    },
+    "desktop": {
+      "version": "13.5.0",
+      "environment": "Local Python static server; Lighthouse default simulated throttling",
+      "scores": {
+        "performance": 100,
+        "accessibility": 100,
+        "best-practices": 100,
+        "seo": 100
+      },
+      "metrics": {
+        "first-contentful-paint": {
+          "value": 288.1665,
           "unit": "millisecond",
           "display": "0.3 s"
         },
         "largest-contentful-paint": {
-          "value": 441.5317,
+          "value": 441.1665,
           "unit": "millisecond",
           "display": "0.4 s"
         },
         "speed-index": {
-          "value": 286.5317,
+          "value": 290.5054957629769,
           "unit": "millisecond",
           "display": "0.3 s"
         },
@@ -102,37 +102,28 @@
           "display": "0"
         },
         "total-byte-weight": {
-          "value": 138082,
+          "value": 141691,
           "unit": "byte",
-          "display": "Total size was 135 KiB"
+          "display": "Total size was 138 KiB"
         }
       }
     }
   },
   "searchDiscovery": {
     "canonical": "https://panostheo98.github.io/",
+    "pageBodyUnchanged": true,
     "originalPersonFactsPreserved": true,
-    "structuredData": [
-      "ProfilePage",
-      "Person",
-      "ScholarlyArticle",
-      "DigitalDocument"
-    ],
+    "structuredData": ["ProfilePage", "Person", "ScholarlyArticle", "DigitalDocument"],
     "selectedPublicationsMatchedToVisibleContent": 4,
     "sitemapEntries": 2,
     "robotsAndSitemapServeSuccessfully": true,
     "verifiedWithoutJavaScript": true,
-    "socialImageDimensions": [
-      1731,
-      909
-    ],
-    "productionIndexingSubmitted": false,
-    "originalTextAndLinksPreserved": true
+    "socialImageDimensions": [1731, 909],
+    "productionIndexingSubmitted": false
   },
   "visualReview": [
     "1440px desktop",
     "390px mobile",
-    "320px mobile",
     "768px tablet",
     "dark mode",
     "mobile navigation"
@@ -145,27 +136,5 @@
       "Physical devices",
       "Spoken VoiceOver/NVDA session"
     ]
-  },
-  "layout": {
-    "focusColumnsAlignedAcrossRows": true,
-    "geometryWidths": [
-      320,
-      390,
-      600,
-      768,
-      1024,
-      1280,
-      1440
-    ],
-    "sectionOrder": [
-      "about",
-      "publications",
-      "research",
-      "news",
-      "service",
-      "talks",
-      "teaching"
-    ],
-    "firstPaperVisibleAt1440x1000": true
   }
 }

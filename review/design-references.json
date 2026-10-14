@@ -1,5 +1,5 @@
 {
-  "method": "Twelve Mobbin MCP searches across the original design and the research-profile revision; all 35 returned previews inspected.",
+  "method": "Eight Mobbin MCP searches; all 27 returned previews inspected before implementation.",
   "searches": [
     {
       "query": "Research institution hero with large typography, a scientist portrait and university affiliation",
@@ -148,103 +148,44 @@
           "url": "https://mobbin.com/screens/5d60e038-b0fd-4472-878b-56f9fc28b8e4"
         }
       ]
-    },
-    {
-      "query": "Research publication list with conference names in a narrow column and paper titles and authors in a wider column",
-      "results": [
-        {
-          "name": "Waabi",
-          "url": "https://mobbin.com/sites/sections/9aaa2fb5-80ec-483f-98b3-e3dcf5217ffb"
-        },
-        {
-          "name": "Duolingo",
-          "url": "https://mobbin.com/sites/sections/064dd9cb-269b-4609-8e99-da32b657f35b"
-        }
-      ]
-    },
-    {
-      "query": "About section for an individual with a compact portrait, biography, and professional links",
-      "results": [
-        {
-          "name": "GitHub",
-          "url": "https://mobbin.com/sites/sections/10928b8e-852d-4424-b248-8028e8ff92d5"
-        },
-        {
-          "name": "Harvest",
-          "url": "https://mobbin.com/sites/sections/3d86c2b4-d5d9-4663-8c1f-9fe475a0bea0"
-        }
-      ]
-    },
-    {
-      "query": "Research interests section with subject names aligned in a typographic grid",
-      "results": [
-        {
-          "name": "Duolingo",
-          "url": "https://mobbin.com/sites/sections/69bc8e60-98c8-4c64-9c5d-d1627f4c19d1"
-        },
-        {
-          "name": "Stripe",
-          "url": "https://mobbin.com/sites/sections/dfba116a-a607-4850-87fd-9595c287a23e"
-        }
-      ]
-    },
-    {
-      "query": "Read.cv personal profile with biography, work experience, projects and external links",
-      "results": [
-        {
-          "name": "Read.cv",
-          "url": "https://mobbin.com/screens/da9ff362-7420-429e-90e0-6276c1541c78"
-        },
-        {
-          "name": "Read.cv",
-          "url": "https://mobbin.com/screens/311f35a5-e5ff-4305-b341-2723b612b148"
-        }
-      ]
     }
   ],
   "decisions": [
     {
-      "source": "https://mobbin.com/screens/da9ff362-7420-429e-90e0-6276c1541c78",
-      "observation": "Compact identity details introduce a continuous professional record.",
-      "application": "A restrained name, original portrait and profile links occupy the desktop identity column. Biography and publications share the wider reading column."
+      "source": "https://mobbin.com/sites/sections/b8608ed1-0d62-4162-92ba-539871655c72",
+      "observation": "Cartesia separates publication dates, serif titles and quieter author lines into a readable archive.",
+      "application": "Full-width publication entries separate venue and oral distinction from title and authors."
     },
     {
-      "source": "https://mobbin.com/sites/sections/9aaa2fb5-80ec-483f-98b3-e3dcf5217ffb",
-      "observation": "Publication entries consistently separate venue, title and authors.",
-      "application": "Each paper uses a narrow venue column and a larger linked serif title, with authors beneath. Publications immediately follow the introduction and focus topics."
+      "source": "https://mobbin.com/sites/sections/5e1e6047-eef1-417c-b42b-c7ab44205e35",
+      "observation": "Kalstore gives an original portrait and biography comparable visual weight.",
+      "application": "The original portrait balances the large name; its natural blue city backdrop informs the palette."
     },
     {
-      "source": "https://mobbin.com/sites/sections/dfba116a-a607-4850-87fd-9595c287a23e",
-      "observation": "The directory maintains consistent column starts across rows of unequal text lengths.",
-      "application": "Current focus uses equal grid tracks, with three, two or one columns determined by available reading width."
+      "source": "https://mobbin.com/screens/072d6e31-1bf0-4c5f-b32c-0b9b33845567",
+      "observation": "Read.cv presents biography and professional records in a compact, text-first reading order.",
+      "application": "Mobile content stays in one reading column with dates and venue labels directly above their entries."
+    },
+    {
+      "source": "https://mobbin.com/sites/sections/593eb726-d6e4-4872-a1d5-51fb4d4a9893",
+      "observation": "IntegratedBio aligns publication labels and action targets without surrounding each article in a card.",
+      "application": "Research directions use clear full-width links; paper titles remain direct external links."
     }
   ],
   "design": {
     "colors": {
-      "paper": "#ffffff",
-      "ink": "#242b30",
-      "muted": "#5a636c",
-      "line": "#dce1e5",
-      "accent": "#23577b"
+      "paper": "#f7fafc",
+      "surface": "#ffffff",
+      "ink": "#173d56",
+      "muted": "#536875",
+      "line": "#cdd8df",
+      "accent": "#245c7c"
     },
     "typography": {
-      "nameAndPaperTitles": "Newsreader, regular, optical size 48",
-      "bodyAndSectionHeadings": "Public Sans, weights 400–600"
+      "headings": "Newsreader, regular, optical size 48",
+      "body": "Public Sans, weights 400–700"
     },
-    "layout": "Compact identity column on the left; biography, focus and publication record on the right. Research directions, news, service, talks and teaching continue on the same reading alignment. Tablet and mobile stack into a single reading column.",
-    "wireframe": [
-      "Identity     Biography",
-      "Portrait     Current focus: three aligned columns",
-      "Links / CV   Selected Publications",
-      "             Selected Research",
-      "             News / Service / Talks / Teaching"
-    ],
-    "principles": [
-      "Publication titles carry the strongest visual emphasis.",
-      "Every original text block and link remains available.",
-      "Reading order and navigation order agree.",
-      "No decorative marks or background panels; boundaries separate publication entries."
-    ],
-    "review": "Replaced the oversized name, large portrait, dark research band and wrapping focus list. The first paper is visible in the initial 1440 by 1000 desktop viewport. Mobile keeps the full biography and stacks focus topics into one aligned list."
+    "layout": "Large name and biography left, original portrait right; a blue research section; publication archive; dated news; service, talks and teaching; contact footer.",
+    "review": "The name appears as plain text in the header, with a simple P favicon. Research directions use a compact heading column and a wider reading column. Publications give priority to the paper titles, venues and authors."
   }
 }

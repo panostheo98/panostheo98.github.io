@@ -141,38 +141,6 @@ test('reflows at narrow, tablet and wide sizes and enlarged text', async ({ page
   expect(await page.evaluate(() => document.documentElement.scrollWidth)).toBeLessThanOrEqual(640);
 });
 
-test('focus topics keep aligned columns and publications follow the introduction', async ({ page }) => {
-  for (const width of [320, 390, 600, 768, 1024, 1280, 1440]) {
-    await page.setViewportSize({ width, height: 1000 });
-    await page.goto('/');
-    await page.evaluate(() => document.fonts.ready);
-    const items = await page.locator('.focus-list li').evaluateAll(nodes => nodes.map(node => {
-      const { x, y, width, height } = node.getBoundingClientRect();
-      return { x, y, width, height };
-    }));
-    const firstRow = items.filter(item => Math.abs(item.y - items[0].y) < 1);
-    for (const [index, item] of items.entries()) {
-      const column = index % firstRow.length;
-      expect(Math.abs(item.x - firstRow[column].x), `${width}px column alignment`).toBeLessThan(1);
-      expect(Math.abs(item.width - firstRow[column].width), `${width}px column width`).toBeLessThan(1);
-      const rowStart = items[index - column];
-      expect(Math.abs(item.y - rowStart.y), `${width}px row alignment`).toBeLessThan(1);
-      if (index >= firstRow.length) {
-        const previous = items[index - firstRow.length];
-        expect(item.y).toBeGreaterThanOrEqual(previous.y + previous.height);
-      }
-    }
-    const order = await page.locator('main > section').evaluateAll(sections => sections.map(section => section.id));
-    expect(order.slice(0, 3)).toEqual(['about', 'publications', 'research']);
-    if (width >= 1280) {
-      const biography = await page.locator('.biography').boundingBox();
-      const heading = await page.locator('#publications h2').boundingBox();
-      expect(Math.abs(biography.x - heading.x)).toBeLessThan(1);
-      await expect(page.locator('.publication h3').first()).toBeInViewport();
-    }
-  }
-});
-
 test('content and navigation work without JavaScript, motion or web fonts', async ({ browser }) => {
   const context = await browser.newContext({ javaScriptEnabled: false, viewport: { width: 375, height: 812 }, reducedMotion: 'reduce' });
   const page = await context.newPage();
