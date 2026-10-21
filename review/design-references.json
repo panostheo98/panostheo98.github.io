@@ -1,0 +1,191 @@
+{
+  "method": "Eight Mobbin MCP searches; all 27 returned previews inspected before implementation.",
+  "searches": [
+    {
+      "query": "Research institution hero with large typography, a scientist portrait and university affiliation",
+      "results": [
+        {
+          "name": "OpenAI",
+          "url": "https://mobbin.com/sites/sections/2bbc707f-df83-4b85-b0f2-87f43e596557"
+        },
+        {
+          "name": "Cartesia",
+          "url": "https://mobbin.com/sites/sections/5d435d51-0e0a-4946-b512-15b4efd875c4"
+        },
+        {
+          "name": "User Interviews",
+          "url": "https://mobbin.com/sites/sections/d62aeba3-3776-4435-9a3c-acad5bd37faa"
+        },
+        {
+          "name": "Until",
+          "url": "https://mobbin.com/sites/sections/e858eb71-c18a-49e5-b7d6-02dacd00a8aa"
+        }
+      ]
+    },
+    {
+      "query": "Research publications index with article titles, authors, dates and category filters",
+      "results": [
+        {
+          "name": "Codecademy",
+          "url": "https://mobbin.com/screens/76382d18-fcfa-4a3f-9f67-cb6bdb5e1988"
+        },
+        {
+          "name": "Elicit",
+          "url": "https://mobbin.com/screens/ecd4a0fb-68dd-4fb7-b514-99570fb589d9"
+        },
+        {
+          "name": "Confluence",
+          "url": "https://mobbin.com/screens/18c98606-80a0-41a3-b361-c538d577fa82"
+        },
+        {
+          "name": "Claude",
+          "url": "https://mobbin.com/screens/89caa346-2310-4edc-9439-a36dc843906c"
+        }
+      ]
+    },
+    {
+      "query": "About page with a large editorial portrait and biographical text arranged in columns",
+      "results": [
+        {
+          "name": "Slack",
+          "url": "https://mobbin.com/sites/sections/1bafeb86-728a-425b-aa78-c5e680e7f640"
+        },
+        {
+          "name": "Intercom",
+          "url": "https://mobbin.com/sites/sections/37b83ac0-3b81-4596-964b-d0a0cea46ba7"
+        },
+        {
+          "name": "Kalstore",
+          "url": "https://mobbin.com/sites/sections/5e1e6047-eef1-417c-b42b-c7ab44205e35"
+        },
+        {
+          "name": "Voiceflow",
+          "url": "https://mobbin.com/sites/sections/476948d0-ff0e-4b44-8aa6-05ec5e93a231"
+        }
+      ]
+    },
+    {
+      "query": "Research publication archive with large linked article titles, publication years and understated dividers",
+      "results": [
+        {
+          "name": "Cartesia",
+          "url": "https://mobbin.com/sites/sections/b8608ed1-0d62-4162-92ba-539871655c72"
+        },
+        {
+          "name": "IntegratedBio",
+          "url": "https://mobbin.com/sites/sections/593eb726-d6e4-4872-a1d5-51fb4d4a9893"
+        },
+        {
+          "name": "OpenAI",
+          "url": "https://mobbin.com/sites/sections/1e4d6891-db02-4b62-8ae8-8addb56aa87e"
+        }
+      ]
+    },
+    {
+      "query": "University or scientific research laboratory website with an editorial typographic layout",
+      "results": [
+        {
+          "name": "Duolingo",
+          "url": "https://mobbin.com/sites/sections/064dd9cb-269b-4609-8e99-da32b657f35b"
+        },
+        {
+          "name": "Waabi",
+          "url": "https://mobbin.com/sites/sections/071973d5-f661-4275-9e40-7c98fa77d021"
+        },
+        {
+          "name": "Maze",
+          "url": "https://mobbin.com/sites/sections/015a862b-ebaf-45c6-baa7-981a9af8c0de"
+        }
+      ]
+    },
+    {
+      "query": "Personal portfolio website navigation with a compact name and section links",
+      "results": [
+        {
+          "name": "MOUTHWASH Studio",
+          "url": "https://mobbin.com/sites/sections/672c2210-6085-428a-920f-c03f1b5933be"
+        },
+        {
+          "name": "Joby Aviation",
+          "url": "https://mobbin.com/sites/sections/1920b177-f705-4eae-9094-13b8d85d8940"
+        },
+        {
+          "name": "Webflow",
+          "url": "https://mobbin.com/sites/sections/87b7733a-9aa4-45db-b9d7-397aad19b9de"
+        }
+      ]
+    },
+    {
+      "query": "Minimal contact footer with a large name, email address and social links",
+      "results": [
+        {
+          "name": "Touchy Coffee",
+          "url": "https://mobbin.com/sites/sections/1262461a-ee8b-472e-9cf1-001b0de70548"
+        },
+        {
+          "name": "Mother Design",
+          "url": "https://mobbin.com/sites/sections/23a43fc2-e616-4b49-945c-4a0dd97df268"
+        },
+        {
+          "name": "Monte",
+          "url": "https://mobbin.com/sites/sections/6ecba422-fe26-482b-8225-8e24ec959d84"
+        }
+      ]
+    },
+    {
+      "query": "Read.cv profile with biography, experience and links on a narrow screen",
+      "results": [
+        {
+          "name": "Read.cv",
+          "url": "https://mobbin.com/screens/072d6e31-1bf0-4c5f-b32c-0b9b33845567"
+        },
+        {
+          "name": "Read.cv",
+          "url": "https://mobbin.com/screens/9eb33512-187f-4018-a96e-24a0c019f42e"
+        },
+        {
+          "name": "Read.cv",
+          "url": "https://mobbin.com/screens/5d60e038-b0fd-4472-878b-56f9fc28b8e4"
+        }
+      ]
+    }
+  ],
+  "decisions": [
+    {
+      "source": "https://mobbin.com/sites/sections/b8608ed1-0d62-4162-92ba-539871655c72",
+      "observation": "Cartesia separates publication dates, serif titles and quieter author lines into a readable archive.",
+      "application": "Full-width publication entries separate venue and oral distinction from title and authors."
+    },
+    {
+      "source": "https://mobbin.com/sites/sections/5e1e6047-eef1-417c-b42b-c7ab44205e35",
+      "observation": "Kalstore gives an original portrait and biography comparable visual weight.",
+      "application": "The original portrait balances the large name; its natural blue city backdrop informs the palette."
+    },
+    {
+      "source": "https://mobbin.com/screens/072d6e31-1bf0-4c5f-b32c-0b9b33845567",
+      "observation": "Read.cv presents biography and professional records in a compact, text-first reading order.",
+      "application": "Mobile content stays in one reading column with dates and venue labels directly above their entries."
+    },
+    {
+      "source": "https://mobbin.com/sites/sections/593eb726-d6e4-4872-a1d5-51fb4d4a9893",
+      "observation": "IntegratedBio aligns publication labels and action targets without surrounding each article in a card.",
+      "application": "Research directions use clear full-width links; paper titles remain direct external links."
+    }
+  ],
+  "design": {
+    "colors": {
+      "paper": "#f7fafc",
+      "surface": "#ffffff",
+      "ink": "#173d56",
+      "muted": "#536875",
+      "line": "#cdd8df",
+      "accent": "#245c7c"
+    },
+    "typography": {
+      "headings": "Newsreader, regular, optical size 48",
+      "body": "Public Sans, weights 400–700"
+    },
+    "layout": "Large name and biography left, original portrait right; a blue research section; publication archive; dated news; service, talks and teaching; contact footer.",
+    "review": "The name appears as plain text in the header, with a simple P favicon. Research directions use a compact heading column and a wider reading column. Publications give priority to the paper titles, venues and authors."
+  }
+}

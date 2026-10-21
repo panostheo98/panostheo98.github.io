@@ -1,0 +1,308 @@
+{
+  "date": "2026-10-14",
+  "baseline": "9041d5a",
+  "preservation": {
+    "textBlocks": 65,
+    "links": 31,
+    "originalAssets": [
+      "Panagiotis_Theodoropoulos_CV.pdf",
+      "IMG_6206.jpeg",
+      "og.png"
+    ],
+    "metadata": true,
+    "structuredData": true,
+    "requestedHeaderRemovals": [
+      "Service",
+      "Talks",
+      "Teaching",
+      "CV"
+    ]
+  },
+  "tests": {
+    "passed": 39,
+    "failed": 0,
+    "projects": [
+      "desktop-chromium",
+      "mobile-chromium",
+      "mobile-webkit"
+    ],
+    "command": "npm test"
+  },
+  "lighthouse": {
+    "scope": "Local design audit before the search metadata and discovery-file additions.",
+    "mobile": {
+      "version": "13.5.0",
+      "environment": "Local Python static server; Lighthouse default simulated throttling",
+      "scores": {
+        "performance": 100,
+        "accessibility": 100,
+        "best-practices": 100,
+        "seo": 100
+      },
+      "metrics": {
+        "first-contentful-paint": {
+          "value": 902.1815999999999,
+          "unit": "millisecond",
+          "display": "0.9 s"
+        },
+        "largest-contentful-paint": {
+          "value": 1802.1816,
+          "unit": "millisecond",
+          "display": "1.8 s"
+        },
+        "speed-index": {
+          "value": 902.1815999999999,
+          "unit": "millisecond",
+          "display": "0.9 s"
+        },
+        "total-blocking-time": {
+          "value": 0,
+          "unit": "millisecond",
+          "display": "0 ms"
+        },
+        "cumulative-layout-shift": {
+          "value": 0,
+          "unit": "unitless",
+          "display": "0"
+        },
+        "total-byte-weight": {
+          "value": 141691,
+          "unit": "byte",
+          "display": "Total size was 138 KiB"
+        }
+      }
+    },
+    "desktop": {
+      "version": "13.5.0",
+      "environment": "Local Python static server; Lighthouse default simulated throttling",
+      "scores": {
+        "performance": 100,
+        "accessibility": 100,
+        "best-practices": 100,
+        "seo": 100
+      },
+      "metrics": {
+        "first-contentful-paint": {
+          "value": 288.1665,
+          "unit": "millisecond",
+          "display": "0.3 s"
+        },
+        "largest-contentful-paint": {
+          "value": 441.1665,
+          "unit": "millisecond",
+          "display": "0.4 s"
+        },
+        "speed-index": {
+          "value": 290.5054957629769,
+          "unit": "millisecond",
+          "display": "0.3 s"
+        },
+        "total-blocking-time": {
+          "value": 0,
+          "unit": "millisecond",
+          "display": "0 ms"
+        },
+        "cumulative-layout-shift": {
+          "value": 0,
+          "unit": "unitless",
+          "display": "0"
+        },
+        "total-byte-weight": {
+          "value": 141691,
+          "unit": "byte",
+          "display": "Total size was 138 KiB"
+        }
+      }
+    }
+  },
+  "searchDiscovery": {
+    "canonical": "https://panostheo98.github.io/",
+    "originalPersonFactsPreserved": true,
+    "structuredData": [
+      "ProfilePage",
+      "Person",
+      "ScholarlyArticle",
+      "DigitalDocument"
+    ],
+    "selectedPublicationsMatchedToVisibleContent": 4,
+    "sitemapEntries": 2,
+    "robotsAndSitemapServeSuccessfully": true,
+    "verifiedWithoutJavaScript": true,
+    "socialImageDimensions": [
+      1731,
+      909
+    ],
+    "productionIndexingSubmitted": false,
+    "originalTextAndLinksPreserved": true
+  },
+  "visualReview": [
+    "1440px desktop",
+    "390px mobile",
+    "768px tablet",
+    "dark mode",
+    "mobile navigation"
+  ],
+  "accessibility": {
+    "automated": "No axe WCAG A/AA violations with light/dark system preferences and the requested dark palette, including expanded mobile navigation.",
+    "keyboard": "Skip link, disclosure, Escape restoration, section focus, active links and anchor placement verified.",
+    "accessibilityTree": "Menu name, button role, expanded state and navigation links inspected.",
+    "notVerified": [
+      "Physical devices",
+      "Spoken VoiceOver/NVDA session"
+    ]
+  },
+  "focusAlignment": {
+    "widths": [
+      320,
+      390,
+      768,
+      1024,
+      1440
+    ],
+    "alignedColumns": true
+  },
+  "oralExplanation": {
+    "hover": true,
+    "keyboardFocus": true,
+    "tapToggle": true,
+    "escapeDismissal": true,
+    "outsideTapDismissal": true,
+    "withinViewport": true,
+    "nativeTitleWithoutJavaScript": true,
+    "source": "https://media.iclr.cc/Conferences/ICLR2025/ICLR2025_Fact_Sheet.pdf",
+    "selectionStats": {
+      "year": 2025,
+      "oralPresentations": 213,
+      "submissions": 11603,
+      "percentageRounded": 1.8
+    }
+  },
+  "heroSocial": {
+    "layout": "Two columns below portrait on desktop; full-width link rows beside portrait and CV below on mobile",
+    "widths": [
+      320,
+      375,
+      390,
+      430,
+      600,
+      688,
+      689,
+      768,
+      1024,
+      1280,
+      1440,
+      1920
+    ],
+    "engines": [
+      "Chromium",
+      "WebKit"
+    ],
+    "textScales": [
+      1,
+      2
+    ],
+    "minimumTargetPixels": 44,
+    "noOverlappingTargets": true,
+    "visibleKeyboardFocus": true,
+    "originalLinksAndLabelsPreserved": true,
+    "designReference": "https://mobbin.com/sites/sections/ecbaa0a2-e865-4b45-a5ea-0f67b4cb9794"
+  },
+  "selectedResearch": {
+    "layout": "Two-column linked headings, single column on mobile",
+    "originalTitlesAndDestinationsPreserved": true,
+    "widths": [
+      320,
+      390,
+      688,
+      689,
+      768,
+      1024,
+      1440,
+      1920
+    ],
+    "textScales": [
+      1,
+      2
+    ],
+    "engines": [
+      "Chromium",
+      "WebKit"
+    ],
+    "noOverflow": true,
+    "visibleKeyboardFocus": true,
+    "designReference": "https://mobbin.com/sites/sections/1b665755-3726-48ea-9f9c-32e8c2c7914b",
+    "typography": {
+      "family": "Public Sans",
+      "weight": 500,
+      "fontSizeRangeRem": [
+        1.125,
+        1.5
+      ],
+      "titleUnderlines": false,
+      "inlineExternalLinkArrows": true
+    },
+    "hover": {
+      "effect": "Links and arrows shift from #f5f5f5 to soft gray-white #c7c7c7; no shimmer or glow",
+      "outerShadow": false,
+      "engines": [
+        "Chromium",
+        "WebKit"
+      ],
+      "keyboardFocusPreserved": true,
+      "forcedColorsChecked": "Chromium"
+    }
+  },
+  "readability": {
+    "bodyTextPixels": 17,
+    "secondaryTextPixels": 16,
+    "uiTextPixels": 15,
+    "labelTextPixels": 14,
+    "darkPalette": {
+      "palette": {
+        "paper": "#171717",
+        "surface": "#1d1d1d",
+        "research": "#1b1b1b",
+        "ink": "#f5f5f5",
+        "muted": "#d4d4d4",
+        "accent": "#91b9ff"
+      },
+      "method": "Contrast against all opaque surfaces and a conservative upper bound with both neutral radial gradient tints at maximum opacity.",
+      "measurements": [
+        {
+          "role": "ink",
+          "color": "#f5f5f5",
+          "minimumContrast": 15.1
+        },
+        {
+          "role": "muted",
+          "color": "#d4d4d4",
+          "minimumContrast": 11.1
+        },
+        {
+          "role": "accent",
+          "color": "#91b9ff",
+          "minimumContrast": 8.3
+        }
+      ]
+    },
+    "reference": "https://panostheo98.github.io/",
+    "inlineLinks": {
+      "color": "#91b9ff",
+      "weight": 600,
+      "underlineAtRest": false,
+      "underlineOnHoverAndFocus": true,
+      "motionPreferenceRespected": true,
+      "engines": [
+        "Chromium",
+        "WebKit"
+      ],
+      "selectedResearchColor": "#f5f5f5"
+    }
+  },
+  "headerNavigation": [
+    "About",
+    "Research",
+    "Publications",
+    "News"
+  ]
+}
